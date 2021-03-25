@@ -1,5 +1,5 @@
 {
-  "name": "@parcelaexpress/checkout-component",
+  "name": "@parcelaexpress/checkout-react-component",
   "version": "1.0.0",
   "description": "Parcela Checkout Component",
   "main": "lib/index.js",
