@@ -4,6 +4,10 @@
   "description": "Parcela Checkout Component",
   "main": "lib/index.js",
   "module": "es/index.js",
+  "publishConfig": {
+    "access": "public"
+  },  
+  "homepage": "https://github.com/Parcela-Express/checkout-component#readme",
   "files": [
     "css",
     "es",
@@ -35,8 +39,7 @@
     "@testing-library/user-event": "^12.1.10",
     "framer-motion": "^3.10.2"
   },
-  "author": "Parcela Express",
-  "homepage": "",
+  "author": "Parcela Express <contato@parcelaexpress.com.br>",  
   "license": "MIT",
   "repository": {
     "type": "git",
