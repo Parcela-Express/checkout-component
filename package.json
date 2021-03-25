@@ -38,7 +38,10 @@
   "author": "Parcela Express",
   "homepage": "",
   "license": "MIT",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Parcela-Express/checkout-component.git"
+  },
   "keywords": [
     "react-component"
   ]
