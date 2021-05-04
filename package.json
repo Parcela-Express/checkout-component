@@ -1,12 +1,12 @@
 {
   "name": "@parcelaexpress/checkout-react-component",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Parcela Checkout Component",
   "main": "lib/index.js",
   "module": "es/index.js",
   "publishConfig": {
     "access": "public"
-  },  
+  },
   "homepage": "https://github.com/Parcela-Express/checkout-component#readme",
   "files": [
     "css",
@@ -23,7 +23,7 @@
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server",
     "patch": "npm version patch"
-  },  
+  },
   "peerDependencies": {
     "react": "17.x"
   },
@@ -33,7 +33,7 @@
   "devDependencies": {
     "nwb": "^0.25.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",    
+    "react-dom": "^17.0.2",
     "@chakra-ui/react": "^1.3.4",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
@@ -42,7 +42,7 @@
     "@testing-library/user-event": "^12.1.10",
     "framer-motion": "^3.10.2"
   },
-  "author": "Parcela Express <contato@parcelaexpress.com.br>",  
+  "author": "Parcela Express <contato@parcelaexpress.com.br>",
   "license": "MIT",
   "repository": {
     "type": "git",
