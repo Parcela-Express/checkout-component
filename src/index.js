@@ -5,7 +5,7 @@ import AdyenCheckout from "@adyen/adyen-web";
 
 import * as ParcelaExpressApi from './clients';
 
-import PaymentThreeDS from "./clients/src/components/PaymentThreeDS";
+import PaymentThreeDS from "./components/PaymentThreeDS";
 
 const paymentMethods = {
   paymentMethods: [
