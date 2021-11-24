@@ -28,13 +28,42 @@ Siga as instruções abaixo para realizar a instalação do componente em sua ap
       console.log('state', state)
     };
 
+    const onErrorHandle = (err) => {
+      console.log(err);
+
+      return;
+    };
+
     return (
-        <Checkout
-            environment={`TEST`}
-            clientKey={process.env.MINHA_CLIENT_KEY}
-            onSubmit={checkoutSubmitHandle}
-            onChange={checkoutOnChangeHandle}
-        />
+      <Checkout environment={'TEST'} 
+        customerData={{
+          amount_cents: 1000,
+          description: 'Venda Teste',
+          form_payment: 'debit',
+          installment_plan: {
+            number_installments: 1,
+          },
+          customer: {
+            email: 'email@email.com.br',
+            ip: '00.000.000.00',
+            first_name: 'Testando',
+            last_name: 'Teste',
+            document: '00000000000',
+            billing_address: {
+              city: 'São Paulo',
+              country: 'BR',
+              house_number_or_name: '10',
+              postal_code: '0000000',
+              state: 'SP',
+              street: 'Rua Teste'
+            }
+          }            
+        }}
+        sellerKey={'key'}
+        clientKey={'clientKey'}
+        onSubmit={checkoutSubmitHandle} 
+        onChange={checkoutOnChangeHandle}
+        onSubmitError={onErrorHandle} />
     );
   }
   
