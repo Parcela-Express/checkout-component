@@ -1,15 +1,16 @@
 import React from 'react'
 
 import { render } from 'react-dom'
-import { Flex, Image, Stack } from '@chakra-ui/react';
+import { Flex, Image, Stack, ChakraProvider } from '@chakra-ui/react';
 
 import Checkout from '../../src'
+import Loader from './loader';
 
 const Demo = () => {
-  const checkoutSubmitHandle = (state) => {
-    alert(JSON.stringify(state));
+  const [ isLoading, setIsLoading ] = React.useState(false);
 
-    console.log(state);
+  const checkoutSubmitHandle = (state, component, data) => {
+    console.log(data);
   };
 
   const checkoutOnChangeHandle = (state) => {
@@ -17,25 +18,63 @@ const Demo = () => {
     console.log('state', state)
   };
 
+  const onErrorHandle = (err) => {
+    console.log(err);
+
+    return;
+  };
+
   return (
-    <Flex w={`100%`} h={`100vh`} alignItems={`center`} justifyContent={`center`}>
-      <Stack isInline spacing={5} justifyContent={`center`}>
-        <Flex flexDir={`column`}>
-          <Image
-            w={200}
-            objectFit="cover"
-            src="https://parcelaexpress-all-pos-web.s3.amazonaws.com/logo/cart.png"
-            alt="Cart Express"
-          />          
-        </Flex>      
-        <Flex w={`50%`} borderWidth={1} borderColor={`#ccc`} rounded={`xl`} p={10}>
-          <Checkout environment={'TEST'} 
-            clientKey={'test_IBIF7UD6SNB7ZJG3KVEGM3UP5M57BJ4B'}
-            onSubmit={checkoutSubmitHandle} 
-            onChange={checkoutOnChangeHandle} />
-        </Flex>
-      </Stack>
-    </Flex>
+    <ChakraProvider>
+      <Flex w={`100%`} h={`100vh`} alignItems={`center`} justifyContent={`center`}>
+        <Stack isInline spacing={5} justifyContent={`center`}>
+          <Flex flexDir={`column`}>
+            <Image
+              w={200}
+              objectFit="cover"
+              src="https://parcelaexpress-all-pos-web.s3.amazonaws.com/logo/cart.png"
+              alt="Cart Express"
+            />          
+          </Flex>      
+          <Flex w={`50%`} borderWidth={1} borderColor={`#ccc`} rounded={`xl`} p={10}>
+            <Checkout environment={'TEST'} 
+              apiUrl={`https://api-qa.parcelaexpress.com.br`}
+              customerData={{
+                amount_cents: 1000,
+                description: 'Venda Teste',
+                form_payment: 'debit',
+                installment_plan: {
+                  number_installments: 1,
+                },
+                customer: {
+                  email: 'teste@fulano.com.br',
+                  ip: '99.106.129.24',
+                  first_name: 'Testando',
+                  last_name: 'Teste',
+                  document: '29896147027',
+                  billing_address: {
+                    city: 'Belo Horizonte',
+                    country: 'BR',
+                    house_number_or_name: '10',
+                    postal_code: '31010500',
+                    state: 'MG',
+                    street: 'Rua Adamina'
+                  }
+                },
+                sale_id: 'b826e94b-f76c-4e95-8d6b-6efd6e0c48e7'
+              }}
+              sellerKey={'e137d1b6-8f84-4377-ab5c-d27dd24415bd'}
+              clientKey={'test_IBIF7UD6SNB7ZJG3KVEGM3UP5M57BJ4B'}
+              onSubmit={checkoutSubmitHandle} 
+              onChange={checkoutOnChangeHandle}
+              onSubmitError={onErrorHandle}
+              beforeSubmit={() => setIsLoading(true)}
+              afterSubmit={() => setIsLoading(false)} />
+          </Flex>
+        </Stack>      
+      </Flex>
+      <Loader isOpen={isLoading} />
+    </ChakraProvider>    
   )
 }
   
