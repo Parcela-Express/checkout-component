@@ -128,10 +128,10 @@ const Checkout = (props) => {
           createPaymentDto.error_return_url = errorReturnUrl;
         }
         return new Promise((resolve, reject) => {
-          props.beforeSubmit();
+          props.beforeSubmit && props.beforeSubmit();
 
           apiInstance.createPayment(createPaymentDto, sellerKey, (err, data) => {
-            props.afterSubmit();              
+            props.afterSubmit && props.afterSubmit();              
 
             if (err) {
               setPaymentResponse(undefined);
