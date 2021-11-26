@@ -44,7 +44,6 @@ const Checkout = (props) => {
   const { environment, clientKey, theme, customerData, apiUrl, sellerKey, successReturnUrl, errorReturnUrl } = props;
 
   const [ paymentResponse, setPaymentResponse ] = React.useState(undefined);
-  const [ isLoading, setIsLoading ] = React.useState(false);
 
   switch (theme) {
     case "outline":
@@ -104,10 +103,20 @@ const Checkout = (props) => {
         const { data } = state;
         const { paymentMethod } = data;
 
+        if (customerData.form_payment === 'debit' && (typeof(successReturnUrl) !== 'string' || typeof(errorReturnUrl) !== 'string')) {
+          if (props.onSubmitError) {
+            return (props.onSubmitError('Please provide successReturnUrl string and errorReturnUrl string!'));
+          } else {
+            console.error('Please provide successReturnUrl string and errorReturnUrl string!');
+            return;
+          } 
+        }
+
         const createPaymentDto = {
           amount_cents: customerData.amount_cents,
           description: customerData.description,
           form_payment: customerData.form_payment,
+          pre_capture: customerData.pre_capture,
           card_attributes: {
             holder_name: paymentMethod.holderName,
             number: paymentMethod.encryptedCardNumber,
@@ -167,8 +176,16 @@ const Checkout = (props) => {
 
 Checkout.propTypes = {
   apiUrl: PropTypes.string,
-  successReturnUrl: PropTypes.string,
-  errorReturnUrl: PropTypes.string,
+  successReturnUrl: function(props, propName, componentName) {
+    if(props.customerData.form_payment === 'debit' && (props[propName] === undefined || typeof(props[propName]) !== 'string')) {
+      return new Error('Please provide a successReturnUrl string!');
+    }
+  },
+  errorReturnUrl: function(props, propName, componentName) {
+    if(props.customerData.form_payment === 'debit' && (props[propName] === undefined || typeof(props[propName]) !== 'string')) {
+      return new Error('Please provide a errorReturnUrl string!');
+    }
+  },
   sellerKey: PropTypes.string.isRequired,
   clientKey: PropTypes.string.isRequired,
   environment: PropTypes.string.isRequired,
@@ -180,6 +197,7 @@ Checkout.propTypes = {
   customerData: PropTypes.shape(
     {
       amount_cents: PropTypes.number,
+      pre_capture: PropTypes.bool,
       description: PropTypes.string,
       form_payment: PropTypes.oneOf([ 'credit', 'debit' ]),
       installment_plan: PropTypes.shape({

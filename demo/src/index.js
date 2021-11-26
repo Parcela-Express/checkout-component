@@ -61,7 +61,8 @@ const Demo = () => {
                     street: 'Rua Adamina'
                   }
                 },
-                sale_id: 'b826e94b-f76c-4e95-8d6b-6efd6e0c48e7'
+                sale_id: 'b826e94b-f76c-4e95-8d6b-6efd6e0c48e7',
+                pre_capture: true,
               }}
               sellerKey={'e137d1b6-8f84-4377-ab5c-d27dd24415bd'}
               clientKey={'test_IBIF7UD6SNB7ZJG3KVEGM3UP5M57BJ4B'}
