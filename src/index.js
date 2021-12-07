@@ -129,7 +129,7 @@ const Checkout = (props) => {
           customer: customerData.customer,
           sale_id: customerData.sale_id,
           has_split_rules: customerData.has_split_rules,
-          split_rules: customerData.has_split_rules
+          split_rules: customerData.split_rules
         };
 
         if (successReturnUrl) {

@@ -50,9 +50,9 @@ const Demo = () => {
           >
             <Checkout
               environment={"TEST"}
-              apiUrl={`https://api-qa.parcelaexpress.com.br`}
+              apiUrl={`http://a892-189-15-42-40.ngrok.io`}
               customerData={{
-                amount_cents: 1000,
+                amount_cents: 20000,
                 description: "Venda Teste",
                 form_payment: "debit",
                 installment_plan: {
