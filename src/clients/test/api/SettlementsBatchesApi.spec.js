@@ -34,6 +34,26 @@
 
   describe('(package)', function() {
     describe('SettlementsBatchesApi', function() {
+      describe('concilExportRequest', function() {
+        it('should call concilExportRequest successfully', function(done) {
+          // TODO: uncomment, update parameter values for concilExportRequest call and complete the assertions
+          /*
+
+          instance.concilExportRequest(body, function(error, data, response) {
+            if (error) {
+              done(error);
+              return;
+            }
+            // TODO: update response assertions
+            expect(data).to.be.a(ParcelaExpressApi.GetFileExportRequestDto);
+
+            done();
+          });
+          */
+          // TODO: uncomment and complete method invocation above, then delete this line and the next:
+          done();
+        });
+      });
       describe('createSettlementBatchListExportRequest', function() {
         it('should call createSettlementBatchListExportRequest successfully', function(done) {
           // TODO: uncomment, update parameter values for createSettlementBatchListExportRequest call and complete the assertions

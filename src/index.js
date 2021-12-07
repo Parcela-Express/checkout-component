@@ -1,9 +1,9 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 import AdyenCheckout from "@adyen/adyen-web";
 
-import * as ParcelaExpressApi from './clients';
+import * as ParcelaExpressApi from "./clients";
 
 import PaymentThreeDS from "./components/PaymentThreeDS";
 
@@ -41,10 +41,19 @@ const paymentMethods = {
 };
 
 const Checkout = (props) => {
-  const { environment, clientKey, theme, customerData, apiUrl, sellerKey, successReturnUrl, errorReturnUrl } = props;
+  const {
+    environment,
+    clientKey,
+    theme,
+    customerData,
+    apiUrl,
+    sellerKey,
+    successReturnUrl,
+    errorReturnUrl,
+  } = props;
 
-  const [ paymentResponse, setPaymentResponse ] = React.useState(undefined);
-  const [ isLoading, setIsLoading ] = React.useState(false);
+  const [paymentResponse, setPaymentResponse] = React.useState(undefined);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   switch (theme) {
     case "outline":
@@ -86,9 +95,10 @@ const Checkout = (props) => {
   };
 
   React.useEffect(() => {
-    const apiInstance = new ParcelaExpressApi.PaymentsApi();        
-    
-    apiInstance.apiClient.basePath = apiUrl || 'https://api-prod.parcelaexpress.com.br';
+    const apiInstance = new ParcelaExpressApi.PaymentsApi();
+
+    apiInstance.apiClient.basePath =
+      apiUrl || "https://api-prod.parcelaexpress.com.br";
 
     const card = new AdyenCheckout(configuration);
     const callbacks = {};
@@ -113,11 +123,13 @@ const Checkout = (props) => {
             number: paymentMethod.encryptedCardNumber,
             expiration_month: paymentMethod.encryptedExpiryMonth,
             expiration_year: paymentMethod.encryptedExpiryYear,
-            security_code: paymentMethod.encryptedSecurityCode
+            security_code: paymentMethod.encryptedSecurityCode,
           },
           installment_plan: customerData.installment_plan,
           customer: customerData.customer,
-          sale_id: customerData.sale_id
+          sale_id: customerData.sale_id,
+          has_split_rules: customerData.has_split_rules,
+          split_rules: customerData.split_rules
         };
 
         if (successReturnUrl) {
@@ -130,21 +142,25 @@ const Checkout = (props) => {
         return new Promise((resolve, reject) => {
           props.beforeSubmit && props.beforeSubmit();
 
-          apiInstance.createPayment(createPaymentDto, sellerKey, (err, data) => {
-            props.afterSubmit && props.afterSubmit();              
+          apiInstance.createPaymentWithSplit(
+            createPaymentDto,
+            sellerKey,
+            (err, data) => {
+              props.afterSubmit && props.afterSubmit();
 
-            if (err) {
-              setPaymentResponse(undefined);
-              if (props.onSubmitError) {
-                reject(props.onSubmitError(JSON.parse(err.message).message));
+              if (err) {
+                setPaymentResponse(undefined);
+                if (props.onSubmitError) {
+                  reject(props.onSubmitError(JSON.parse(err.message).message));
+                } else {
+                  reject(JSON.parse(err.message).message);
+                }
               } else {
-                reject(JSON.parse(err.message).message);
-              }              
-            } else {
-              setPaymentResponse(data);
-              resolve(props.onSubmit(state, component, data));
-            }            
-          })            
+                setPaymentResponse(data);
+                resolve(props.onSubmit(state, component, data));
+              }
+            }
+          );
         });
       };
     }
@@ -154,13 +170,17 @@ const Checkout = (props) => {
   return (
     <>
       <div id="checkout-container" />
-      {(paymentResponse && paymentResponse.action && paymentResponse.action.type && (paymentResponse.action.type === 'threeDS2Fingerprint' || (paymentResponse.action.type === 'redirect'))) && (
-        <PaymentThreeDS
-          environment={environment}
-          clientKey={clientKey}
-          action={(paymentResponse.action)}          
-        />
-      )}
+      {paymentResponse &&
+        paymentResponse.action &&
+        paymentResponse.action.type &&
+        (paymentResponse.action.type === "threeDS2Fingerprint" ||
+          paymentResponse.action.type === "redirect") && (
+          <PaymentThreeDS
+            environment={environment}
+            clientKey={clientKey}
+            action={paymentResponse.action}
+          />
+        )}
     </>
   );
 };
@@ -177,32 +197,37 @@ Checkout.propTypes = {
   onSubmitError: PropTypes.func,
   beforeSubmit: PropTypes.func,
   afterSubmit: PropTypes.func,
-  customerData: PropTypes.shape(
-    {
-      amount_cents: PropTypes.number,
-      description: PropTypes.string,
-      form_payment: PropTypes.oneOf([ 'credit', 'debit' ]),
-      installment_plan: PropTypes.shape({
-        number_installments: PropTypes.number,
+  customerData: PropTypes.shape({
+    amount_cents: PropTypes.number,
+    description: PropTypes.string,
+    form_payment: PropTypes.oneOf(["credit", "debit"]),
+    installment_plan: PropTypes.shape({
+      number_installments: PropTypes.number,
+    }),
+    customer: PropTypes.shape({
+      email: PropTypes.string,
+      ip: PropTypes.string,
+      first_name: PropTypes.string,
+      last_name: PropTypes.string,
+      document: PropTypes.string,
+      billing_address: PropTypes.shape({
+        city: PropTypes.string,
+        country: PropTypes.string,
+        house_number_or_name: PropTypes.string,
+        postal_code: PropTypes.string,
+        state: PropTypes.string,
+        street: PropTypes.string,
       }),
-      customer: PropTypes.shape({
-        email: PropTypes.string,
-        ip: PropTypes.string,
-        first_name: PropTypes.string,
-        last_name: PropTypes.string,
-        document: PropTypes.string,
-        billing_address: PropTypes.shape({
-          city: PropTypes.string,
-          country: PropTypes.string,
-          house_number_or_name: PropTypes.string,
-          postal_code: PropTypes.string,
-          state: PropTypes.string,
-          street: PropTypes.string
-        })
-      }),
-      sale_id: PropTypes.string
-    }
-  ).isRequired
-}
+    }),
+    sale_id: PropTypes.string,
+  }).isRequired,
+  has_split_rules: PropTypes.bool,
+  split_rules: PropTypes.arrayOf(
+    PropTypes.shape({
+      amount: PropTypes.number.isRequired,
+      seller_id: PropTypes.string.isRequired,
+    }).isRequired
+  ),
+};
 
 export default Checkout;

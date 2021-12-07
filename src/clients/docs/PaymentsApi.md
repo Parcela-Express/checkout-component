@@ -5,12 +5,10 @@ All URIs are relative to */*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**capturePayment**](PaymentsApi.md#capturePayment) | **POST** /v1/payments/sellers/{seller_id}/sales/{sale_id}/capture | Capturar pagamento
-[**createDebitPayment**](PaymentsApi.md#createDebitPayment) | **POST** /v1/payments/sellers/{seller_id}/debit | Criar um pagamento usando Débito
 [**createPayment**](PaymentsApi.md#createPayment) | **POST** /v1/payments/sellers/{seller_id} | Criar novo pagamento
 [**createPaymentWithSplit**](PaymentsApi.md#createPaymentWithSplit) | **POST** /v2/payments/sellers/{seller_id} | Criar novo pagamento online
 [**createPixPayment**](PaymentsApi.md#createPixPayment) | **POST** /v1/payments/sellers/{seller_id}/pix | Criar um pagamento usando Pix
 [**createPixPaymentWithSplits**](PaymentsApi.md#createPixPaymentWithSplits) | **POST** /v2/payments/sellers/{seller_id}/pix | Criar um pagamento usando Pix
-[**paymentDetails**](PaymentsApi.md#paymentDetails) | **POST** /v1/payments/sellers/{seller_id}/details/sale/{sale_id} | Verificar detalhes de pagamento
 [**paymentsControllerCancelPayment**](PaymentsApi.md#paymentsControllerCancelPayment) | **POST** /v1/payments/sellers/{seller_id}/sales/{sale_id}/void | Cancelar um pagamento
 
 <a name="capturePayment"></a>
@@ -54,49 +52,6 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="createDebitPayment"></a>
-# **createDebitPayment**
-> CreateDebitPaymentResponseDTO createDebitPayment(body, sellerId)
-
-Criar um pagamento usando Débito
-
-### Example
-```javascript
-import {ParcelaExpressApi} from 'parcela_express_api';
-
-let apiInstance = new ParcelaExpressApi.PaymentsApi();
-let body = new ParcelaExpressApi.CreateDebitPaymentDto(); // CreateDebitPaymentDto | 
-let sellerId = "sellerId_example"; // String | 
-
-apiInstance.createDebitPayment(body, sellerId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CreateDebitPaymentDto**](CreateDebitPaymentDto.md)|  | 
- **sellerId** | **String**|  | 
-
-### Return type
-
-[**CreateDebitPaymentResponseDTO**](CreateDebitPaymentResponseDTO.md)
-
-### Authorization
-
-No authorization required
 
 ### HTTP request headers
 
@@ -265,51 +220,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreatePixPaymentWithSplitResponseDTO**](CreatePixPaymentWithSplitResponseDTO.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="paymentDetails"></a>
-# **paymentDetails**
-> CreateDebitPaymentResponseDTO paymentDetails(body, sellerId, saleId)
-
-Verificar detalhes de pagamento
-
-### Example
-```javascript
-import {ParcelaExpressApi} from 'parcela_express_api';
-
-let apiInstance = new ParcelaExpressApi.PaymentsApi();
-let body = new ParcelaExpressApi.PaymentDetailsDTO(); // PaymentDetailsDTO | 
-let sellerId = "sellerId_example"; // String | 
-let saleId = "saleId_example"; // String | 
-
-apiInstance.paymentDetails(body, sellerId, saleId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**PaymentDetailsDTO**](PaymentDetailsDTO.md)|  | 
- **sellerId** | **String**|  | 
- **saleId** | **String**|  | 
-
-### Return type
-
-[**CreateDebitPaymentResponseDTO**](CreateDebitPaymentResponseDTO.md)
 
 ### Authorization
 

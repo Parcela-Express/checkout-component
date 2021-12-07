@@ -68,6 +68,12 @@ export class CreatePaymentWithSplitDto {
         obj.protestLink = ApiClient.convertToType(data['protest_link'], 'Boolean');
       if (data.hasOwnProperty('amount_fee'))
         obj.amountFee = ApiClient.convertToType(data['amount_fee'], 'Number');
+      if (data.hasOwnProperty('form_payment'))
+        obj.formPayment = ApiClient.convertToType(data['form_payment'], 'Number');
+      if (data.hasOwnProperty('success_return_url'))
+        obj.successReturnUrl = ApiClient.convertToType(data['success_return_url'], 'Number');
+      if (data.hasOwnProperty('error_return_url'))
+        obj.errorReturnUrl = ApiClient.convertToType(data['error_return_url'], 'Number');
       if (data.hasOwnProperty('has_split_rules'))
         obj.hasSplitRules = ApiClient.convertToType(data['has_split_rules'], 'Boolean');
       if (data.hasOwnProperty('split_rules'))
@@ -121,6 +127,21 @@ CreatePaymentWithSplitDto.prototype.protestLink = undefined;
  * @member {Number} amountFee
  */
 CreatePaymentWithSplitDto.prototype.amountFee = undefined;
+
+/**
+ * @member {Number} formPayment
+ */
+CreatePaymentWithSplitDto.prototype.formPayment = undefined;
+
+/**
+ * @member {Number} successReturnUrl
+ */
+CreatePaymentWithSplitDto.prototype.successReturnUrl = undefined;
+
+/**
+ * @member {Number} errorReturnUrl
+ */
+CreatePaymentWithSplitDto.prototype.errorReturnUrl = undefined;
 
 /**
  * @member {Boolean} hasSplitRules

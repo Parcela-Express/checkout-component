@@ -61,6 +61,10 @@ export class CreatePaymentDto {
         obj.customer = CustomerDTO.constructFromObject(data['customer']);
       if (data.hasOwnProperty('form_payment'))
         obj.formPayment = ApiClient.convertToType(data['form_payment'], 'String');
+      if (data.hasOwnProperty('success_return_url'))
+        obj.successReturnUrl = ApiClient.convertToType(data['success_return_url'], 'String');
+      if (data.hasOwnProperty('error_return_url'))
+        obj.errorReturnUrl = ApiClient.convertToType(data['error_return_url'], 'String');
       if (data.hasOwnProperty('sale_id'))
         obj.saleId = ApiClient.convertToType(data['sale_id'], 'String');
       if (data.hasOwnProperty('pre_capture'))
@@ -139,6 +143,16 @@ CreatePaymentDto.FormPaymentEnum = {
  * @member {module:model/CreatePaymentDto.FormPaymentEnum} formPayment
  */
 CreatePaymentDto.prototype.formPayment = undefined;
+
+/**
+ * @member {String} successReturnUrl
+ */
+CreatePaymentDto.prototype.successReturnUrl = undefined;
+
+/**
+ * @member {String} errorReturnUrl
+ */
+CreatePaymentDto.prototype.errorReturnUrl = undefined;
 
 /**
  * @member {String} saleId

@@ -93,6 +93,24 @@
         // expect(instance.amountFee).to.be(expectedValueLiteral);
       });
 
+      it('should have the property formPayment (base name: "form_payment")', function() {
+        // TODO: update the code to test the property formPayment
+        expect(instance).to.have.property('formPayment');
+        // expect(instance.formPayment).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property successReturnUrl (base name: "success_return_url")', function() {
+        // TODO: update the code to test the property successReturnUrl
+        expect(instance).to.have.property('successReturnUrl');
+        // expect(instance.successReturnUrl).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property errorReturnUrl (base name: "error_return_url")', function() {
+        // TODO: update the code to test the property errorReturnUrl
+        expect(instance).to.have.property('errorReturnUrl');
+        // expect(instance.errorReturnUrl).to.be(expectedValueLiteral);
+      });
+
       it('should have the property hasSplitRules (base name: "has_split_rules")', function() {
         // TODO: update the code to test the property hasSplitRules
         expect(instance).to.have.property('hasSplitRules');

@@ -13,8 +13,6 @@
  *
  */
 import {ApiClient} from './ApiClient';
-import {AccountingAccountDto} from './model/AccountingAccountDto';
-import {AllOfCreateDebitPaymentDtoCardAttributes} from './model/AllOfCreateDebitPaymentDtoCardAttributes';
 import {AllOfCreatePaymentDtoCardAttributes} from './model/AllOfCreatePaymentDtoCardAttributes';
 import {AllOfCreatePaymentDtoInstallmentPlan} from './model/AllOfCreatePaymentDtoInstallmentPlan';
 import {AllOfCreatePaymentWithSplitDtoCardAttributes} from './model/AllOfCreatePaymentWithSplitDtoCardAttributes';
@@ -26,16 +24,12 @@ import {CancelPaymentResponseDTO} from './model/CancelPaymentResponseDTO';
 import {CancelSalePos} from './model/CancelSalePos';
 import {CapturePaymentDto} from './model/CapturePaymentDto';
 import {CardDTO} from './model/CardDTO';
-import {CreateAccountingAccountDto} from './model/CreateAccountingAccountDto';
 import {CreateAddressDto} from './model/CreateAddressDto';
 import {CreateBankAccountDto} from './model/CreateBankAccountDto';
 import {CreateBilletDto} from './model/CreateBilletDto';
 import {CreateCostPlanDto} from './model/CreateCostPlanDto';
 import {CreateCostPlanOptionsDto} from './model/CreateCostPlanOptionsDto';
 import {CreateDebitAddressDTO} from './model/CreateDebitAddressDTO';
-import {CreateDebitCustomerDTO} from './model/CreateDebitCustomerDTO';
-import {CreateDebitPaymentDto} from './model/CreateDebitPaymentDto';
-import {CreateDebitPaymentResponseDTO} from './model/CreateDebitPaymentResponseDTO';
 import {CreateExportSalesListDto} from './model/CreateExportSalesListDto';
 import {CreateExportSettlementBatchSalesListDto} from './model/CreateExportSettlementBatchSalesListDto';
 import {CreateExportSettlementListDto} from './model/CreateExportSettlementListDto';
@@ -76,7 +70,6 @@ import {EditSellerDto} from './model/EditSellerDto';
 import {FeeTransactionDto} from './model/FeeTransactionDto';
 import {ForgotPasswordRequestDto} from './model/ForgotPasswordRequestDto';
 import {GenerateShippingDTO} from './model/GenerateShippingDTO';
-import {GetAccountingAccountDto} from './model/GetAccountingAccountDto';
 import {GetAcquirerDto} from './model/GetAcquirerDto';
 import {GetAcquirerSalePlanDto} from './model/GetAcquirerSalePlanDto';
 import {GetAddressDto} from './model/GetAddressDto';
@@ -154,7 +147,6 @@ import {ListSettlementSellerDto} from './model/ListSettlementSellerDto';
 import {ListWebHookLinkResponseDto} from './model/ListWebHookLinkResponseDto';
 import {OperationEnum} from './model/OperationEnum';
 import {PaginatedDto} from './model/PaginatedDto';
-import {PaymentDetailsDTO} from './model/PaymentDetailsDTO';
 import {PaymentMethodTransactionDto} from './model/PaymentMethodTransactionDto';
 import {PaymentPosRequest} from './model/PaymentPosRequest';
 import {PaymentPosRequestDTOV2} from './model/PaymentPosRequestDTOV2';
@@ -180,7 +172,6 @@ import {UserLoginDto} from './model/UserLoginDto';
 import {UserLoginResponseDto} from './model/UserLoginResponseDto';
 import {UserRefreshTokenDto} from './model/UserRefreshTokenDto';
 import {UserRefreshTokenResponseDto} from './model/UserRefreshTokenResponseDto';
-import {AccountingAccountsApi} from './api/AccountingAccountsApi';
 import {AccreditationApi} from './api/AccreditationApi';
 import {AcquirersApi} from './api/AcquirersApi';
 import {AuthApi} from './api/AuthApi';
@@ -244,18 +235,6 @@ export {
      * @property {module:ApiClient}
      */
     ApiClient,
-
-    /**
-     * The AccountingAccountDto model constructor.
-     * @property {module:model/AccountingAccountDto}
-     */
-    AccountingAccountDto,
-
-    /**
-     * The AllOfCreateDebitPaymentDtoCardAttributes model constructor.
-     * @property {module:model/AllOfCreateDebitPaymentDtoCardAttributes}
-     */
-    AllOfCreateDebitPaymentDtoCardAttributes,
 
     /**
      * The AllOfCreatePaymentDtoCardAttributes model constructor.
@@ -324,12 +303,6 @@ export {
     CardDTO,
 
     /**
-     * The CreateAccountingAccountDto model constructor.
-     * @property {module:model/CreateAccountingAccountDto}
-     */
-    CreateAccountingAccountDto,
-
-    /**
      * The CreateAddressDto model constructor.
      * @property {module:model/CreateAddressDto}
      */
@@ -364,24 +337,6 @@ export {
      * @property {module:model/CreateDebitAddressDTO}
      */
     CreateDebitAddressDTO,
-
-    /**
-     * The CreateDebitCustomerDTO model constructor.
-     * @property {module:model/CreateDebitCustomerDTO}
-     */
-    CreateDebitCustomerDTO,
-
-    /**
-     * The CreateDebitPaymentDto model constructor.
-     * @property {module:model/CreateDebitPaymentDto}
-     */
-    CreateDebitPaymentDto,
-
-    /**
-     * The CreateDebitPaymentResponseDTO model constructor.
-     * @property {module:model/CreateDebitPaymentResponseDTO}
-     */
-    CreateDebitPaymentResponseDTO,
 
     /**
      * The CreateExportSalesListDto model constructor.
@@ -622,12 +577,6 @@ export {
      * @property {module:model/GenerateShippingDTO}
      */
     GenerateShippingDTO,
-
-    /**
-     * The GetAccountingAccountDto model constructor.
-     * @property {module:model/GetAccountingAccountDto}
-     */
-    GetAccountingAccountDto,
 
     /**
      * The GetAcquirerDto model constructor.
@@ -1092,12 +1041,6 @@ export {
     PaginatedDto,
 
     /**
-     * The PaymentDetailsDTO model constructor.
-     * @property {module:model/PaymentDetailsDTO}
-     */
-    PaymentDetailsDTO,
-
-    /**
      * The PaymentMethodTransactionDto model constructor.
      * @property {module:model/PaymentMethodTransactionDto}
      */
@@ -1246,12 +1189,6 @@ export {
      * @property {module:model/UserRefreshTokenResponseDto}
      */
     UserRefreshTokenResponseDto,
-
-    /**
-    * The AccountingAccountsApi service constructor.
-    * @property {module:api/AccountingAccountsApi}
-    */
-    AccountingAccountsApi,
 
     /**
     * The AccreditationApi service constructor.

@@ -12,5 +12,8 @@ Name | Type | Description | Notes
 **preCapture** | **Boolean** |  | [optional] 
 **protestLink** | **Boolean** |  | [optional] 
 **amountFee** | **Number** |  | [optional] 
+**formPayment** | **Number** |  | [optional] 
+**successReturnUrl** | **Number** |  | [optional] 
+**errorReturnUrl** | **Number** |  | [optional] 
 **hasSplitRules** | **Boolean** |  | [optional] 
 **splitRules** | [**[CreateSplitRulesDto]**](CreateSplitRulesDto.md) |  | [optional] 

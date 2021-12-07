@@ -72,8 +72,8 @@ var ParcelaExpressApi = require('parcela_express_api');
 var defaultClient = ParcelaExpressApi.ApiClient.instance;
 
 
-var api = new ParcelaExpressApi.AccountingAccountsApi()
-var body = new ParcelaExpressApi.CreateAccountingAccountDto(); // {CreateAccountingAccountDto} 
+var api = new ParcelaExpressApi.AccreditationApi()
+var sellerId = "sellerId_example"; // {String} 
 
 var callback = function(error, data, response) {
   if (error) {
@@ -82,7 +82,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.createAccountingAccount(body, callback);
+api.createAccreditation(sellerId, callback);
 ```
 
 ## Documentation for API Endpoints
@@ -91,8 +91,6 @@ All URIs are relative to */*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ParcelaExpressApi.AccountingAccountsApi* | [**createAccountingAccount**](docs/AccountingAccountsApi.md#createAccountingAccount) | **POST** /v1/accounting-accounts | Criar conta contábil
-*ParcelaExpressApi.AccountingAccountsApi* | [**listAccountingAccount**](docs/AccountingAccountsApi.md#listAccountingAccount) | **GET** /v1/accounting-accounts | Listar contas contábeis
 *ParcelaExpressApi.AccreditationApi* | [**createAccreditation**](docs/AccreditationApi.md#createAccreditation) | **POST** /v1/accreditations/{seller_id} | Iniciar rotina de credenciamento.
 *ParcelaExpressApi.AcquirersApi* | [**listAcquirerSalesPlans**](docs/AcquirersApi.md#listAcquirerSalesPlans) | **GET** /v1/acquirers/{acquirerId}/sales-plans | Listar planos de vendas da adquirente
 *ParcelaExpressApi.AcquirersApi* | [**listAcquirers**](docs/AcquirersApi.md#listAcquirers) | **GET** /v1/acquirers | Listar adquirentes
@@ -126,12 +124,10 @@ Class | Method | HTTP request | Description
 *ParcelaExpressApi.PaymentLinksApi* | [**sentPaymentLinkReceiptMail**](docs/PaymentLinksApi.md#sentPaymentLinkReceiptMail) | **POST** /v1/payment-links/{token}/receipt | Reenviar recibo para o email do pagador
 *ParcelaExpressApi.PaymentLinksApi* | [**updatePaymentLink**](docs/PaymentLinksApi.md#updatePaymentLink) | **PATCH** /v1/payment-links/{paymentLinkId}/update | Atualizar um link de pagamento
 *ParcelaExpressApi.PaymentsApi* | [**capturePayment**](docs/PaymentsApi.md#capturePayment) | **POST** /v1/payments/sellers/{seller_id}/sales/{sale_id}/capture | Capturar pagamento
-*ParcelaExpressApi.PaymentsApi* | [**createDebitPayment**](docs/PaymentsApi.md#createDebitPayment) | **POST** /v1/payments/sellers/{seller_id}/debit | Criar um pagamento usando Débito
 *ParcelaExpressApi.PaymentsApi* | [**createPayment**](docs/PaymentsApi.md#createPayment) | **POST** /v1/payments/sellers/{seller_id} | Criar novo pagamento
 *ParcelaExpressApi.PaymentsApi* | [**createPaymentWithSplit**](docs/PaymentsApi.md#createPaymentWithSplit) | **POST** /v2/payments/sellers/{seller_id} | Criar novo pagamento online
 *ParcelaExpressApi.PaymentsApi* | [**createPixPayment**](docs/PaymentsApi.md#createPixPayment) | **POST** /v1/payments/sellers/{seller_id}/pix | Criar um pagamento usando Pix
 *ParcelaExpressApi.PaymentsApi* | [**createPixPaymentWithSplits**](docs/PaymentsApi.md#createPixPaymentWithSplits) | **POST** /v2/payments/sellers/{seller_id}/pix | Criar um pagamento usando Pix
-*ParcelaExpressApi.PaymentsApi* | [**paymentDetails**](docs/PaymentsApi.md#paymentDetails) | **POST** /v1/payments/sellers/{seller_id}/details/sale/{sale_id} | Verificar detalhes de pagamento
 *ParcelaExpressApi.PaymentsApi* | [**paymentsControllerCancelPayment**](docs/PaymentsApi.md#paymentsControllerCancelPayment) | **POST** /v1/payments/sellers/{seller_id}/sales/{sale_id}/void | Cancelar um pagamento
 *ParcelaExpressApi.PosApi* | [**listPos**](docs/PosApi.md#listPos) | **GET** /v1/pos | Listar as máquinas de todos os estabelecimentos
 *ParcelaExpressApi.PosApi* | [**updateBackofficePos**](docs/PosApi.md#updateBackofficePos) | **PATCH** /v1/pos/{posId} | Atualizar pos via backoffice
@@ -186,6 +182,7 @@ Class | Method | HTTP request | Description
 *ParcelaExpressApi.SellersApi* | [**updateSellerUser**](docs/SellersApi.md#updateSellerUser) | **PATCH** /v1/sellers/{sellerId}/users/{userId} | Atualizar um usuário do estabelecimento
 *ParcelaExpressApi.SellersApi* | [**uploadSellerLogo**](docs/SellersApi.md#uploadSellerLogo) | **POST** /v1/sellers/{sellerId}/logo | Realizar upload da logo do estabelecimento
 *ParcelaExpressApi.SettlementPlansApi* | [**listSettlementPlans**](docs/SettlementPlansApi.md#listSettlementPlans) | **GET** /v1/settlement-plans | Listar os planos de liquidação cadastrados
+*ParcelaExpressApi.SettlementsBatchesApi* | [**concilExportRequest**](docs/SettlementsBatchesApi.md#concilExportRequest) | **POST** /v1/settlement/list/transactions/concil/export/requests | Gerar uma requisição de exportação das vendas dos históricos de liquidações para conciliação
 *ParcelaExpressApi.SettlementsBatchesApi* | [**createSettlementBatchListExportRequest**](docs/SettlementsBatchesApi.md#createSettlementBatchListExportRequest) | **POST** /v1/settlement/list/export/requests | Gerar uma requisição de exportação dos históricos de liquidação
 *ParcelaExpressApi.SettlementsBatchesApi* | [**createSettlementBatchSalesExportRequest**](docs/SettlementsBatchesApi.md#createSettlementBatchSalesExportRequest) | **POST** /v1/settlement/{settlement_batch_id}/list/export/requests | Gerar uma requisição de exportação da lista das vendas de um lote de liquidação
 *ParcelaExpressApi.SettlementsBatchesApi* | [**createTransactionsListExportRequest**](docs/SettlementsBatchesApi.md#createTransactionsListExportRequest) | **POST** /v1/settlement/list/transactions/export/requests | Gerar uma requisição de exportação das vendas dos históricos de liquidações
@@ -207,8 +204,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [ParcelaExpressApi.AccountingAccountDto](docs/AccountingAccountDto.md)
- - [ParcelaExpressApi.AllOfCreateDebitPaymentDtoCardAttributes](docs/AllOfCreateDebitPaymentDtoCardAttributes.md)
  - [ParcelaExpressApi.AllOfCreatePaymentDtoCardAttributes](docs/AllOfCreatePaymentDtoCardAttributes.md)
  - [ParcelaExpressApi.AllOfCreatePaymentDtoInstallmentPlan](docs/AllOfCreatePaymentDtoInstallmentPlan.md)
  - [ParcelaExpressApi.AllOfCreatePaymentWithSplitDtoCardAttributes](docs/AllOfCreatePaymentWithSplitDtoCardAttributes.md)
@@ -220,16 +215,12 @@ Class | Method | HTTP request | Description
  - [ParcelaExpressApi.CancelSalePos](docs/CancelSalePos.md)
  - [ParcelaExpressApi.CapturePaymentDto](docs/CapturePaymentDto.md)
  - [ParcelaExpressApi.CardDTO](docs/CardDTO.md)
- - [ParcelaExpressApi.CreateAccountingAccountDto](docs/CreateAccountingAccountDto.md)
  - [ParcelaExpressApi.CreateAddressDto](docs/CreateAddressDto.md)
  - [ParcelaExpressApi.CreateBankAccountDto](docs/CreateBankAccountDto.md)
  - [ParcelaExpressApi.CreateBilletDto](docs/CreateBilletDto.md)
  - [ParcelaExpressApi.CreateCostPlanDto](docs/CreateCostPlanDto.md)
  - [ParcelaExpressApi.CreateCostPlanOptionsDto](docs/CreateCostPlanOptionsDto.md)
  - [ParcelaExpressApi.CreateDebitAddressDTO](docs/CreateDebitAddressDTO.md)
- - [ParcelaExpressApi.CreateDebitCustomerDTO](docs/CreateDebitCustomerDTO.md)
- - [ParcelaExpressApi.CreateDebitPaymentDto](docs/CreateDebitPaymentDto.md)
- - [ParcelaExpressApi.CreateDebitPaymentResponseDTO](docs/CreateDebitPaymentResponseDTO.md)
  - [ParcelaExpressApi.CreateExportSalesListDto](docs/CreateExportSalesListDto.md)
  - [ParcelaExpressApi.CreateExportSettlementBatchSalesListDto](docs/CreateExportSettlementBatchSalesListDto.md)
  - [ParcelaExpressApi.CreateExportSettlementListDto](docs/CreateExportSettlementListDto.md)
@@ -270,7 +261,6 @@ Class | Method | HTTP request | Description
  - [ParcelaExpressApi.FeeTransactionDto](docs/FeeTransactionDto.md)
  - [ParcelaExpressApi.ForgotPasswordRequestDto](docs/ForgotPasswordRequestDto.md)
  - [ParcelaExpressApi.GenerateShippingDTO](docs/GenerateShippingDTO.md)
- - [ParcelaExpressApi.GetAccountingAccountDto](docs/GetAccountingAccountDto.md)
  - [ParcelaExpressApi.GetAcquirerDto](docs/GetAcquirerDto.md)
  - [ParcelaExpressApi.GetAcquirerSalePlanDto](docs/GetAcquirerSalePlanDto.md)
  - [ParcelaExpressApi.GetAddressDto](docs/GetAddressDto.md)
@@ -348,7 +338,6 @@ Class | Method | HTTP request | Description
  - [ParcelaExpressApi.ListWebHookLinkResponseDto](docs/ListWebHookLinkResponseDto.md)
  - [ParcelaExpressApi.OperationEnum](docs/OperationEnum.md)
  - [ParcelaExpressApi.PaginatedDto](docs/PaginatedDto.md)
- - [ParcelaExpressApi.PaymentDetailsDTO](docs/PaymentDetailsDTO.md)
  - [ParcelaExpressApi.PaymentMethodTransactionDto](docs/PaymentMethodTransactionDto.md)
  - [ParcelaExpressApi.PaymentPosRequest](docs/PaymentPosRequest.md)
  - [ParcelaExpressApi.PaymentPosRequestDTOV2](docs/PaymentPosRequestDTOV2.md)
