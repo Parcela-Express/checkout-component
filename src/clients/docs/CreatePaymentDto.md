@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **installmentPlan** | **AllOfCreatePaymentDtoInstallmentPlan** |  | 
 **customer** | [**CustomerDTO**](CustomerDTO.md) |  | 
 **formPayment** | **String** |  | [optional] 
+**successReturnUrl** | **String** |  | [optional] 
+**errorReturnUrl** | **String** |  | [optional] 
 **saleId** | **String** |  | [optional] 
 **preCapture** | **Boolean** |  | [optional] 
 **protestLink** | **Boolean** |  | [optional] 

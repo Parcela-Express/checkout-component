@@ -40,6 +40,52 @@ export class SettlementsBatchesApi {
     }
 
     /**
+     * Callback function to receive the result of the concilExportRequest operation.
+     * @callback moduleapi/SettlementsBatchesApi~concilExportRequestCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/GetFileExportRequestDto{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Gerar uma requisição de exportação das vendas dos históricos de liquidações para conciliação
+     * @param {module:model/CreateExportSettlementListDto} body 
+     * @param {module:api/SettlementsBatchesApi~concilExportRequestCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    concilExportRequest(body, callback) {
+      
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling concilExportRequest");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        
+      };
+      let headerParams = {
+        
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = ['bearer'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = GetFileExportRequestDto;
+
+      return this.apiClient.callApi(
+        '/v1/settlement/list/transactions/concil/export/requests', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
      * Callback function to receive the result of the createSettlementBatchListExportRequest operation.
      * @callback moduleapi/SettlementsBatchesApi~createSettlementBatchListExportRequestCallback
      * @param {String} error Error message, if any.

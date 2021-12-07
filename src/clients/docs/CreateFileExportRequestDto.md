@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 ## Enum: TypeEnum
 
 * `sales` (value: `"sales"`)
+* `salesConcil` (value: `"sales_concil"`)
 * `payments` (value: `"payments"`)
 * `settlement` (value: `"settlement"`)
 * `settlementTransactions` (value: `"settlement_transactions"`)

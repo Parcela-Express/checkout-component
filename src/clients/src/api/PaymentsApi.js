@@ -16,8 +16,6 @@ import {ApiClient} from "../ApiClient";
 import {CancelPaymentDTO} from '../model/CancelPaymentDTO';
 import {CancelPaymentResponseDTO} from '../model/CancelPaymentResponseDTO';
 import {CapturePaymentDto} from '../model/CapturePaymentDto';
-import {CreateDebitPaymentDto} from '../model/CreateDebitPaymentDto';
-import {CreateDebitPaymentResponseDTO} from '../model/CreateDebitPaymentResponseDTO';
 import {CreatePaymentDto} from '../model/CreatePaymentDto';
 import {CreatePaymentResponseDTO} from '../model/CreatePaymentResponseDTO';
 import {CreatePaymentWithSplitDto} from '../model/CreatePaymentWithSplitDto';
@@ -26,7 +24,6 @@ import {CreatePixPaymentResponseDTO} from '../model/CreatePixPaymentResponseDTO'
 import {CreatePixPaymentWithSplitDto} from '../model/CreatePixPaymentWithSplitDto';
 import {CreatePixPaymentWithSplitResponseDTO} from '../model/CreatePixPaymentWithSplitResponseDTO';
 import {GetSaleDto} from '../model/GetSaleDto';
-import {PaymentDetailsDTO} from '../model/PaymentDetailsDTO';
 
 /**
 * Payments service.
@@ -99,57 +96,6 @@ export class PaymentsApi {
 
       return this.apiClient.callApi(
         '/v1/payments/sellers/{seller_id}/sales/{sale_id}/capture', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-    /**
-     * Callback function to receive the result of the createDebitPayment operation.
-     * @callback moduleapi/PaymentsApi~createDebitPaymentCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CreateDebitPaymentResponseDTO{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Criar um pagamento usando Débito
-     * @param {module:model/CreateDebitPaymentDto} body 
-     * @param {String} sellerId 
-     * @param {module:api/PaymentsApi~createDebitPaymentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
-     */
-    createDebitPayment(body, sellerId, callback) {
-      
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling createDebitPayment");
-      }
-      // verify the required parameter 'sellerId' is set
-      if (sellerId === undefined || sellerId === null) {
-        throw new Error("Missing the required parameter 'sellerId' when calling createDebitPayment");
-      }
-
-      let pathParams = {
-        'seller_id': sellerId
-      };
-      let queryParams = {
-        
-      };
-      let headerParams = {
-        
-      };
-      let formParams = {
-        
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = CreateDebitPaymentResponseDTO;
-
-      return this.apiClient.callApi(
-        '/v1/payments/sellers/{seller_id}/debit', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -354,62 +300,6 @@ export class PaymentsApi {
 
       return this.apiClient.callApi(
         '/v2/payments/sellers/{seller_id}/pix', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-    /**
-     * Callback function to receive the result of the paymentDetails operation.
-     * @callback moduleapi/PaymentsApi~paymentDetailsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CreateDebitPaymentResponseDTO{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Verificar detalhes de pagamento
-     * @param {module:model/PaymentDetailsDTO} body 
-     * @param {String} sellerId 
-     * @param {String} saleId 
-     * @param {module:api/PaymentsApi~paymentDetailsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
-     */
-    paymentDetails(body, sellerId, saleId, callback) {
-      
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling paymentDetails");
-      }
-      // verify the required parameter 'sellerId' is set
-      if (sellerId === undefined || sellerId === null) {
-        throw new Error("Missing the required parameter 'sellerId' when calling paymentDetails");
-      }
-      // verify the required parameter 'saleId' is set
-      if (saleId === undefined || saleId === null) {
-        throw new Error("Missing the required parameter 'saleId' when calling paymentDetails");
-      }
-
-      let pathParams = {
-        'seller_id': sellerId,'sale_id': saleId
-      };
-      let queryParams = {
-        
-      };
-      let headerParams = {
-        
-      };
-      let formParams = {
-        
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = CreateDebitPaymentResponseDTO;
-
-      return this.apiClient.callApi(
-        '/v1/payments/sellers/{seller_id}/details/sale/{sale_id}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
