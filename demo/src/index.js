@@ -50,7 +50,7 @@ const Demo = () => {
           >
             <Checkout
               environment={"TEST"}
-              apiUrl={`https://api-qa.parcelaexpress.com.br`}
+              apiUrl={`https://sandbox.parcelaexpress.com.br`}
               customerData={{
                 amount_cents: 20000,
                 description: "Venda Teste",
@@ -73,7 +73,6 @@ const Demo = () => {
                     street: "Rua Adamina",
                   },
                 },
-                sale_id: "b826e94b-f76c-4e95-8d6b-6efd6e0c48e7",
                 has_split_rules: true,
                 split_rules: [
                   {
