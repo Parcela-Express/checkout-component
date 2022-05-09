@@ -68,13 +68,17 @@ Siga as instruções abaixo para realizar a instalação do componente em sua ap
               amount: 5000,
               seller_id: "99d1f231-557a-44b9-ae5d-9b5f533c684e",
             }
-          ],         
+          ],
+          confirmation_required: false       
         }}
         sellerKey={'key'}
         clientKey={'clientKey'}
         onSubmit={checkoutSubmitHandle} 
         onChange={checkoutOnChangeHandle}
-        onSubmitError={onErrorHandle} />
+        onSubmitError={onErrorHandle}
+        successReturnUrl={"http://success-url.com.br"}
+        errorReturnUrl={"http://error-url.com.br"}
+      />
     );
   }
   

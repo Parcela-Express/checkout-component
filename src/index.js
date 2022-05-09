@@ -132,6 +132,10 @@ const Checkout = (props) => {
           split_rules: customerData.split_rules
         };
 
+        if (customerData.confirmation_required) {
+          createPaymentDto.confirmation_required = customerData.confirmation_required;
+        }
+
         if (successReturnUrl) {
           createPaymentDto.success_return_url = successReturnUrl;
         }
