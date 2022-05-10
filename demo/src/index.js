@@ -84,6 +84,7 @@ const Demo = () => {
                     seller_id: "5a6cda6a-8b90-417a-95de-982550bccfdf",
                   },
                 ],
+                confirmation_required: false
               }}
               sellerKey={"e137d1b6-8f84-4377-ab5c-d27dd24415bd"}
               clientKey={"test_IBIF7UD6SNB7ZJG3KVEGM3UP5M57BJ4B"}
@@ -92,6 +93,8 @@ const Demo = () => {
               onSubmitError={onErrorHandle}
               beforeSubmit={() => setIsLoading(true)}
               afterSubmit={() => setIsLoading(false)}
+              successReturnUrl={"http://success-url.com.br"}
+              errorReturnUrl={"http://error-url.com.br"}
             />
           </Flex>
         </Stack>
