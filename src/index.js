@@ -132,6 +132,10 @@ const Checkout = (props) => {
           split_rules: customerData.split_rules
         };
 
+        if (customerData.extract_identification) {
+          createPaymentDto.extract_identification = customerData.extract_identification;
+        }
+
         if (customerData.confirmation_required) {
           createPaymentDto.confirmation_required = customerData.confirmation_required;
         }
@@ -225,6 +229,7 @@ Checkout.propTypes = {
     }),
     sale_id: PropTypes.string,
   }).isRequired,
+  extract_identification: PropTypes.string,
   has_split_rules: PropTypes.bool,
   split_rules: PropTypes.arrayOf(
     PropTypes.shape({

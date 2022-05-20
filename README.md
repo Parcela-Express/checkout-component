@@ -69,7 +69,8 @@ Siga as instruções abaixo para realizar a instalação do componente em sua ap
               seller_id: "99d1f231-557a-44b9-ae5d-9b5f533c684e",
             }
           ],
-          confirmation_required: false       
+          confirmation_required: false,
+          extract_identification: "Cartório Exemplo",     
         }}
         sellerKey={'key'}
         clientKey={'clientKey'}
