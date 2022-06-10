@@ -75,6 +75,18 @@
         // expect(instance.formPayment).to.be(expectedValueLiteral);
       });
 
+      it('should have the property successReturnUrl (base name: "success_return_url")', function() {
+        // TODO: update the code to test the property successReturnUrl
+        expect(instance).to.have.property('successReturnUrl');
+        // expect(instance.successReturnUrl).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property errorReturnUrl (base name: "error_return_url")', function() {
+        // TODO: update the code to test the property errorReturnUrl
+        expect(instance).to.have.property('errorReturnUrl');
+        // expect(instance.errorReturnUrl).to.be(expectedValueLiteral);
+      });
+
       it('should have the property saleId (base name: "sale_id")', function() {
         // TODO: update the code to test the property saleId
         expect(instance).to.have.property('saleId');

@@ -171,12 +171,6 @@
         // expect(instance.sellerCode).to.be(expectedValueLiteral);
       });
 
-      it('should have the property accountingAccountCategory (base name: "accounting_account_category")', function() {
-        // TODO: update the code to test the property accountingAccountCategory
-        expect(instance).to.have.property('accountingAccountCategory');
-        // expect(instance.accountingAccountCategory).to.be(expectedValueLiteral);
-      });
-
       it('should have the property cardBrand (base name: "card_brand")', function() {
         // TODO: update the code to test the property cardBrand
         expect(instance).to.have.property('cardBrand');

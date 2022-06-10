@@ -54,26 +54,6 @@
           done();
         });
       });
-      describe('createDebitPayment', function() {
-        it('should call createDebitPayment successfully', function(done) {
-          // TODO: uncomment, update parameter values for createDebitPayment call and complete the assertions
-          /*
-
-          instance.createDebitPayment(body, sellerId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-            // TODO: update response assertions
-            expect(data).to.be.a(ParcelaExpressApi.CreateDebitPaymentResponseDTO);
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
       describe('createPayment', function() {
         it('should call createPayment successfully', function(done) {
           // TODO: uncomment, update parameter values for createPayment call and complete the assertions
@@ -146,26 +126,6 @@
             }
             // TODO: update response assertions
             expect(data).to.be.a(ParcelaExpressApi.CreatePixPaymentWithSplitResponseDTO);
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('paymentDetails', function() {
-        it('should call paymentDetails successfully', function(done) {
-          // TODO: uncomment, update parameter values for paymentDetails call and complete the assertions
-          /*
-
-          instance.paymentDetails(body, sellerId, saleId, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-            // TODO: update response assertions
-            expect(data).to.be.a(ParcelaExpressApi.CreateDebitPaymentResponseDTO);
 
             done();
           });

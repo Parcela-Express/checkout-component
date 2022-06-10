@@ -25,7 +25,6 @@ Name | Type | Description | Notes
 **createdAtTimestamp** | **Number** |  | 
 **orderNumber** | **Number** |  | 
 **sellerCode** | **String** |  | 
-**accountingAccountCategory** | **String** |  | 
 **cardBrand** | **String** |  | 
 **competenceDate** | **String** |  | 
 **paymentTypeId** | **String** |  | 
@@ -34,25 +33,6 @@ Name | Type | Description | Notes
 **type** | **String** |  | 
 **formPayment** | **String** |  | [optional] 
 **isStandalone** | **Boolean** |  | [optional] 
-
-<a name="AccountingAccountCategoryEnum"></a>
-## Enum: AccountingAccountCategoryEnum
-
-* `adyen` (value: `"adyen"`)
-* `adyenassets` (value: `"adyen:assets"`)
-* `adyenliabilities` (value: `"adyen:liabilities"`)
-* `zoopassets` (value: `"zoop:assets"`)
-* `zoopliabilities` (value: `"zoop:liabilities"`)
-* `parcelaexpress` (value: `"parcelaexpress"`)
-* `parcelaexpressassets` (value: `"parcelaexpress:assets"`)
-* `parcelaexpressliabilities` (value: `"parcelaexpress:liabilities"`)
-* `parcelaexpressspreadassets` (value: `"parcelaexpress:spread:assets"`)
-* `parcelaexpressspreadliabilities` (value: `"parcelaexpress:spread:liabilities"`)
-* `sellersettlementassets` (value: `"seller:settlement:assets"`)
-* `sellersettlementliabilities` (value: `"seller:settlement:liabilities"`)
-* `sellerassets` (value: `"seller:assets"`)
-* `sellerliabilities` (value: `"seller:liabilities"`)
-
 
 <a name="CardBrandEnum"></a>
 ## Enum: CardBrandEnum

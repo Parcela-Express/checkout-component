@@ -57,14 +57,32 @@ Siga as instruções abaixo para realizar a instalação do componente em sua ap
               state: 'SP',
               street: 'Rua Teste'
             }
-          }            
+          },
+          has_split_rules: true,
+          split_rules: [
+            {
+              amount: 10000,
+              seller_id: "d6a245d2-b705-42a1-8d4a-0956aaa00fed",
+            },
+            {
+              amount: 5000,
+              seller_id: "99d1f231-557a-44b9-ae5d-9b5f533c684e",
+            }
+          ],
+          confirmation_required: false       
         }}
         sellerKey={'key'}
         clientKey={'clientKey'}
         onSubmit={checkoutSubmitHandle} 
         onChange={checkoutOnChangeHandle}
-        onSubmitError={onErrorHandle} />
+        onSubmitError={onErrorHandle}
+        successReturnUrl={"http://success-url.com.br"}
+        errorReturnUrl={"http://error-url.com.br"}
+        showPayButton={true}
+      />
     );
   }
   
   ```
+
+  Os campos has_split_rules e split_rules(opcionais) são usados para dividir o valor da venda entre os estabelecimentos

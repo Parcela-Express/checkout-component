@@ -221,10 +221,11 @@ export class ApiClient {
         return newParams;
     }
 
+
     /**
     * Builds a string representation of an array-type actual parameter, according to the given collection format.
     * @param {Array} param An array parameter.
-    * @param {module:string} collectionFormat The array element separator strategy.
+    * @param {module:ApiClient.CollectionFormatEnum} collectionFormat The array element separator strategy.
     * @returns {String|Array} A string representation of the supplied collection, using the specified delimiter. Returns
     * <code>param</code> as is if <code>collectionFormat</code> is <code>multi</code>.
     */

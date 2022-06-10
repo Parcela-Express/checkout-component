@@ -53,7 +53,6 @@ export class TransactionDto {
    * @param createdAtTimestamp {Number} 
    * @param orderNumber {Number} 
    * @param sellerCode {String} 
-   * @param accountingAccountCategory {module:model/TransactionDto.AccountingAccountCategoryEnum} 
    * @param cardBrand {module:model/TransactionDto.CardBrandEnum} 
    * @param competenceDate {String} 
    * @param paymentTypeId {String} 
@@ -61,7 +60,7 @@ export class TransactionDto {
    * @param eventCode {String} 
    * @param type {String} 
    */
-  constructor(id, sellerId, transactionNumber, amountWithoutFees, amountWithFees, description, fees, paymentMethod, operationType, currency, source, status, metadata, createdAt, updatedAt, accountingAccountId, merchantHasPreCapture, preCapture, installments, createdAtTimestamp, orderNumber, sellerCode, accountingAccountCategory, cardBrand, competenceDate, paymentTypeId, paymentTypeCode, eventCode, type) {
+  constructor(id, sellerId, transactionNumber, amountWithoutFees, amountWithFees, description, fees, paymentMethod, operationType, currency, source, status, metadata, createdAt, updatedAt, accountingAccountId, merchantHasPreCapture, preCapture, installments, createdAtTimestamp, orderNumber, sellerCode, cardBrand, competenceDate, paymentTypeId, paymentTypeCode, eventCode, type) {
     this.id = id;
     this.sellerId = sellerId;
     this.transactionNumber = transactionNumber;
@@ -84,7 +83,6 @@ export class TransactionDto {
     this.createdAtTimestamp = createdAtTimestamp;
     this.orderNumber = orderNumber;
     this.sellerCode = sellerCode;
-    this.accountingAccountCategory = accountingAccountCategory;
     this.cardBrand = cardBrand;
     this.competenceDate = competenceDate;
     this.paymentTypeId = paymentTypeId;
@@ -147,8 +145,6 @@ export class TransactionDto {
         obj.orderNumber = ApiClient.convertToType(data['order_number'], 'Number');
       if (data.hasOwnProperty('seller_code'))
         obj.sellerCode = ApiClient.convertToType(data['seller_code'], 'String');
-      if (data.hasOwnProperty('accounting_account_category'))
-        obj.accountingAccountCategory = ApiClient.convertToType(data['accounting_account_category'], 'String');
       if (data.hasOwnProperty('card_brand'))
         obj.cardBrand = ApiClient.convertToType(data['card_brand'], 'String');
       if (data.hasOwnProperty('competence_date'))
@@ -280,101 +276,6 @@ TransactionDto.prototype.orderNumber = undefined;
  * @member {String} sellerCode
  */
 TransactionDto.prototype.sellerCode = undefined;
-
-/**
- * Allowed values for the <code>accountingAccountCategory</code> property.
- * @enum {String}
- * @readonly
- */
-TransactionDto.AccountingAccountCategoryEnum = {
-  /**
-   * value: "adyen"
-   * @const
-   */
-  adyen: "adyen",
-
-  /**
-   * value: "adyen:assets"
-   * @const
-   */
-  adyenassets: "adyen:assets",
-
-  /**
-   * value: "adyen:liabilities"
-   * @const
-   */
-  adyenliabilities: "adyen:liabilities",
-
-  /**
-   * value: "zoop:assets"
-   * @const
-   */
-  zoopassets: "zoop:assets",
-
-  /**
-   * value: "zoop:liabilities"
-   * @const
-   */
-  zoopliabilities: "zoop:liabilities",
-
-  /**
-   * value: "parcelaexpress"
-   * @const
-   */
-  parcelaexpress: "parcelaexpress",
-
-  /**
-   * value: "parcelaexpress:assets"
-   * @const
-   */
-  parcelaexpressassets: "parcelaexpress:assets",
-
-  /**
-   * value: "parcelaexpress:liabilities"
-   * @const
-   */
-  parcelaexpressliabilities: "parcelaexpress:liabilities",
-
-  /**
-   * value: "parcelaexpress:spread:assets"
-   * @const
-   */
-  parcelaexpressspreadassets: "parcelaexpress:spread:assets",
-
-  /**
-   * value: "parcelaexpress:spread:liabilities"
-   * @const
-   */
-  parcelaexpressspreadliabilities: "parcelaexpress:spread:liabilities",
-
-  /**
-   * value: "seller:settlement:assets"
-   * @const
-   */
-  sellersettlementassets: "seller:settlement:assets",
-
-  /**
-   * value: "seller:settlement:liabilities"
-   * @const
-   */
-  sellersettlementliabilities: "seller:settlement:liabilities",
-
-  /**
-   * value: "seller:assets"
-   * @const
-   */
-  sellerassets: "seller:assets",
-
-  /**
-   * value: "seller:liabilities"
-   * @const
-   */
-  sellerliabilities: "seller:liabilities"
-};
-/**
- * @member {module:model/TransactionDto.AccountingAccountCategoryEnum} accountingAccountCategory
- */
-TransactionDto.prototype.accountingAccountCategory = undefined;
 
 /**
  * Allowed values for the <code>cardBrand</code> property.

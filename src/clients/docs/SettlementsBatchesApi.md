@@ -4,6 +4,7 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**concilExportRequest**](SettlementsBatchesApi.md#concilExportRequest) | **POST** /v1/settlement/list/transactions/concil/export/requests | Gerar uma requisição de exportação das vendas dos históricos de liquidações para conciliação
 [**createSettlementBatchListExportRequest**](SettlementsBatchesApi.md#createSettlementBatchListExportRequest) | **POST** /v1/settlement/list/export/requests | Gerar uma requisição de exportação dos históricos de liquidação
 [**createSettlementBatchSalesExportRequest**](SettlementsBatchesApi.md#createSettlementBatchSalesExportRequest) | **POST** /v1/settlement/{settlement_batch_id}/list/export/requests | Gerar uma requisição de exportação da lista das vendas de um lote de liquidação
 [**createTransactionsListExportRequest**](SettlementsBatchesApi.md#createTransactionsListExportRequest) | **POST** /v1/settlement/list/transactions/export/requests | Gerar uma requisição de exportação das vendas dos históricos de liquidações
@@ -13,6 +14,49 @@ Method | HTTP request | Description
 [**noPaginatedListAllSettlementDetailedWith**](SettlementsBatchesApi.md#noPaginatedListAllSettlementDetailedWith) | **GET** /v1/settlement/unpaginatedList | Listar todas as liquidações detalhadas sem paginação
 [**settlementBatchControllerGetSettlementBatch**](SettlementsBatchesApi.md#settlementBatchControllerGetSettlementBatch) | **GET** /v1/settlement/{settlement_batch_id} | Listar detalhes de liquidação
 [**settlementBatchControllerUpdateSettlementBatch**](SettlementsBatchesApi.md#settlementBatchControllerUpdateSettlementBatch) | **PATCH** /v1/settlement/{settlement_batch_id} | Atualizar lote de liquidação
+
+<a name="concilExportRequest"></a>
+# **concilExportRequest**
+> GetFileExportRequestDto concilExportRequest(body)
+
+Gerar uma requisição de exportação das vendas dos históricos de liquidações para conciliação
+
+### Example
+```javascript
+import {ParcelaExpressApi} from 'parcela_express_api';
+let defaultClient = ParcelaExpressApi.ApiClient.instance;
+
+
+let apiInstance = new ParcelaExpressApi.SettlementsBatchesApi();
+let body = new ParcelaExpressApi.CreateExportSettlementListDto(); // CreateExportSettlementListDto | 
+
+apiInstance.concilExportRequest(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateExportSettlementListDto**](CreateExportSettlementListDto.md)|  | 
+
+### Return type
+
+[**GetFileExportRequestDto**](GetFileExportRequestDto.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="createSettlementBatchListExportRequest"></a>
 # **createSettlementBatchListExportRequest**

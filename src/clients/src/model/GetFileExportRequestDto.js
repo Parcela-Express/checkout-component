@@ -166,6 +166,12 @@ GetFileExportRequestDto.TypeEnum = {
   sales: "sales",
 
   /**
+   * value: "sales_concil"
+   * @const
+   */
+  salesConcil: "sales_concil",
+
+  /**
    * value: "payments"
    * @const
    */
