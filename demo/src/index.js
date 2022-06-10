@@ -78,10 +78,12 @@ const Demo = () => {
                   {
                     amount: 10000,
                     seller_id: "741d17b7-3e7c-493a-8d8c-f91b423c2a79",
+                    description: "Descrição do split"
                   },
                   {
                     amount: 5000,
                     seller_id: "5a6cda6a-8b90-417a-95de-982550bccfdf",
+                    no_cost: true
                   },
                 ],
                 confirmation_required: false
