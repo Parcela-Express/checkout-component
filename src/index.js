@@ -50,6 +50,7 @@ const Checkout = (props) => {
     sellerKey,
     successReturnUrl,
     errorReturnUrl,
+    showPayButton
   } = props;
 
   const [paymentResponse, setPaymentResponse] = React.useState(undefined);
@@ -71,7 +72,7 @@ const Checkout = (props) => {
     clientKey,
     paymentMethodsResponse: paymentMethods,
     hasHolderName: true,
-    showPayButton: true,
+    showPayButton: showPayButton !== undefined ? showPayButton : true,
     translations: {
       "pt-br": {
         payButton: "Pagamento",
@@ -232,6 +233,7 @@ Checkout.propTypes = {
       seller_id: PropTypes.string.isRequired,
     }).isRequired
   ),
+  showPayButton: PropTypes.bool
 };
 
 export default Checkout;
