@@ -147,6 +147,10 @@ const Checkout = (props) => {
           createPaymentDto.active_3ds = customerData.active_3ds;
         }
 
+        if (customerData.service_id) {
+          createPaymentDto.service_id = customerData.service_id;
+        }
+
         if (customerData.risk_custom_field) {
           createPaymentDto.risk_custom_field = customerData.risk_custom_field;
         }
@@ -259,6 +263,7 @@ Checkout.propTypes = {
     risk_custom_field: PropTypes.string,
     extract_identification: PropTypes.string,
     has_split_rules: PropTypes.bool,
+    service_id: PropTypes.string,
     split_rules: PropTypes.arrayOf(
       PropTypes.shape({
         amount: PropTypes.number.isRequired,
