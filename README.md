@@ -79,6 +79,7 @@ Siga as instruções abaixo para realizar a instalação do componente em sua ap
         onSubmitError={onErrorHandle}
         successReturnUrl={"http://success-url.com.br"}
         errorReturnUrl={"http://error-url.com.br"}
+        showPayButton={true}
       />
     );
   }
