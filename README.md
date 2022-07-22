@@ -62,14 +62,17 @@ Siga as instruções abaixo para realizar a instalação do componente em sua ap
           split_rules: [
             {
               amount: 10000,
-              seller_id: "d6a245d2-b705-42a1-8d4a-0956aaa00fed",
+              seller_id: "741d17b7-3e7c-493a-8d8c-f91b423c2a79",
+              description: "Descrição Teste"
             },
             {
               amount: 5000,
-              seller_id: "99d1f231-557a-44b9-ae5d-9b5f533c684e",
-            }
+              seller_id: "5a6cda6a-8b90-417a-95de-982550bccfdf",
+              no_cost: true
+            },
           ],
-          confirmation_required: false       
+          confirmation_required: false,
+          extract_identification: "Cartório Exemplo",     
         }}
         sellerKey={'key'}
         clientKey={'clientKey'}

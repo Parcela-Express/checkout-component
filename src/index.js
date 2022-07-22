@@ -143,6 +143,10 @@ const Checkout = (props) => {
           split_rules: customerData.split_rules
         };
 
+        if (customerData.extract_identification) {
+          createPaymentDto.extract_identification = customerData.extract_identification;
+        }
+
         if (customerData.confirmation_required) {
           createPaymentDto.confirmation_required = customerData.confirmation_required;
         }
@@ -254,11 +258,14 @@ Checkout.propTypes = {
     active_3ds: PropTypes.bool,
     risk_custom_field: PropTypes.string
   }).isRequired,
+  extract_identification: PropTypes.string,
   has_split_rules: PropTypes.bool,
   split_rules: PropTypes.arrayOf(
     PropTypes.shape({
       amount: PropTypes.number.isRequired,
       seller_id: PropTypes.string.isRequired,
+      no_cost: PropTypes.bool,
+      description: PropTypes.string
     }).isRequired
   ),
   showPayButton: PropTypes.bool
