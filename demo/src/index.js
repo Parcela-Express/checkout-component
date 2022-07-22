@@ -50,7 +50,7 @@ const Demo = () => {
           >
             <Checkout
               environment={"TEST"}
-              apiUrl={`http://localhost:9010`}
+              apiUrl={`https://sandbox.parcelaexpress.com.br`}
               customerData={{
                 amount_cents: 20000,
                 description: "Venda Teste",
