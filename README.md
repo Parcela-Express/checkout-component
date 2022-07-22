@@ -71,7 +71,8 @@ Siga as instruções abaixo para realizar a instalação do componente em sua ap
               no_cost: true
             },
           ],
-          confirmation_required: false       
+          confirmation_required: false,
+          extract_identification: "Cartório Exemplo",     
         }}
         sellerKey={'key'}
         clientKey={'clientKey'}
