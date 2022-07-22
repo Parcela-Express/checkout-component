@@ -72,7 +72,8 @@ Siga as instruções abaixo para realizar a instalação do componente em sua ap
           ],
           confirmation_required: false,
           active_3ds: true,
-          extract_identification: "Cartório Exemplo",     
+          extract_identification: "Cartório Exemplo",
+          service_id: "seu id(opcional)" 
         }}
         sellerKey={'key'}
         clientKey={'clientKey'}
