@@ -254,6 +254,8 @@ Checkout.propTypes = {
     PropTypes.shape({
       amount: PropTypes.number.isRequired,
       seller_id: PropTypes.string.isRequired,
+      no_cost: PropTypes.bool,
+      description: PropTypes.string
     }).isRequired
   ),
   showPayButton: PropTypes.bool
