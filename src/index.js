@@ -143,6 +143,14 @@ const Checkout = (props) => {
           split_rules: customerData.split_rules
         };
 
+        if (customerData.active_3ds) {
+          createPaymentDto.active_3ds = customerData.active_3ds;
+        }
+
+        if (customerData.risk_custom_field) {
+          createPaymentDto.risk_custom_field = customerData.risk_custom_field;
+        }
+
         if (customerData.extract_identification) {
           createPaymentDto.extract_identification = customerData.extract_identification;
         }
@@ -206,13 +214,13 @@ const Checkout = (props) => {
 
 Checkout.propTypes = {
   apiUrl: PropTypes.string,
-  successReturnUrl: function(props, propName, componentName) {
-    if(props.customerData.form_payment === 'debit' && (props[propName] === undefined || typeof(props[propName]) !== 'string')) {
+  successReturnUrl: function(props, propName) {
+    if((props.customerData.form_payment === 'debit' || props.customerData.active_3ds) && (props[propName] === undefined || typeof(props[propName]) !== 'string')) {
       return new Error('Please provide a successReturnUrl string!');
     }
   },
-  errorReturnUrl: function(props, propName, componentName) {
-    if(props.customerData.form_payment === 'debit' && (props[propName] === undefined || typeof(props[propName]) !== 'string')) {
+  errorReturnUrl: function(props, propName) {
+    if((props.customerData.form_payment === 'debit' || props.customerData.active_3ds) && (props[propName] === undefined || typeof(props[propName]) !== 'string')) {
       return new Error('Please provide a errorReturnUrl string!');
     }
   },
@@ -247,17 +255,19 @@ Checkout.propTypes = {
       }),
     }),
     sale_id: PropTypes.string,
+    active_3ds: PropTypes.bool,
+    risk_custom_field: PropTypes.string,
+    extract_identification: PropTypes.string,
+    has_split_rules: PropTypes.bool,
+    split_rules: PropTypes.arrayOf(
+      PropTypes.shape({
+        amount: PropTypes.number.isRequired,
+        seller_id: PropTypes.string.isRequired,
+        no_cost: PropTypes.bool,
+        description: PropTypes.string
+      }).isRequired
+    ),
   }).isRequired,
-  extract_identification: PropTypes.string,
-  has_split_rules: PropTypes.bool,
-  split_rules: PropTypes.arrayOf(
-    PropTypes.shape({
-      amount: PropTypes.number.isRequired,
-      seller_id: PropTypes.string.isRequired,
-      no_cost: PropTypes.bool,
-      description: PropTypes.string
-    }).isRequired
-  ),
   showPayButton: PropTypes.bool
 };
 

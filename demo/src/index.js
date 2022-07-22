@@ -50,7 +50,7 @@ const Demo = () => {
           >
             <Checkout
               environment={"TEST"}
-              apiUrl={`https://sandbox.parcelaexpress.com.br`}
+              apiUrl={`http://localhost:9010`}
               customerData={{
                 amount_cents: 20000,
                 description: "Venda Teste",
@@ -86,7 +86,7 @@ const Demo = () => {
                   },
                 ],
                 confirmation_required: false,
-                active_3ds: true
+                active_3ds: true,
                 extract_identification: "Cartório exemplo"
               }}
               sellerKey={"e137d1b6-8f84-4377-ab5c-d27dd24415bd"}

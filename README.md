@@ -67,11 +67,11 @@ Siga as instruções abaixo para realizar a instalação do componente em sua ap
             },
             {
               amount: 5000,
-              seller_id: "5a6cda6a-8b90-417a-95de-982550bccfdf",
-              no_cost: true
+              seller_id: "5a6cda6a-8b90-417a-95de-982550bccfdf"
             },
           ],
           confirmation_required: false,
+          active_3ds: true,
           extract_identification: "Cartório Exemplo",     
         }}
         sellerKey={'key'}
