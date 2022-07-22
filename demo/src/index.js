@@ -73,18 +73,21 @@ const Demo = () => {
                     street: "Rua Adamina",
                   },
                 },
-                has_split_rules: true,
+                has_split_rules: false,
                 split_rules: [
                   {
                     amount: 10000,
                     seller_id: "741d17b7-3e7c-493a-8d8c-f91b423c2a79",
+                    description: "Descrição do split"
                   },
                   {
                     amount: 5000,
                     seller_id: "5a6cda6a-8b90-417a-95de-982550bccfdf",
                   },
                 ],
-                confirmation_required: false
+                confirmation_required: false,
+                active_3ds: true
+                extract_identification: "Cartório exemplo"
               }}
               sellerKey={"e137d1b6-8f84-4377-ab5c-d27dd24415bd"}
               clientKey={"test_IBIF7UD6SNB7ZJG3KVEGM3UP5M57BJ4B"}
