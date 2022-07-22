@@ -147,14 +147,6 @@ const Checkout = (props) => {
           createPaymentDto.confirmation_required = customerData.confirmation_required;
         }
 
-        if (customerData.active_3ds) {
-          createPaymentDto.active_3ds = customerData.active_3ds;
-        }
-
-        if (customerData.risk_custom_field) {
-          createPaymentDto.risk_custom_field = customerData.risk_custom_field;
-        }
-
         if (successReturnUrl) {
           createPaymentDto.success_return_url = successReturnUrl;
         }
@@ -251,8 +243,6 @@ Checkout.propTypes = {
       }),
     }),
     sale_id: PropTypes.string,
-    active_3ds: PropTypes.bool,
-    risk_custom_field: PropTypes.string
   }).isRequired,
   has_split_rules: PropTypes.bool,
   split_rules: PropTypes.arrayOf(
