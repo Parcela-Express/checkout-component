@@ -88,7 +88,8 @@ const Demo = () => {
                 confirmation_required: false,
                 active_3ds: true,
                 extract_identification: "Cartório exemplo",
-                service_id: "seu id (opcional)"
+                service_id: "seu id (opcional)",
+                protocol: "PROTOCOLO123658"
               }}
               sellerKey={"e137d1b6-8f84-4377-ab5c-d27dd24415bd"}
               clientKey={"test_IBIF7UD6SNB7ZJG3KVEGM3UP5M57BJ4B"}

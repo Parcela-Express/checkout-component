@@ -151,6 +151,10 @@ const Checkout = (props) => {
           createPaymentDto.service_id = customerData.service_id;
         }
 
+        if (customerData.protocol) {
+          createPaymentDto.protocol = customerData.protocol;
+        }
+
         if (customerData.risk_custom_field) {
           createPaymentDto.risk_custom_field = customerData.risk_custom_field;
         }
@@ -170,6 +174,7 @@ const Checkout = (props) => {
         if (errorReturnUrl) {
           createPaymentDto.error_return_url = errorReturnUrl;
         }
+        
         return new Promise((resolve, reject) => {
           props.beforeSubmit && props.beforeSubmit();
 
@@ -264,6 +269,7 @@ Checkout.propTypes = {
     extract_identification: PropTypes.string,
     has_split_rules: PropTypes.bool,
     service_id: PropTypes.string,
+    protocol: PropTypes.string,
     split_rules: PropTypes.arrayOf(
       PropTypes.shape({
         amount: PropTypes.number.isRequired,
