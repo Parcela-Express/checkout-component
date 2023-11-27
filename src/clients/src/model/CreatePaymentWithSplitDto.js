@@ -69,15 +69,19 @@ export class CreatePaymentWithSplitDto {
       if (data.hasOwnProperty('amount_fee'))
         obj.amountFee = ApiClient.convertToType(data['amount_fee'], 'Number');
       if (data.hasOwnProperty('form_payment'))
-        obj.formPayment = ApiClient.convertToType(data['form_payment'], 'Number');
+        obj.formPayment = ApiClient.convertToType(data['form_payment'], 'String');
       if (data.hasOwnProperty('success_return_url'))
-        obj.successReturnUrl = ApiClient.convertToType(data['success_return_url'], 'Number');
+        obj.successReturnUrl = ApiClient.convertToType(data['success_return_url'], 'String');
       if (data.hasOwnProperty('error_return_url'))
-        obj.errorReturnUrl = ApiClient.convertToType(data['error_return_url'], 'Number');
+        obj.errorReturnUrl = ApiClient.convertToType(data['error_return_url'], 'String');
       if (data.hasOwnProperty('has_split_rules'))
         obj.hasSplitRules = ApiClient.convertToType(data['has_split_rules'], 'Boolean');
       if (data.hasOwnProperty('split_rules'))
         obj.splitRules = ApiClient.convertToType(data['split_rules'], [CreateSplitRulesDto]);
+      if (data.hasOwnProperty('recurrence'))
+        obj.recurrence = ApiClient.convertToType(data['recurrence'], 'Boolean');
+      if (data.hasOwnProperty('recurrence_day'))
+        obj.recurrenceDay = ApiClient.convertToType(data['recurrence_day'], 'Number');
     }
     return obj;
   }
@@ -129,17 +133,17 @@ CreatePaymentWithSplitDto.prototype.protestLink = undefined;
 CreatePaymentWithSplitDto.prototype.amountFee = undefined;
 
 /**
- * @member {Number} formPayment
+ * @member {String} formPayment
  */
 CreatePaymentWithSplitDto.prototype.formPayment = undefined;
 
 /**
- * @member {Number} successReturnUrl
+ * @member {String} successReturnUrl
  */
 CreatePaymentWithSplitDto.prototype.successReturnUrl = undefined;
 
 /**
- * @member {Number} errorReturnUrl
+ * @member {String} errorReturnUrl
  */
 CreatePaymentWithSplitDto.prototype.errorReturnUrl = undefined;
 
@@ -153,3 +157,12 @@ CreatePaymentWithSplitDto.prototype.hasSplitRules = undefined;
  */
 CreatePaymentWithSplitDto.prototype.splitRules = undefined;
 
+/**
+ * @member {Boolean} recurrence
+ */
+CreatePaymentWithSplitDto.prototype.recurrence = undefined;
+
+/**
+ * @member {Number} recurrenceDay
+ */
+CreatePaymentWithSplitDto.prototype.recurrenceDay = undefined;
