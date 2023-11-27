@@ -93,7 +93,7 @@ const Demo = () => {
                 recurrence: false,
                 recurrence_day: 10
               }}
-              sellerKey={"741d17b7-3e7c-493a-8d8c-f91b423c2a79"}
+              sellerKey={"e137d1b6-8f84-4377-ab5c-d27dd24415bd"}
               clientKey={"test_IBIF7UD6SNB7ZJG3KVEGM3UP5M57BJ4B"}
               onSubmit={checkoutSubmitHandle}
               onChange={checkoutOnChangeHandle}
