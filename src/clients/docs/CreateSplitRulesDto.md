@@ -1,7 +1,12 @@
 # ParcelaExpressApi.CreateSplitRulesDto
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **Number** |  | 
-**sellerId** | **String** |  | 
+**seller_id** | **String** |  | 
+**description** | **String** |  | [optional] 
+**no_cost** | **Boolean** |  | [optional] 
+
+

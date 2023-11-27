@@ -1,60 +1,116 @@
 # ParcelaExpressApi.CreateExportSalesListDto
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startDate** | **String** | Formato: yyyy-mm-dd | [optional] 
-**endDate** | **String** | Formato: yyyy-mm-dd | [optional] 
+**payer_email** | **String** | Email do pagador | [optional] 
+**payer_phone** | **String** | Telefone do pagador | [optional] 
+**start_date** | **String** | Formato: yyyy-mm-dd | [optional] 
+**end_date** | **String** | Formato: yyyy-mm-dd | [optional] 
+**updated_day** | **Boolean** | Dia da atualização | [optional] 
+**created_by_user_name** | **String** | Usuário logado | [optional] 
 **id** | **String** |  | [optional] 
 **status** | **[String]** |  | [optional] 
 **description** | **String** |  | [optional] 
+**search** | **String** |  | [optional] 
 **amount** | **Number** |  | [optional] 
-**originalAmount** | **Number** |  | [optional] 
+**original_amount** | **Number** |  | [optional] 
 **type** | **[String]** |  | [optional] 
 **name** | **String** |  | [optional] 
+**payer_name** | **String** |  | [optional] 
 **user** | **String** |  | [optional] 
-**formPayment** | **[String]** |  | [optional] 
+**form_payment** | **[String]** |  | [optional] 
 **extension** | **String** |  | [optional] 
-**sellerId** | **String** |  | [optional] 
+**seller_id** | **String** |  | [optional] 
+**payment_day** | **Boolean** |  | [optional] 
 
-<a name="[StatusEnum]"></a>
+
+
 ## Enum: [StatusEnum]
 
+
 * `pending` (value: `"pending"`)
-* `pendingCapture` (value: `"pending_capture"`)
-* `inProgressCapture` (value: `"in_progress_capture"`)
+
+* `pending_capture` (value: `"pending_capture"`)
+
+* `in_progress_capture` (value: `"in_progress_capture"`)
+
 * `succeeded` (value: `"succeeded"`)
+
 * `canceled` (value: `"canceled"`)
-* `pendingCancel` (value: `"pending_cancel"`)
+
+* `pending_cancel` (value: `"pending_cancel"`)
+
 * `abort` (value: `"abort"`)
+
 * `failed` (value: `"failed"`)
 
+* `waiting_confirmation` (value: `"waiting_confirmation"`)
 
-<a name="[TypeEnum]"></a>
+* `expired` (value: `"expired"`)
+
+* `waiting_cashIn` (value: `"waiting_cashIn"`)
+
+
+
+
+
 ## Enum: [TypeEnum]
 
+
 * `boleto` (value: `"boleto"`)
+
 * `pos` (value: `"pos"`)
-* `paymentLink` (value: `"payment_link"`)
-* `protestLink` (value: `"protest_link"`)
+
+* `payment_link` (value: `"payment_link"`)
+
+* `protest_link` (value: `"protest_link"`)
+
 * `online` (value: `"online"`)
-* `autoGeneratePaymentLink` (value: `"auto_generate_payment_link"`)
-* `autoGenerateProtestLink` (value: `"auto_generate_protest_link"`)
+
+* `auto_generate_payment_link` (value: `"auto_generate_payment_link"`)
+
+* `auto_generate_protest_link` (value: `"auto_generate_protest_link"`)
+
+* `billet_code` (value: `"billet_code"`)
+
+* `bill_payment` (value: `"bill_payment"`)
 
 
-<a name="[FormPaymentEnum]"></a>
+
+
+
 ## Enum: [FormPaymentEnum]
 
+
 * `credit` (value: `"credit"`)
+
 * `debit` (value: `"debit"`)
+
 * `pix` (value: `"pix"`)
+
 * `billet` (value: `"billet"`)
 
+* `billet_code` (value: `"billet_code"`)
 
-<a name="ExtensionEnum"></a>
+* `pix_pos` (value: `"pix_pos"`)
+
+
+
+
+
 ## Enum: ExtensionEnum
 
+
 * `xls` (value: `"xls"`)
+
 * `csv` (value: `"csv"`)
+
 * `json` (value: `"json"`)
+
+* `pdf` (value: `"pdf"`)
+
+
+
 

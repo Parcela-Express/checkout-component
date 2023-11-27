@@ -1,9 +1,13 @@
 # ParcelaExpressApi.ShopperDTO
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**firstName** | **String** |  | 
-**lastName** | **String** |  | 
+**first_name** | **String** |  | 
+**last_name** | **String** |  | 
 **email** | **String** |  | [optional] 
-**billingAddress** | [**BillingAddressDTO**](BillingAddressDTO.md) |  | 
+**phone** | **String** |  | [optional] 
+**billing_address** | [**BillingAddressDTO**](BillingAddressDTO.md) |  | 
+
+

@@ -1,6 +1,9 @@
 # ParcelaExpressApi.UserRefreshTokenDto
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**refreshToken** | **String** |  | 
+**refresh_token** | **String** |  | 
+
+

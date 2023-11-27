@@ -1,48 +1,79 @@
 # ParcelaExpressApi.GetFileExportRequestDto
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **description** | **String** |  | 
 **status** | **String** |  | 
-**formattedStatus** | **String** |  | 
+**formatted_status** | **String** |  | 
 **type** | **String** |  | 
-**formattedType** | **String** |  | 
+**formatted_type** | **String** |  | 
 **extension** | **String** |  | 
-**startDate** | **String** |  | 
-**endDate** | **String** |  | 
+**start_date** | **String** |  | 
+**end_date** | **String** |  | 
 **user** | [**GetFileExportRequestUserDto**](GetFileExportRequestUserDto.md) |  | 
 **seller** | [**GetFileExportRequestSellerDto**](GetFileExportRequestSellerDto.md) |  | 
 **filename** | **String** |  | 
 **key** | **String** |  | 
 **url** | **String** |  | 
-**createdAt** | **String** |  | 
-**updatedAt** | **String** |  | 
+**created_at** | **String** |  | 
+**updated_at** | **String** |  | 
 
-<a name="StatusEnum"></a>
+
+
 ## Enum: StatusEnum
 
+
 * `pending` (value: `"pending"`)
+
 * `failed` (value: `"failed"`)
+
 * `finished` (value: `"finished"`)
 
 
-<a name="TypeEnum"></a>
+
+
+
 ## Enum: TypeEnum
 
+
 * `sales` (value: `"sales"`)
-* `salesConcil` (value: `"sales_concil"`)
+
+* `sales_concil` (value: `"sales_concil"`)
+
 * `payments` (value: `"payments"`)
+
 * `settlement` (value: `"settlement"`)
-* `settlementTransactions` (value: `"settlement_transactions"`)
-* `settlementsBatchTransactions` (value: `"settlements_batch_transactions"`)
+
+* `settlement_transactions` (value: `"settlement_transactions"`)
+
+* `settlements_batch_transactions` (value: `"settlements_batch_transactions"`)
+
+* `protocols` (value: `"protocols"`)
+
+* `sales_history` (value: `"sales_history"`)
+
+* `sellers` (value: `"sellers"`)
+
+* `sales_bill_payment` (value: `"sales_bill_payment"`)
 
 
-<a name="ExtensionEnum"></a>
+
+
+
 ## Enum: ExtensionEnum
 
+
 * `xls` (value: `"xls"`)
+
 * `csv` (value: `"csv"`)
+
 * `json` (value: `"json"`)
+
+* `pdf` (value: `"pdf"`)
+
+
+
 

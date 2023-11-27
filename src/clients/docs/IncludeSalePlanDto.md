@@ -1,6 +1,9 @@
 # ParcelaExpressApi.IncludeSalePlanDto
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**salePlanId** | **String** |  | 
+**sale_plan_id** | **String** |  | 
+
+

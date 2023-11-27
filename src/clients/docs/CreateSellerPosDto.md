@@ -1,16 +1,24 @@
 # ParcelaExpressApi.CreateSellerPosDto
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**terminalId** | **String** |  | 
-**acquirerId** | **String** |  | 
+**terminal_id** | **String** |  | 
+**acquirer_id** | **String** |  | 
 **status** | **String** |  | 
 
-<a name="StatusEnum"></a>
+
+
 ## Enum: StatusEnum
 
+
 * `active` (value: `"active"`)
+
 * `broken` (value: `"broken"`)
+
 * `canceled` (value: `"canceled"`)
+
+
+
 

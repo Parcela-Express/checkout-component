@@ -1,18 +1,21 @@
 # ParcelaExpressApi.GetBilletDataDto
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **banco** | **String** |  | 
-**dataEmissao** | **String** |  | 
-**dataVencimento** | **String** |  | 
+**data_emissao** | **String** |  | 
+**data_vencimento** | **String** |  | 
 **valor** | **Number** |  | 
-**nossoNumero** | **String** |  | 
+**nosso_numero** | **String** |  | 
 **instrucoes** | **String** |  | 
-**agencia** | **Number** |  | 
-**conta** | **Number** |  | 
+**agencia** | **String** |  | [optional] 
+**conta** | **String** |  | [optional] 
 **carteira** | **String** |  | 
 **pagador** | **String** |  | 
 **cedente** | **String** |  | 
-**cedenteCnpj** | **String** |  | 
-**codigoCedente** | **String** |  | 
+**cedente_cnpj** | **String** |  | 
+**codigo_cedente** | **String** |  | 
+
+

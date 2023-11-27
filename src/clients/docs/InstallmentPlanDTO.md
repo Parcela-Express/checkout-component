@@ -1,6 +1,9 @@
 # ParcelaExpressApi.InstallmentPlanDTO
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**numberInstallments** | **Number** |  | 
+**number_installments** | **Number** |  | 
+
+

@@ -1,7 +1,10 @@
 # ParcelaExpressApi.CapturePaymentDto
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **Number** |  | [optional] 
-**splitRules** | [**[CreateSplitRulesDto]**](CreateSplitRulesDto.md) |  | [optional] 
+**split_rules** | [**[CreateSplitRulesDto]**](CreateSplitRulesDto.md) |  | [optional] 
+
+

@@ -1,8 +1,11 @@
 # ParcelaExpressApi.GetSellerAcceptedPaymentMethodsDto
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**billetPaymentIsPermitted** | **Boolean** |  | 
-**qrcodePaymentIsPermitted** | **Boolean** |  | 
-**cardPaymentIsPermitted** | **Boolean** |  | 
+**billet_payment_is_permitted** | **Boolean** |  | 
+**qrcode_payment_is_permitted** | **Boolean** |  | 
+**card_payment_is_permitted** | **Boolean** |  | 
+
+

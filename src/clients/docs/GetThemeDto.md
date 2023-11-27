@@ -1,10 +1,13 @@
 # ParcelaExpressApi.GetThemeDto
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**primaryColor** | **String** |  | 
-**secondaryColor** | **String** |  | 
-**defaultColor** | **String** |  | 
-**textColor** | **String** |  | 
-**menuTextColor** | **String** |  | 
+**primary_color** | **String** |  | 
+**secondary_color** | **String** |  | 
+**default_color** | **String** |  | 
+**text_color** | **String** |  | 
+**menu_text_color** | **String** |  | 
+
+

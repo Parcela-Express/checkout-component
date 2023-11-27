@@ -1,18 +1,21 @@
 # ParcelaExpressApi.GetOneBilletDto
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **sale** | [**GetOneBilletSaleDto**](GetOneBilletSaleDto.md) |  | 
 **url** | **String** |  | 
-**expiresAt** | **String** |  | 
+**expires_at** | **String** |  | 
 **barcode** | **String** |  | 
 **status** | **String** |  | 
 **description** | **String** |  | 
 **email** | **String** |  | 
-**payerName** | **String** |  | 
-**payerEmail** | **String** |  | 
-**payerDocument** | **String** |  | 
-**payerAddress** | [**GetBilletPayerAddressDto**](GetBilletPayerAddressDto.md) |  | 
-**billetData** | [**GetBilletDataDto**](GetBilletDataDto.md) |  | [optional] 
+**payer_name** | **String** |  | 
+**payer_email** | **String** |  | 
+**payer_document** | **String** |  | 
+**payer_address** | [**GetBilletPayerAddressDto**](GetBilletPayerAddressDto.md) |  | 
+**billet_data** | [**GetBilletDataDto**](GetBilletDataDto.md) |  | [optional] 
+
+

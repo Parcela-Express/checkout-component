@@ -1,6 +1,6 @@
 # ParcelaExpressApi.UsersApi
 
-All URIs are relative to */*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,22 +8,26 @@ Method | HTTP request | Description
 [**listUsers**](UsersApi.md#listUsers) | **GET** /v1/users | Listar os usuários de todos os estabelecimentos
 [**updateBackofficeUser**](UsersApi.md#updateBackofficeUser) | **PUT** /v1/users/{userId} | Atualizar um usuário de backoffice
 
-<a name="createBackofficeUser"></a>
-# **createBackofficeUser**
-> GetUserDto createBackofficeUser(body)
+
+
+## createBackofficeUser
+
+> GetUserDto createBackofficeUser(CreateUserDto)
 
 Criar usuário de backoffice
 
 ### Example
-```javascript
-import {ParcelaExpressApi} from 'parcela_express_api';
-let defaultClient = ParcelaExpressApi.ApiClient.instance;
 
+```javascript
+import ParcelaExpressApi from 'parcela_express_api';
+let defaultClient = ParcelaExpressApi.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new ParcelaExpressApi.UsersApi();
-let body = new ParcelaExpressApi.CreateUserDto(); // CreateUserDto | 
-
-apiInstance.createBackofficeUser(body, (error, data, response) => {
+let CreateUserDto = new ParcelaExpressApi.CreateUserDto(); // CreateUserDto | 
+apiInstance.createBackofficeUser(CreateUserDto, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -34,9 +38,10 @@ apiInstance.createBackofficeUser(body, (error, data, response) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateUserDto**](CreateUserDto.md)|  | 
+ **CreateUserDto** | [**CreateUserDto**](CreateUserDto.md)|  | 
 
 ### Return type
 
@@ -48,29 +53,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="listUsers"></a>
-# **listUsers**
-> InlineResponse200 listUsers(limit, currentPage, type, opts)
+
+## listUsers
+
+> PaginatedDto listUsers(limit, current_page, type, opts)
 
 Listar os usuários de todos os estabelecimentos
 
 ### Example
-```javascript
-import {ParcelaExpressApi} from 'parcela_express_api';
-let defaultClient = ParcelaExpressApi.ApiClient.instance;
 
+```javascript
+import ParcelaExpressApi from 'parcela_express_api';
+let defaultClient = ParcelaExpressApi.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new ParcelaExpressApi.UsersApi();
 let limit = 10; // Number | 
-let currentPage = 1; // Number | 
+let current_page = 1; // Number | 
 let type = "type_example"; // String | 
-let opts = { 
-  'sort': "time-descending" // String | 
+let opts = {
+  'sort': "'time-descending'" // String | 
 };
-apiInstance.listUsers(limit, currentPage, type, opts, (error, data, response) => {
+apiInstance.listUsers(limit, current_page, type, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -81,16 +90,17 @@ apiInstance.listUsers(limit, currentPage, type, opts, (error, data, response) =>
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Number**|  | [default to 10]
- **currentPage** | **Number**|  | [default to 1]
+ **current_page** | **Number**|  | [default to 1]
  **type** | **String**|  | 
- **sort** | **String**|  | [optional] [default to time-descending]
+ **sort** | **String**|  | [optional] [default to &#39;time-descending&#39;]
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**PaginatedDto**](PaginatedDto.md)
 
 ### Authorization
 
@@ -98,26 +108,29 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="updateBackofficeUser"></a>
-# **updateBackofficeUser**
-> updateBackofficeUser(body, userId)
+
+## updateBackofficeUser
+
+> updateBackofficeUser(userId, UpdateUserDto)
 
 Atualizar um usuário de backoffice
 
 ### Example
-```javascript
-import {ParcelaExpressApi} from 'parcela_express_api';
-let defaultClient = ParcelaExpressApi.ApiClient.instance;
 
+```javascript
+import ParcelaExpressApi from 'parcela_express_api';
+let defaultClient = ParcelaExpressApi.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new ParcelaExpressApi.UsersApi();
-let body = new ParcelaExpressApi.UpdateUserDto(); // UpdateUserDto | 
 let userId = "userId_example"; // String | 
-
-apiInstance.updateBackofficeUser(body, userId, (error, data, response) => {
+let UpdateUserDto = new ParcelaExpressApi.UpdateUserDto(); // UpdateUserDto | 
+apiInstance.updateBackofficeUser(userId, UpdateUserDto, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -128,10 +141,11 @@ apiInstance.updateBackofficeUser(body, userId, (error, data, response) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateUserDto**](UpdateUserDto.md)|  | 
  **userId** | **String**|  | 
+ **UpdateUserDto** | [**UpdateUserDto**](UpdateUserDto.md)|  | 
 
 ### Return type
 
@@ -143,6 +157,6 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: Not defined
 

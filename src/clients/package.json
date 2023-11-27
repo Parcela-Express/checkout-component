@@ -3,8 +3,10 @@
   "version": "1.0",
   "description": "Parcela_Express_API",
   "license": "Unlicense",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "babel src -d dist",
+    "prepare": "npm run build",
     "test": "mocha --require @babel/register --recursive"
   },
   "browser": {
@@ -37,5 +39,8 @@
     "expect.js": "^0.3.1",
     "mocha": "^8.0.1",
     "sinon": "^7.2.0"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

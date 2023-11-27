@@ -1,30 +1,49 @@
 # ParcelaExpressApi.ListSettlementResponseDTO
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**settlementDay** | **String** | Formato: yyyy-mm-dd | 
-**total** | **Number** |  | 
+**settlement_day** | **String** | Formato: yyyy-mm-dd | [readonly] 
+**total** | **Number** |  | [readonly] 
 **id** | **String** |  | 
-**sellerDocument** | **String** |  | 
+**seller_document** | **String** |  | 
 **status** | **String** |  | 
 **type** | **String** |  | 
 **seller** | [**ListSettlementSellerDto**](ListSettlementSellerDto.md) |  | 
+**cnab_id** | **String** |  | [optional] 
+**is_retry** | **Boolean** |  | [optional] 
 
-<a name="StatusEnum"></a>
+
+
 ## Enum: StatusEnum
 
+
 * `pending` (value: `"pending"`)
+
 * `paid` (value: `"paid"`)
+
 * `sent` (value: `"sent"`)
-* `pendingCancel` (value: `"pending_cancel"`)
+
+* `pending_cancel` (value: `"pending_cancel"`)
+
 * `canceled` (value: `"canceled"`)
+
 * `failed` (value: `"failed"`)
 
+* `resent` (value: `"resent"`)
 
-<a name="TypeEnum"></a>
+
+
+
+
 ## Enum: TypeEnum
 
+
 * `PIX` (value: `"PIX"`)
+
 * `TED` (value: `"TED"`)
+
+
+
 

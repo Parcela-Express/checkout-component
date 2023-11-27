@@ -1,6 +1,7 @@
 # ParcelaExpressApi.GetSaleSellerDto
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
@@ -8,3 +9,5 @@ Name | Type | Description | Notes
 **document** | **String** |  | 
 **phone** | **String** |  | 
 **address** | [**GetSaleSellerAddressDto**](GetSaleSellerAddressDto.md) |  | 
+
+

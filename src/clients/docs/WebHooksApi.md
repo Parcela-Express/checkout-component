@@ -1,6 +1,6 @@
 # ParcelaExpressApi.WebHooksApi
 
-All URIs are relative to */*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,23 +8,27 @@ Method | HTTP request | Description
 [**deleteWebHookUrl**](WebHooksApi.md#deleteWebHookUrl) | **DELETE** /v1/sellers/{sellerId}/webhooks/{urlId} | Deletar url específica
 [**listUrlsBySeller**](WebHooksApi.md#listUrlsBySeller) | **GET** /v1/sellers/{sellerId}/webhooks | Listar urls por seller
 
-<a name="createWebHookSellerLink"></a>
-# **createWebHookSellerLink**
-> CreateWebHookLinkResponseDto createWebHookSellerLink(body, sellerId)
+
+
+## createWebHookSellerLink
+
+> CreateWebHookLinkResponseDto createWebHookSellerLink(sellerId, CreateWebHookLinkDto)
 
 Criar um link de webhook para um seller
 
 ### Example
-```javascript
-import {ParcelaExpressApi} from 'parcela_express_api';
-let defaultClient = ParcelaExpressApi.ApiClient.instance;
 
+```javascript
+import ParcelaExpressApi from 'parcela_express_api';
+let defaultClient = ParcelaExpressApi.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new ParcelaExpressApi.WebHooksApi();
-let body = new ParcelaExpressApi.CreateWebHookLinkDto(); // CreateWebHookLinkDto | 
 let sellerId = "sellerId_example"; // String | 
-
-apiInstance.createWebHookSellerLink(body, sellerId, (error, data, response) => {
+let CreateWebHookLinkDto = new ParcelaExpressApi.CreateWebHookLinkDto(); // CreateWebHookLinkDto | 
+apiInstance.createWebHookSellerLink(sellerId, CreateWebHookLinkDto, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -35,10 +39,11 @@ apiInstance.createWebHookSellerLink(body, sellerId, (error, data, response) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateWebHookLinkDto**](CreateWebHookLinkDto.md)|  | 
  **sellerId** | **String**|  | 
+ **CreateWebHookLinkDto** | [**CreateWebHookLinkDto**](CreateWebHookLinkDto.md)|  | 
 
 ### Return type
 
@@ -50,25 +55,28 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="deleteWebHookUrl"></a>
-# **deleteWebHookUrl**
+
+## deleteWebHookUrl
+
 > deleteWebHookUrl(urlId, sellerId)
 
 Deletar url específica
 
 ### Example
-```javascript
-import {ParcelaExpressApi} from 'parcela_express_api';
-let defaultClient = ParcelaExpressApi.ApiClient.instance;
 
+```javascript
+import ParcelaExpressApi from 'parcela_express_api';
+let defaultClient = ParcelaExpressApi.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new ParcelaExpressApi.WebHooksApi();
 let urlId = "urlId_example"; // String | 
 let sellerId = "sellerId_example"; // String | 
-
 apiInstance.deleteWebHookUrl(urlId, sellerId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -79,6 +87,7 @@ apiInstance.deleteWebHookUrl(urlId, sellerId, (error, data, response) => {
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -95,24 +104,27 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="listUrlsBySeller"></a>
-# **listUrlsBySeller**
+
+## listUrlsBySeller
+
 > [ListWebHookLinkResponseDto] listUrlsBySeller(sellerId)
 
 Listar urls por seller
 
 ### Example
-```javascript
-import {ParcelaExpressApi} from 'parcela_express_api';
-let defaultClient = ParcelaExpressApi.ApiClient.instance;
 
+```javascript
+import ParcelaExpressApi from 'parcela_express_api';
+let defaultClient = ParcelaExpressApi.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new ParcelaExpressApi.WebHooksApi();
 let sellerId = "sellerId_example"; // String | 
-
 apiInstance.listUrlsBySeller(sellerId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -123,6 +135,7 @@ apiInstance.listUrlsBySeller(sellerId, (error, data, response) => {
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -138,6 +151,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

@@ -174,6 +174,11 @@ const Checkout = (props) => {
         if (errorReturnUrl) {
           createPaymentDto.error_return_url = errorReturnUrl;
         }
+
+        if (customerData.recurrence && customerData.recurrence_day) {
+          createPaymentDto.recurrence = customerData.recurrence;
+          createPaymentDto.recurrence_day = customerData.recurrence_day;
+        }
         
         return new Promise((resolve, reject) => {
           props.beforeSubmit && props.beforeSubmit();
@@ -278,6 +283,8 @@ Checkout.propTypes = {
         description: PropTypes.string
       }).isRequired
     ),
+    recurrence: PropTypes.bool,
+    recurrence_day: PropTypes.number
   }).isRequired,
   showPayButton: PropTypes.bool
 };

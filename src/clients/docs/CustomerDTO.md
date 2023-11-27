@@ -1,11 +1,14 @@
 # ParcelaExpressApi.CustomerDTO
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**firstName** | **String** |  | 
-**lastName** | **String** |  | 
+**first_name** | **String** |  | 
+**last_name** | **String** |  | 
 **document** | **String** | Número do CPF/CNPJ do comprador | [optional] 
 **email** | **String** |  | [optional] 
 **ip** | **String** |  | [optional] 
-**billingAddress** | [**CreateDebitAddressDTO**](CreateDebitAddressDTO.md) |  | [optional] 
+**billing_address** | [**CreateDebitAddressDTO**](CreateDebitAddressDTO.md) |  | [optional] 
+
+

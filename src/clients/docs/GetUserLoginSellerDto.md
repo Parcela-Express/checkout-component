@@ -1,58 +1,89 @@
 # ParcelaExpressApi.GetUserLoginSellerDto
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **name** | **String** |  | 
 **description** | **String** |  | 
 **document** | **String** |  | 
-**stateRegistration** | **String** |  | 
+**state_registration** | **String** |  | 
 **code** | **String** |  | 
-**absorbCosts** | **[String]** |  | [optional] 
-**settlementType** | **String** |  | 
+**absorb_costs** | **[String]** |  | [optional] 
+**settlement_type** | **String** |  | 
 **acquirers** | [**[GetAcquirerDto]**](GetAcquirerDto.md) |  | [optional] 
 **address** | [**GetAddressDto**](GetAddressDto.md) |  | 
-**bankAccount** | [**GetBankAccountDto**](GetBankAccountDto.md) |  | 
-**isSplit** | **Boolean** |  | 
+**bank_account** | [**GetBankAccountDto**](GetBankAccountDto.md) |  | 
+**is_split** | **Boolean** |  | 
 **phone** | **String** |  | 
 **status** | **String** |  | 
 **type** | **String** |  | 
 **merchant** | [**GetMerchantDto**](GetMerchantDto.md) |  | 
-**salePlan** | [**GetSellerSalePlanDto**](GetSellerSalePlanDto.md) |  | 
-**pixPos** | **Boolean** |  | 
-**billetProvider** | **String** |  | 
-**noPaymentMethods** | **[String]** |  | [optional] 
+**sale_plan_id** | **String** |  | 
+**pix_pos** | **Boolean** |  | 
+**billet_provider** | **String** |  | 
+**no_payment_methods** | **[String]** |  | [optional] 
 **logo** | [**GetLogoDto**](GetLogoDto.md) |  | [optional] 
 **theme** | [**GetThemeDto**](GetThemeDto.md) |  | [optional] 
-**hasSplitRules** | **Boolean** |  | [optional] 
+**has_split_rules** | **Boolean** |  | [optional] 
+**protocol_customizations** | [**ProtocolCustomizations**](ProtocolCustomizations.md) |  | [optional] 
+**custom_emails** | [**SellerEmails**](SellerEmails.md) |  | [optional] 
+**report_customization** | [**ReportCustomization**](ReportCustomization.md) |  | [optional] 
+**billet_code** | **Boolean** |  | [optional] 
 
-<a name="SettlementTypeEnum"></a>
+
+
 ## Enum: SettlementTypeEnum
 
+
 * `PIX` (value: `"PIX"`)
+
 * `TED` (value: `"TED"`)
 
 
-<a name="StatusEnum"></a>
+
+
+
 ## Enum: StatusEnum
 
+
 * `activated` (value: `"activated"`)
+
 * `inactive` (value: `"inactive"`)
+
 * `pending` (value: `"pending"`)
 
+* `activation_sent` (value: `"activation_sent"`)
 
-<a name="TypeEnum"></a>
+
+
+
+
 ## Enum: TypeEnum
 
+
 * `transaction` (value: `"transaction"`)
+
 * `registry` (value: `"registry"`)
+
 * `group` (value: `"group"`)
 
+* `restricted_seller` (value: `"restricted_seller"`)
 
-<a name="BilletProviderEnum"></a>
+
+
+
+
 ## Enum: BilletProviderEnum
 
+
 * `adyen` (value: `"adyen"`)
+
 * `bradesco` (value: `"bradesco"`)
+
+* `itau` (value: `"itau"`)
+
+
+
 

@@ -1,25 +1,42 @@
 # ParcelaExpressApi.GetSellerSaleDto
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **description** | **String** |  | 
-**createdAt** | **String** |  | 
-**originalAmount** | **Number** |  | 
+**created_at** | **String** |  | 
+**original_amount** | **Number** |  | 
 **type** | **String** |  | 
-**paymentType** | [**GetSalePlanPaymentTypeDto**](GetSalePlanPaymentTypeDto.md) |  | 
+**payment_type** | [**GetSalePlanPaymentTypeDto**](GetSalePlanPaymentTypeDto.md) |  | 
 **payer** | [**GetSalePayerDto**](GetSalePayerDto.md) |  | 
 **billet** | [**GetBilletDto**](GetBilletDto.md) |  | 
+**celcoin** | [**Celcoin**](Celcoin.md) |  | 
 
-<a name="TypeEnum"></a>
+
+
 ## Enum: TypeEnum
 
+
 * `boleto` (value: `"boleto"`)
+
 * `pos` (value: `"pos"`)
-* `paymentLink` (value: `"payment_link"`)
-* `protestLink` (value: `"protest_link"`)
+
+* `payment_link` (value: `"payment_link"`)
+
+* `protest_link` (value: `"protest_link"`)
+
 * `online` (value: `"online"`)
-* `autoGeneratePaymentLink` (value: `"auto_generate_payment_link"`)
-* `autoGenerateProtestLink` (value: `"auto_generate_protest_link"`)
+
+* `auto_generate_payment_link` (value: `"auto_generate_payment_link"`)
+
+* `auto_generate_protest_link` (value: `"auto_generate_protest_link"`)
+
+* `billet_code` (value: `"billet_code"`)
+
+* `bill_payment` (value: `"bill_payment"`)
+
+
+
 

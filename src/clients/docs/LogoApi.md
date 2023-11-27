@@ -1,26 +1,30 @@
 # ParcelaExpressApi.LogoApi
 
-All URIs are relative to */*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**uploadMerchantLogo**](LogoApi.md#uploadMerchantLogo) | **POST** /v1/logo | Realizar upload da logo do marketplace
 
-<a name="uploadMerchantLogo"></a>
-# **uploadMerchantLogo**
+
+
+## uploadMerchantLogo
+
 > GetLogoDto uploadMerchantLogo(file)
 
 Realizar upload da logo do marketplace
 
 ### Example
-```javascript
-import {ParcelaExpressApi} from 'parcela_express_api';
-let defaultClient = ParcelaExpressApi.ApiClient.instance;
 
+```javascript
+import ParcelaExpressApi from 'parcela_express_api';
+let defaultClient = ParcelaExpressApi.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new ParcelaExpressApi.LogoApi();
-let file = "file_example"; // Blob | 
-
+let file = "/path/to/file"; // File | 
 apiInstance.uploadMerchantLogo(file, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -32,9 +36,10 @@ apiInstance.uploadMerchantLogo(file, (error, data, response) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **Blob**|  | 
+ **file** | **File**|  | 
 
 ### Return type
 
@@ -46,6 +51,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
- - **Accept**: application/json
+- **Content-Type**: multipart/form-data
+- **Accept**: application/json
 

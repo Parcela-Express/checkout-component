@@ -1,10 +1,13 @@
 # ParcelaExpressApi.UpdateMerchantThemeDto
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**primaryColor** | **String** |  | [optional] 
-**secondaryColor** | **String** |  | [optional] 
-**defaultColor** | **String** |  | [optional] 
-**textColor** | **String** |  | [optional] 
-**menuTextColor** | **String** |  | [optional] 
+**primary_color** | **String** |  | [optional] 
+**secondary_color** | **String** |  | [optional] 
+**default_color** | **String** |  | [optional] 
+**text_color** | **String** |  | [optional] 
+**menu_text_color** | **String** |  | [optional] 
+
+

@@ -54,7 +54,7 @@ const Demo = () => {
               customerData={{
                 amount_cents: 20000,
                 description: "Venda Teste",
-                form_payment: "debit",
+                form_payment: "credit",
                 installment_plan: {
                   number_installments: 1,
                 },
@@ -86,12 +86,14 @@ const Demo = () => {
                   },
                 ],
                 confirmation_required: false,
-                active_3ds: true,
+                active_3ds: false,
                 extract_identification: "Cartório exemplo",
                 service_id: "seu id (opcional)",
-                protocol: "PROTOCOLO123658"
+                protocol: "PROTOCOLO123658",
+                recurrence: false,
+                recurrence_day: 10
               }}
-              sellerKey={"e137d1b6-8f84-4377-ab5c-d27dd24415bd"}
+              sellerKey={"741d17b7-3e7c-493a-8d8c-f91b423c2a79"}
               clientKey={"test_IBIF7UD6SNB7ZJG3KVEGM3UP5M57BJ4B"}
               onSubmit={checkoutSubmitHandle}
               onChange={checkoutOnChangeHandle}

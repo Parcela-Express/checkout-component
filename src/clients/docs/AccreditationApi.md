@@ -1,44 +1,49 @@
 # ParcelaExpressApi.AccreditationApi
 
-All URIs are relative to */*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createAccreditation**](AccreditationApi.md#createAccreditation) | **POST** /v1/accreditations/{seller_id} | Iniciar rotina de credenciamento.
 
-<a name="createAccreditation"></a>
-# **createAccreditation**
-> Object createAccreditation(sellerId)
+
+
+## createAccreditation
+
+> createAccreditation(seller_id)
 
 Iniciar rotina de credenciamento.
 
 ### Example
-```javascript
-import {ParcelaExpressApi} from 'parcela_express_api';
-let defaultClient = ParcelaExpressApi.ApiClient.instance;
 
+```javascript
+import ParcelaExpressApi from 'parcela_express_api';
+let defaultClient = ParcelaExpressApi.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: bearer
+let bearer = defaultClient.authentications['bearer'];
+bearer.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new ParcelaExpressApi.AccreditationApi();
-let sellerId = "sellerId_example"; // String | 
-
-apiInstance.createAccreditation(sellerId, (error, data, response) => {
+let seller_id = "seller_id_example"; // String | 
+apiInstance.createAccreditation(seller_id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sellerId** | **String**|  | 
+ **seller_id** | **String**|  | 
 
 ### Return type
 
-**Object**
+null (empty response body)
 
 ### Authorization
 
@@ -46,6 +51,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
