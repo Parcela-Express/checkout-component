@@ -1,11 +1,9 @@
 # ParcelaExpressApi.SalesApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSalesBillPaymentListExportRequest**](SalesApi.md#createSalesBillPaymentListExportRequest) | **POST** /v1/sales/list/export/billpayment/requests | Gerar uma requisição de exportação da lista de Pagamento de Contas
-[**createSalesHistoryExportRequest**](SalesApi.md#createSalesHistoryExportRequest) | **POST** /v1/sales/history/export/requests | Gerar uma requisição de exportação do histórico de vendas
 [**createSalesListExportRequest**](SalesApi.md#createSalesListExportRequest) | **POST** /v1/sales/list/export/requests | Gerar uma requisição de exportação da lista de vendas
 [**getAllSalesSummary**](SalesApi.md#getAllSalesSummary) | **GET** /v1/sales/summary | Listar resumo de venda de todos Estabelecimentos
 [**getAllSalesSummaryChart**](SalesApi.md#getAllSalesSummaryChart) | **GET** /v1/sales/summary-chart | Listar resumo dos ultimos 6 meses de todos Estabelecimentos
@@ -13,120 +11,22 @@ Method | HTTP request | Description
 [**listSales**](SalesApi.md#listSales) | **GET** /v1/sales | Listar as vendas de todos os estabelecimentos
 [**payPix**](SalesApi.md#payPix) | **POST** /v1/sales/{saleId}/pix/pay | Pagar PIX (em ambiente de desenvolvimento)
 
-
-
-## createSalesBillPaymentListExportRequest
-
-> GetFileExportRequestDto createSalesBillPaymentListExportRequest(CreateExportSalesListDto)
-
-Gerar uma requisição de exportação da lista de Pagamento de Contas
-
-### Example
-
-```javascript
-import ParcelaExpressApi from 'parcela_express_api';
-let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
-
-let apiInstance = new ParcelaExpressApi.SalesApi();
-let CreateExportSalesListDto = new ParcelaExpressApi.CreateExportSalesListDto(); // CreateExportSalesListDto | 
-apiInstance.createSalesBillPaymentListExportRequest(CreateExportSalesListDto, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **CreateExportSalesListDto** | [**CreateExportSalesListDto**](CreateExportSalesListDto.md)|  | 
-
-### Return type
-
-[**GetFileExportRequestDto**](GetFileExportRequestDto.md)
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## createSalesHistoryExportRequest
-
-> GetFileExportRequestDto createSalesHistoryExportRequest(CreateExportSalesListDto)
-
-Gerar uma requisição de exportação do histórico de vendas
-
-### Example
-
-```javascript
-import ParcelaExpressApi from 'parcela_express_api';
-let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
-
-let apiInstance = new ParcelaExpressApi.SalesApi();
-let CreateExportSalesListDto = new ParcelaExpressApi.CreateExportSalesListDto(); // CreateExportSalesListDto | 
-apiInstance.createSalesHistoryExportRequest(CreateExportSalesListDto, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **CreateExportSalesListDto** | [**CreateExportSalesListDto**](CreateExportSalesListDto.md)|  | 
-
-### Return type
-
-[**GetFileExportRequestDto**](GetFileExportRequestDto.md)
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## createSalesListExportRequest
-
-> GetFileExportRequestDto createSalesListExportRequest(CreateExportSalesListDto)
+<a name="createSalesListExportRequest"></a>
+# **createSalesListExportRequest**
+> GetFileExportRequestDto createSalesListExportRequest(body)
 
 Gerar uma requisição de exportação da lista de vendas
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SalesApi();
-let CreateExportSalesListDto = new ParcelaExpressApi.CreateExportSalesListDto(); // CreateExportSalesListDto | 
-apiInstance.createSalesListExportRequest(CreateExportSalesListDto, (error, data, response) => {
+let body = new ParcelaExpressApi.CreateExportSalesListDto(); // CreateExportSalesListDto | 
+
+apiInstance.createSalesListExportRequest(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -137,10 +37,9 @@ apiInstance.createSalesListExportRequest(CreateExportSalesListDto, (error, data,
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **CreateExportSalesListDto** | [**CreateExportSalesListDto**](CreateExportSalesListDto.md)|  | 
+ **body** | [**CreateExportSalesListDto**](CreateExportSalesListDto.md)|  | 
 
 ### Return type
 
@@ -152,27 +51,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-
-## getAllSalesSummary
-
+<a name="getAllSalesSummary"></a>
+# **getAllSalesSummary**
 > GetSaleSummaryDto getAllSalesSummary(opts)
 
 Listar resumo de venda de todos Estabelecimentos
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SalesApi();
-let opts = {
+let opts = { 
   'startDate': "startDate_example", // String | 
   'endDate': "endDate_example", // String | 
   'status': "status_example" // String | 
@@ -187,7 +82,6 @@ apiInstance.getAllSalesSummary(opts, (error, data, response) => {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -205,24 +99,20 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-
-## getAllSalesSummaryChart
-
+<a name="getAllSalesSummaryChart"></a>
+# **getAllSalesSummaryChart**
 > GetSaleSummaryChartDto getAllSalesSummaryChart()
 
 Listar resumo dos ultimos 6 meses de todos Estabelecimentos
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SalesApi();
 apiInstance.getAllSalesSummaryChart((error, data, response) => {
@@ -235,7 +125,6 @@ apiInstance.getAllSalesSummaryChart((error, data, response) => {
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -248,27 +137,24 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-
-## getSale
-
+<a name="getSale"></a>
+# **getSale**
 > GetSaleDto getSale(saleId)
 
 Retornar dados de uma venda especifica
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SalesApi();
 let saleId = "saleId_example"; // String | 
+
 apiInstance.getSale(saleId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -279,7 +165,6 @@ apiInstance.getSale(saleId, (error, data, response) => {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -295,53 +180,40 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-
-## listSales
-
-> PaginatedDto listSales(limit, current_page, opts)
+<a name="listSales"></a>
+# **listSales**
+> InlineResponse200 listSales(limit, currentPage, opts)
 
 Listar as vendas de todos os estabelecimentos
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SalesApi();
 let limit = 10; // Number | 
-let current_page = 1; // Number | 
-let opts = {
-  'description': "description_example", // String | Descricão
-  'search': "search_example", // String | Busca por descrição, protocolo, id ou referencia da adquirente
-  'amount': 3.4, // Number | Valor
-  'original_amount': 3.4, // Number | Valor original
-  'type': ["null"], // [String] | Tipo de pagamento
-  'name': "name_example", // String | Nome
-  'payer_name': "payer_name_example", // String | Nome do pagador
-  'user': "user_example", // String | Usuário
-  'form_payment': ["null"], // [String] | Forma de pagamento
-  'startDate': "startDate_example", // String | Data de inicio. Formato: yyyy-mm-dd
-  'endDate': "endDate_example", // String | Data de fim. Formato: yyyy-mm-dd
-  'last_number_sales': 3.4, // Number | Quantidade de vendas
-  'payment_day': true, // Boolean | Dia do pagamento
-  'payer_email': "payer_email_example", // String | Email do pagador
-  'payer_phone': "payer_phone_example", // String | Telefone do pagador
-  'settlement_batch_id': "settlement_batch_id_example", // String | ID do lote
-  'settlement_batch_day': "settlement_batch_day_example", // String | Data de liquidação do lote
-  'updated_day': true, // Boolean | Dia da atualização
-  'created_by_user_name': "created_by_user_name_example", // String | Usuário logado
-  'sort': "'time-descending'", // String | 
+let currentPage = 1; // Number | 
+let opts = { 
+  'startDate': "startDate_example", // String | Formato: yyyy-mm-dd
+  'endDate': "endDate_example", // String | Formato: yyyy-mm-dd
+  'sort': "time-descending", // String | 
   'id': "id_example", // String | 
-  'status': ["null"] // [String] | 
+  'status': ["status_example"], // [String] | 
+  'description': "description_example", // String | 
+  'amount': 1.2, // Number | 
+  'originalAmount': 1.2, // Number | 
+  'type': ["type_example"], // [String] | 
+  'name': "name_example", // String | 
+  'user': "user_example", // String | 
+  'formPayment': ["formPayment_example"], // [String] | 
+  'lastNumberSales': 1.2 // Number | 
 };
-apiInstance.listSales(limit, current_page, opts, (error, data, response) => {
+apiInstance.listSales(limit, currentPage, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -352,37 +224,27 @@ apiInstance.listSales(limit, current_page, opts, (error, data, response) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Number**|  | [default to 10]
- **current_page** | **Number**|  | [default to 1]
- **description** | **String**| Descricão | [optional] 
- **search** | **String**| Busca por descrição, protocolo, id ou referencia da adquirente | [optional] 
- **amount** | **Number**| Valor | [optional] 
- **original_amount** | **Number**| Valor original | [optional] 
- **type** | [**[String]**](String.md)| Tipo de pagamento | [optional] 
- **name** | **String**| Nome | [optional] 
- **payer_name** | **String**| Nome do pagador | [optional] 
- **user** | **String**| Usuário | [optional] 
- **form_payment** | [**[String]**](String.md)| Forma de pagamento | [optional] 
- **startDate** | **String**| Data de inicio. Formato: yyyy-mm-dd | [optional] 
- **endDate** | **String**| Data de fim. Formato: yyyy-mm-dd | [optional] 
- **last_number_sales** | **Number**| Quantidade de vendas | [optional] 
- **payment_day** | **Boolean**| Dia do pagamento | [optional] 
- **payer_email** | **String**| Email do pagador | [optional] 
- **payer_phone** | **String**| Telefone do pagador | [optional] 
- **settlement_batch_id** | **String**| ID do lote | [optional] 
- **settlement_batch_day** | **String**| Data de liquidação do lote | [optional] 
- **updated_day** | **Boolean**| Dia da atualização | [optional] 
- **created_by_user_name** | **String**| Usuário logado | [optional] 
- **sort** | **String**|  | [optional] [default to &#39;time-descending&#39;]
+ **currentPage** | **Number**|  | [default to 1]
+ **startDate** | **String**| Formato: yyyy-mm-dd | [optional] 
+ **endDate** | **String**| Formato: yyyy-mm-dd | [optional] 
+ **sort** | **String**|  | [optional] [default to time-descending]
  **id** | **String**|  | [optional] 
  **status** | [**[String]**](String.md)|  | [optional] 
+ **description** | **String**|  | [optional] 
+ **amount** | **Number**|  | [optional] 
+ **originalAmount** | **Number**|  | [optional] 
+ **type** | [**[String]**](String.md)|  | [optional] 
+ **name** | **String**|  | [optional] 
+ **user** | **String**|  | [optional] 
+ **formPayment** | [**[String]**](String.md)|  | [optional] 
+ **lastNumberSales** | **Number**|  | [optional] 
 
 ### Return type
 
-[**PaginatedDto**](PaginatedDto.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -390,27 +252,24 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-
-## payPix
-
+<a name="payPix"></a>
+# **payPix**
 > payPix(saleId)
 
 Pagar PIX (em ambiente de desenvolvimento)
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SalesApi();
 let saleId = "saleId_example"; // String | 
+
 apiInstance.payPix(saleId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -421,7 +280,6 @@ apiInstance.payPix(saleId, (error, data, response) => {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -437,6 +295,6 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 

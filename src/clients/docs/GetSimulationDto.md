@@ -1,15 +1,11 @@
 # ParcelaExpressApi.GetSimulationDto
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**installment_amount_cents_decimal** | **Number** |  | 
-**installment_amount_cents** | **Number** |  | 
-**original_amount_cents** | **Number** |  | 
+**installmentAmountCentsDecimal** | **Number** |  | 
+**installmentAmountCents** | **Number** |  | 
+**originalAmountCents** | **Number** |  | 
 **installment** | **Number** |  | 
-**total_amount_cents** | **Number** |  | 
+**totalAmountCents** | **Number** |  | 
 **type** | **String** |  | 
-**cet** | **Number** |  | 
-
-

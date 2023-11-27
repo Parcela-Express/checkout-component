@@ -1,15 +1,12 @@
 # ParcelaExpressApi.CreateAddressDto
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **zipcode** | **String** |  | 
 **street** | **String** |  | 
-**number** | **String** |  | 
+**_number** | **String** |  | 
 **complement** | **String** |  | 
 **district** | **String** |  | 
 **state** | **String** |  | 
 **city** | **String** |  | 
-
-

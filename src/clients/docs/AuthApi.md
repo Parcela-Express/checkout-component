@@ -1,6 +1,6 @@
 # ParcelaExpressApi.AuthApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,25 +9,22 @@ Method | HTTP request | Description
 [**login**](AuthApi.md#login) | **POST** /v1/auth/login | Realizar autenticação na aplicação
 [**loginV2**](AuthApi.md#loginV2) | **POST** /v2/auth/login | Realizar autenticação na aplicação
 [**refreshToken**](AuthApi.md#refreshToken) | **POST** /v1/auth/refresh | Atualizar o token da aplicação
-[**refreshTokenV2**](AuthApi.md#refreshTokenV2) | **POST** /v2/auth/refresh | Atualizar o token da aplicação
 [**resetPasswordRequest**](AuthApi.md#resetPasswordRequest) | **POST** /v1/auth/reset-password | Realizar alteração de senha
 
-
-
-## forgotPasswordRequest
-
-> forgotPasswordRequest(ForgotPasswordRequestDto)
+<a name="forgotPasswordRequest"></a>
+# **forgotPasswordRequest**
+> forgotPasswordRequest(body)
 
 Solicitar alteração de senha
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 
 let apiInstance = new ParcelaExpressApi.AuthApi();
-let ForgotPasswordRequestDto = new ParcelaExpressApi.ForgotPasswordRequestDto(); // ForgotPasswordRequestDto | 
-apiInstance.forgotPasswordRequest(ForgotPasswordRequestDto, (error, data, response) => {
+let body = new ParcelaExpressApi.ForgotPasswordRequestDto(); // ForgotPasswordRequestDto | 
+
+apiInstance.forgotPasswordRequest(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -38,10 +35,9 @@ apiInstance.forgotPasswordRequest(ForgotPasswordRequestDto, (error, data, respon
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ForgotPasswordRequestDto** | [**ForgotPasswordRequestDto**](ForgotPasswordRequestDto.md)|  | 
+ **body** | [**ForgotPasswordRequestDto**](ForgotPasswordRequestDto.md)|  | 
 
 ### Return type
 
@@ -53,23 +49,22 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
-
-## getForgotPasswordRequestData
-
+<a name="getForgotPasswordRequestData"></a>
+# **getForgotPasswordRequestData**
 > GetForgotPasswordRequestDto getForgotPasswordRequestData(token)
 
 Validar token enviado no esqueci minha senha
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 
 let apiInstance = new ParcelaExpressApi.AuthApi();
 let token = "token_example"; // String | 
+
 apiInstance.getForgotPasswordRequestData(token, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -80,7 +75,6 @@ apiInstance.getForgotPasswordRequestData(token, (error, data, response) => {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -96,24 +90,23 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-
-## login
-
-> UserLoginResponseDto login(UserLoginDto)
+<a name="login"></a>
+# **login**
+> UserLoginResponseDto login(body)
 
 Realizar autenticação na aplicação
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 
 let apiInstance = new ParcelaExpressApi.AuthApi();
-let UserLoginDto = new ParcelaExpressApi.UserLoginDto(); // UserLoginDto | 
-apiInstance.login(UserLoginDto, (error, data, response) => {
+let body = new ParcelaExpressApi.UserLoginDto(); // UserLoginDto | 
+
+apiInstance.login(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -124,10 +117,9 @@ apiInstance.login(UserLoginDto, (error, data, response) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UserLoginDto** | [**UserLoginDto**](UserLoginDto.md)|  | 
+ **body** | [**UserLoginDto**](UserLoginDto.md)|  | 
 
 ### Return type
 
@@ -139,24 +131,23 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-
-## loginV2
-
-> UserLoginResponseDto loginV2(UserLoginDto)
+<a name="loginV2"></a>
+# **loginV2**
+> UserLoginResponseDto loginV2(body)
 
 Realizar autenticação na aplicação
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 
 let apiInstance = new ParcelaExpressApi.AuthApi();
-let UserLoginDto = new ParcelaExpressApi.UserLoginDto(); // UserLoginDto | 
-apiInstance.loginV2(UserLoginDto, (error, data, response) => {
+let body = new ParcelaExpressApi.UserLoginDto(); // UserLoginDto | 
+
+apiInstance.loginV2(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -167,10 +158,9 @@ apiInstance.loginV2(UserLoginDto, (error, data, response) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UserLoginDto** | [**UserLoginDto**](UserLoginDto.md)|  | 
+ **body** | [**UserLoginDto**](UserLoginDto.md)|  | 
 
 ### Return type
 
@@ -182,24 +172,23 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-
-## refreshToken
-
-> UserRefreshTokenResponseDto refreshToken(UserRefreshTokenDto)
+<a name="refreshToken"></a>
+# **refreshToken**
+> UserRefreshTokenResponseDto refreshToken(body)
 
 Atualizar o token da aplicação
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 
 let apiInstance = new ParcelaExpressApi.AuthApi();
-let UserRefreshTokenDto = new ParcelaExpressApi.UserRefreshTokenDto(); // UserRefreshTokenDto | 
-apiInstance.refreshToken(UserRefreshTokenDto, (error, data, response) => {
+let body = new ParcelaExpressApi.UserRefreshTokenDto(); // UserRefreshTokenDto | 
+
+apiInstance.refreshToken(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -210,10 +199,9 @@ apiInstance.refreshToken(UserRefreshTokenDto, (error, data, response) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UserRefreshTokenDto** | [**UserRefreshTokenDto**](UserRefreshTokenDto.md)|  | 
+ **body** | [**UserRefreshTokenDto**](UserRefreshTokenDto.md)|  | 
 
 ### Return type
 
@@ -225,67 +213,23 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-
-## refreshTokenV2
-
-> UserRefreshTokenResponseDto refreshTokenV2(UserRefreshTokenDto)
-
-Atualizar o token da aplicação
-
-### Example
-
-```javascript
-import ParcelaExpressApi from 'parcela_express_api';
-
-let apiInstance = new ParcelaExpressApi.AuthApi();
-let UserRefreshTokenDto = new ParcelaExpressApi.UserRefreshTokenDto(); // UserRefreshTokenDto | 
-apiInstance.refreshTokenV2(UserRefreshTokenDto, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **UserRefreshTokenDto** | [**UserRefreshTokenDto**](UserRefreshTokenDto.md)|  | 
-
-### Return type
-
-[**UserRefreshTokenResponseDto**](UserRefreshTokenResponseDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## resetPasswordRequest
-
-> resetPasswordRequest(ResetPasswordRequestDto)
+<a name="resetPasswordRequest"></a>
+# **resetPasswordRequest**
+> resetPasswordRequest(body)
 
 Realizar alteração de senha
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 
 let apiInstance = new ParcelaExpressApi.AuthApi();
-let ResetPasswordRequestDto = new ParcelaExpressApi.ResetPasswordRequestDto(); // ResetPasswordRequestDto | 
-apiInstance.resetPasswordRequest(ResetPasswordRequestDto, (error, data, response) => {
+let body = new ParcelaExpressApi.ResetPasswordRequestDto(); // ResetPasswordRequestDto | 
+
+apiInstance.resetPasswordRequest(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -296,10 +240,9 @@ apiInstance.resetPasswordRequest(ResetPasswordRequestDto, (error, data, response
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ResetPasswordRequestDto** | [**ResetPasswordRequestDto**](ResetPasswordRequestDto.md)|  | 
+ **body** | [**ResetPasswordRequestDto**](ResetPasswordRequestDto.md)|  | 
 
 ### Return type
 
@@ -311,6 +254,6 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 

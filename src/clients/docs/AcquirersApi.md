@@ -1,31 +1,27 @@
 # ParcelaExpressApi.AcquirersApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**listAcquirerSalesPlans**](AcquirersApi.md#listAcquirerSalesPlans) | **GET** /v1/acquirers/{acquirerId}/sales-plans | Listar planos de vendas da adquirente
 [**listAcquirers**](AcquirersApi.md#listAcquirers) | **GET** /v1/acquirers | Listar adquirentes
 
-
-
-## listAcquirerSalesPlans
-
+<a name="listAcquirerSalesPlans"></a>
+# **listAcquirerSalesPlans**
 > [GetAcquirerSalePlanDto] listAcquirerSalesPlans(acquirerId)
 
 Listar planos de vendas da adquirente
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.AcquirersApi();
 let acquirerId = "acquirerId_example"; // String | 
+
 apiInstance.listAcquirerSalesPlans(acquirerId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -36,7 +32,6 @@ apiInstance.listAcquirerSalesPlans(acquirerId, (error, data, response) => {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -52,24 +47,20 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-
-## listAcquirers
-
+<a name="listAcquirers"></a>
+# **listAcquirers**
 > [GetAcquirerDto] listAcquirers()
 
 Listar adquirentes
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.AcquirersApi();
 apiInstance.listAcquirers((error, data, response) => {
@@ -82,7 +73,6 @@ apiInstance.listAcquirers((error, data, response) => {
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -95,6 +85,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

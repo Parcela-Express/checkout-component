@@ -1,31 +1,27 @@
 # ParcelaExpressApi.ThemeApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**updateMerchantTheme**](ThemeApi.md#updateMerchantTheme) | **PUT** /v1/theme | Atualizar o tema do marketplace
 
-
-
-## updateMerchantTheme
-
-> updateMerchantTheme(UpdateMerchantThemeDto)
+<a name="updateMerchantTheme"></a>
+# **updateMerchantTheme**
+> updateMerchantTheme(body)
 
 Atualizar o tema do marketplace
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.ThemeApi();
-let UpdateMerchantThemeDto = new ParcelaExpressApi.UpdateMerchantThemeDto(); // UpdateMerchantThemeDto | 
-apiInstance.updateMerchantTheme(UpdateMerchantThemeDto, (error, data, response) => {
+let body = new ParcelaExpressApi.UpdateMerchantThemeDto(); // UpdateMerchantThemeDto | 
+
+apiInstance.updateMerchantTheme(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -36,10 +32,9 @@ apiInstance.updateMerchantTheme(UpdateMerchantThemeDto, (error, data, response) 
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UpdateMerchantThemeDto** | [**UpdateMerchantThemeDto**](UpdateMerchantThemeDto.md)|  | 
+ **body** | [**UpdateMerchantThemeDto**](UpdateMerchantThemeDto.md)|  | 
 
 ### Return type
 
@@ -51,6 +46,6 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 

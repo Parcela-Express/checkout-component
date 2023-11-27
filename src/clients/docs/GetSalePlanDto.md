@@ -1,33 +1,22 @@
 # ParcelaExpressApi.GetSalePlanDto
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **name** | **String** |  | 
 **description** | **String** |  | 
-**payment_types** | [**[GetSalePlanPaymentTypeDto]**](GetSalePlanPaymentTypeDto.md) |  | 
+**paymentTypes** | [**[GetPaymentTypeDto]**](GetPaymentTypeDto.md) |  | 
 **type** | **String** |  | 
 **merchant** | [**GetMerchantDto**](GetMerchantDto.md) |  | 
 **acquirer** | [**GetAcquirerDto**](GetAcquirerDto.md) |  | 
-**settlement_plan** | [**GetSettlementPlanDto**](GetSettlementPlanDto.md) |  | 
-**cost_plan** | [**GetCostPlanDto**](GetCostPlanDto.md) |  | 
-**payment_method** | **String** |  | 
-**risk_value** | **Number** |  | [optional] 
-**inactive** | **Boolean** |  | [optional] 
+**settlementPlan** | [**GetSettlementPlanDto**](GetSettlementPlanDto.md) |  | 
+**costPlan** | [**GetCostPlanDto**](GetCostPlanDto.md) |  | 
 
-
-
+<a name="TypeEnum"></a>
 ## Enum: TypeEnum
 
-
 * `markup` (value: `"markup"`)
-
 * `spread` (value: `"spread"`)
-
 * `split` (value: `"split"`)
-
-
-
 

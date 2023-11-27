@@ -1,26 +1,16 @@
 # ParcelaExpressApi.CreateWebHookLinkDto
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**acquirer_code** | **String** |  | 
+**acquirerCode** | **String** |  | 
 **url** | **String** |  | 
 **description** | **String** |  | 
 
-
-
+<a name="AcquirerCodeEnum"></a>
 ## Enum: AcquirerCodeEnum
 
-
 * `zoop` (value: `"zoop"`)
-
 * `adyen` (value: `"adyen"`)
-
 * `bradesco` (value: `"bradesco"`)
-
-* `itau` (value: `"itau"`)
-
-
-
 

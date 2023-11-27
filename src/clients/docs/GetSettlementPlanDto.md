@@ -1,27 +1,19 @@
 # ParcelaExpressApi.GetSettlementPlanDto
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **name** | **String** |  | 
 **description** | **String** |  | 
 **code** | **String** |  | 
-**anticipation_receivables** | **Boolean** |  | 
+**anticipationReceivables** | **Boolean** |  | 
 **options** | [**[GetSettlementOptionDto]**](GetSettlementOptionDto.md) |  | [optional] 
 
-
-
+<a name="CodeEnum"></a>
 ## Enum: CodeEnum
 
-
-* `D0` (value: `"D0"`)
-
-* `D1` (value: `"D1"`)
-
-* `D30` (value: `"D30"`)
-
-
-
+* `d0` (value: `"D0"`)
+* `d1` (value: `"D1"`)
+* `d30` (value: `"D30"`)
 

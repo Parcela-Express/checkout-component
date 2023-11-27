@@ -1,7 +1,6 @@
 # ParcelaExpressApi.GetProtestLinkSellerDto
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
@@ -10,6 +9,4 @@ Name | Type | Description | Notes
 **document** | **String** |  | 
 **address** | [**GetAddressDto**](GetAddressDto.md) |  | 
 **phone** | **String** |  | 
-**no_payment_methods** | **[String]** |  | [optional] 
-
-
+**noPaymentMethods** | **[String]** |  | [optional] 

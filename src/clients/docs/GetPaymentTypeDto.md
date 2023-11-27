@@ -1,7 +1,6 @@
 # ParcelaExpressApi.GetPaymentTypeDto
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
@@ -9,28 +8,13 @@ Name | Type | Description | Notes
 **fee** | **Number** |  | 
 **description** | **String** |  | 
 **installments** | **Number** |  | 
-**piso** | **Number** |  | 
-**teto** | **Number** |  | 
-**operation_mode** | **String** |  | 
-**min_rules** | **Number** |  | 
+**operationMode** | **String** |  | 
 
-
-
+<a name="OperationModeEnum"></a>
 ## Enum: OperationModeEnum
 
-
 * `credit` (value: `"credit"`)
-
 * `debit` (value: `"debit"`)
-
 * `pix` (value: `"pix"`)
-
 * `billet` (value: `"billet"`)
-
-* `billet_code` (value: `"billet_code"`)
-
-* `pix_pos` (value: `"pix_pos"`)
-
-
-
 

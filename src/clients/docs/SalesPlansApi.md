@@ -1,37 +1,32 @@
 # ParcelaExpressApi.SalesPlansApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addPaymentType**](SalesPlansApi.md#addPaymentType) | **POST** /v1/sales-plans/{salePlanId}/payment-types | Associar um ou mais tipo(s) de pagamento(s) a um plano de vendas
 [**createSalesPlan**](SalesPlansApi.md#createSalesPlan) | **POST** /v1/sales-plans | Criar plano de vendas
-[**getSalePlan**](SalesPlansApi.md#getSalePlan) | **GET** /v1/sales-plans/{salePlanId} | Obtém dados do plano de venda através do id.
 [**listAllSalePlan**](SalesPlansApi.md#listAllSalePlan) | **GET** /v1/sales-plans | Listar Todos planos de venda
 [**listSalePlan**](SalesPlansApi.md#listSalePlan) | **GET** /v1/sales-plans/list | Listar planos de venda
 [**listSalePlanPaymentTypes**](SalesPlansApi.md#listSalePlanPaymentTypes) | **GET** /v1/sales-plans/{salePlanId}/payment-types | Listar as formas de pagamento do plano de vendas informado
 
-
-
-## addPaymentType
-
-> GetSalePlanDto addPaymentType(salePlanId, IncludePaymentTypesDto)
+<a name="addPaymentType"></a>
+# **addPaymentType**
+> GetSalePlanDto addPaymentType(body, salePlanId)
 
 Associar um ou mais tipo(s) de pagamento(s) a um plano de vendas
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SalesPlansApi();
+let body = new ParcelaExpressApi.IncludePaymentTypesDto(); // IncludePaymentTypesDto | 
 let salePlanId = "salePlanId_example"; // String | 
-let IncludePaymentTypesDto = new ParcelaExpressApi.IncludePaymentTypesDto(); // IncludePaymentTypesDto | 
-apiInstance.addPaymentType(salePlanId, IncludePaymentTypesDto, (error, data, response) => {
+
+apiInstance.addPaymentType(body, salePlanId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -42,11 +37,10 @@ apiInstance.addPaymentType(salePlanId, IncludePaymentTypesDto, (error, data, res
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**IncludePaymentTypesDto**](IncludePaymentTypesDto.md)|  | 
  **salePlanId** | **String**|  | 
- **IncludePaymentTypesDto** | [**IncludePaymentTypesDto**](IncludePaymentTypesDto.md)|  | 
 
 ### Return type
 
@@ -58,28 +52,25 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-
-## createSalesPlan
-
-> GetSalePlanDto createSalesPlan(CreateSalePlanDto)
+<a name="createSalesPlan"></a>
+# **createSalesPlan**
+> GetSalePlanDto createSalesPlan(body)
 
 Criar plano de vendas
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SalesPlansApi();
-let CreateSalePlanDto = new ParcelaExpressApi.CreateSalePlanDto(); // CreateSalePlanDto | 
-apiInstance.createSalesPlan(CreateSalePlanDto, (error, data, response) => {
+let body = new ParcelaExpressApi.CreateSalePlanDto(); // CreateSalePlanDto | 
+
+apiInstance.createSalesPlan(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -90,10 +81,9 @@ apiInstance.createSalesPlan(CreateSalePlanDto, (error, data, response) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **CreateSalePlanDto** | [**CreateSalePlanDto**](CreateSalePlanDto.md)|  | 
+ **body** | [**CreateSalePlanDto**](CreateSalePlanDto.md)|  | 
 
 ### Return type
 
@@ -105,82 +95,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-
-## getSalePlan
-
-> GetSalePlanDto getSalePlan(salePlanId)
-
-Obtém dados do plano de venda através do id.
-
-### Example
-
-```javascript
-import ParcelaExpressApi from 'parcela_express_api';
-let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
-
-let apiInstance = new ParcelaExpressApi.SalesPlansApi();
-let salePlanId = "salePlanId_example"; // String | 
-apiInstance.getSalePlan(salePlanId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **salePlanId** | **String**|  | 
-
-### Return type
-
-[**GetSalePlanDto**](GetSalePlanDto.md)
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## listAllSalePlan
-
-> PaginatedDto listAllSalePlan(limit, current_page, opts)
+<a name="listAllSalePlan"></a>
+# **listAllSalePlan**
+> InlineResponse200 listAllSalePlan(limit, currentPage, opts)
 
 Listar Todos planos de venda
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SalesPlansApi();
 let limit = 10; // Number | 
-let current_page = 1; // Number | 
-let opts = {
-  'sort': "'time-descending'", // String | 
+let currentPage = 1; // Number | 
+let opts = { 
+  'sort': "time-descending", // String | 
   'id': "id_example", // String | 
-  'type': ["null"], // [String] | 
+  'type': ["type_example"], // [String] | 
   'name': "name_example" // String | 
 };
-apiInstance.listAllSalePlan(limit, current_page, opts, (error, data, response) => {
+apiInstance.listAllSalePlan(limit, currentPage, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -191,19 +130,18 @@ apiInstance.listAllSalePlan(limit, current_page, opts, (error, data, response) =
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Number**|  | [default to 10]
- **current_page** | **Number**|  | [default to 1]
- **sort** | **String**|  | [optional] [default to &#39;time-descending&#39;]
+ **currentPage** | **Number**|  | [default to 1]
+ **sort** | **String**|  | [optional] [default to time-descending]
  **id** | **String**|  | [optional] 
  **type** | [**[String]**](String.md)|  | [optional] 
  **name** | **String**|  | [optional] 
 
 ### Return type
 
-[**PaginatedDto**](PaginatedDto.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -211,30 +149,23 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-
-## listSalePlan
-
-> [GetSalePlanDto] listSalePlan(opts)
+<a name="listSalePlan"></a>
+# **listSalePlan**
+> [GetSalePlanDto] listSalePlan()
 
 Listar planos de venda
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SalesPlansApi();
-let opts = {
-  'mode': "mode_example" // String | 
-};
-apiInstance.listSalePlan(opts, (error, data, response) => {
+apiInstance.listSalePlan((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -244,11 +175,7 @@ apiInstance.listSalePlan(opts, (error, data, response) => {
 ```
 
 ### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **mode** | **String**|  | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -260,27 +187,24 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-
-## listSalePlanPaymentTypes
-
+<a name="listSalePlanPaymentTypes"></a>
+# **listSalePlanPaymentTypes**
 > [GetPaymentTypeDto] listSalePlanPaymentTypes(salePlanId)
 
 Listar as formas de pagamento do plano de vendas informado
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SalesPlansApi();
 let salePlanId = "salePlanId_example"; // String | 
+
 apiInstance.listSalePlanPaymentTypes(salePlanId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -291,7 +215,6 @@ apiInstance.listSalePlanPaymentTypes(salePlanId, (error, data, response) => {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -307,6 +230,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

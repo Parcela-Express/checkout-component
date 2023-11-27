@@ -1,27 +1,22 @@
 # ParcelaExpressApi.LogRiskApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**listLogRisks**](LogRiskApi.md#listLogRisks) | **GET** /v1/log-risk | Listar todos logs de risco
 
-
-
-## listLogRisks
-
+<a name="listLogRisks"></a>
+# **listLogRisks**
 > [GetLogRiskDto] listLogRisks()
 
 Listar todos logs de risco
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.LogRiskApi();
 apiInstance.listLogRisks((error, data, response) => {
@@ -34,7 +29,6 @@ apiInstance.listLogRisks((error, data, response) => {
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -47,6 +41,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

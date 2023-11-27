@@ -1,7 +1,6 @@
 # ParcelaExpressApi.GetSettlementOptionDto
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
@@ -10,32 +9,19 @@ Name | Type | Description | Notes
 **type** | **String** |  | 
 **days** | **Number** |  | 
 
-
-
+<a name="CodeEnum"></a>
 ## Enum: CodeEnum
 
-
-* `D0` (value: `"D0"`)
-
-* `D1` (value: `"D1"`)
-
-* `D30` (value: `"D30"`)
+* `d0` (value: `"D0"`)
+* `d1` (value: `"D1"`)
+* `d30` (value: `"D30"`)
 
 
-
-
-
+<a name="TypeEnum"></a>
 ## Enum: TypeEnum
 
-
 * `pix` (value: `"pix"`)
-
 * `debit` (value: `"debit"`)
-
 * `credit` (value: `"credit"`)
-
 * `billet` (value: `"billet"`)
-
-
-
 

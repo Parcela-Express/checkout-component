@@ -1,37 +1,32 @@
 # ParcelaExpressApi.PosApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**listPos**](PosApi.md#listPos) | **GET** /v1/pos | Listar as máquinas de todos os estabelecimentos
 [**updateBackofficePos**](PosApi.md#updateBackofficePos) | **PATCH** /v1/pos/{posId} | Atualizar pos via backoffice
 
-
-
-## listPos
-
-> PaginatedDto listPos(limit, current_page, status, opts)
+<a name="listPos"></a>
+# **listPos**
+> InlineResponse200 listPos(limit, currentPage, status, opts)
 
 Listar as máquinas de todos os estabelecimentos
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.PosApi();
 let limit = 10; // Number | 
-let current_page = 1; // Number | 
+let currentPage = 1; // Number | 
 let status = "status_example"; // String | 
-let opts = {
-  'sort': "'asc'" // String | 
+let opts = { 
+  'sort': "asc" // String | 
 };
-apiInstance.listPos(limit, current_page, status, opts, (error, data, response) => {
+apiInstance.listPos(limit, currentPage, status, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -42,17 +37,16 @@ apiInstance.listPos(limit, current_page, status, opts, (error, data, response) =
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Number**|  | [default to 10]
- **current_page** | **Number**|  | [default to 1]
+ **currentPage** | **Number**|  | [default to 1]
  **status** | **String**|  | 
- **sort** | **String**|  | [optional] [default to &#39;asc&#39;]
+ **sort** | **String**|  | [optional] [default to asc]
 
 ### Return type
 
-[**PaginatedDto**](PaginatedDto.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -60,29 +54,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-
-## updateBackofficePos
-
-> updateBackofficePos(posId, UpdateSellerPosDto)
+<a name="updateBackofficePos"></a>
+# **updateBackofficePos**
+> updateBackofficePos(body, posId)
 
 Atualizar pos via backoffice
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.PosApi();
+let body = new ParcelaExpressApi.UpdateSellerPosDto(); // UpdateSellerPosDto | 
 let posId = "posId_example"; // String | 
-let UpdateSellerPosDto = new ParcelaExpressApi.UpdateSellerPosDto(); // UpdateSellerPosDto | 
-apiInstance.updateBackofficePos(posId, UpdateSellerPosDto, (error, data, response) => {
+
+apiInstance.updateBackofficePos(body, posId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -93,11 +84,10 @@ apiInstance.updateBackofficePos(posId, UpdateSellerPosDto, (error, data, respons
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateSellerPosDto**](UpdateSellerPosDto.md)|  | 
  **posId** | **String**|  | 
- **UpdateSellerPosDto** | [**UpdateSellerPosDto**](UpdateSellerPosDto.md)|  | 
 
 ### Return type
 
@@ -109,6 +99,6 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 

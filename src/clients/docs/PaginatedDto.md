@@ -1,17 +1,14 @@
 # ParcelaExpressApi.PaginatedDto
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | **[String]** |  | 
-**current_page** | **Number** |  | 
-**total_pages** | **Number** |  | 
+**currentPage** | **Number** |  | 
+**totalPages** | **Number** |  | 
 **limit** | **Number** |  | 
 **start** | **Number** |  | 
 **end** | **Number** |  | 
-**total_items** | **Number** |  | 
-**has_more** | **Boolean** |  | 
-**additional_data** | **Object** |  | [optional] 
-
-
+**totalItems** | **Number** |  | 
+**hasMore** | **Boolean** |  | 
+**results** | **[String]** |  | 
+**additionalData** | **Object** |  | 

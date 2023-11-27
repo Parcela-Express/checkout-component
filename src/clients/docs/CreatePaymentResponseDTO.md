@@ -1,7 +1,6 @@
 # ParcelaExpressApi.CreatePaymentResponseDTO
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pspReference** | **String** |  | 
@@ -9,9 +8,6 @@ Name | Type | Description | Notes
 **merchantReference** | **String** |  | 
 **amount** | [**AmountDTO**](AmountDTO.md) |  | 
 **action** | **Object** |  | 
-**splitRules** | [**PaymentsSplitRulesDto**](PaymentsSplitRulesDto.md) |  | [optional] 
+**splitRules** | [**[CreateSplitRulesDto]**](CreateSplitRulesDto.md) |  | [optional] 
 **hasSplitRules** | **Boolean** |  | [optional] 
-**sale_id** | **String** |  | [optional] 
-**session_id** | **String** |  | [optional] 
-
-
+**saleId** | **String** |  | [optional] 

@@ -1,67 +1,35 @@
 # ParcelaExpressApi.CreatePaymentLinkSaleResponseDto
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **description** | **String** |  | 
-**original_amount** | **Number** |  | 
+**originalAmount** | **Number** |  | 
 **type** | **String** |  | 
 **status** | **String** |  | 
 
-
-
+<a name="TypeEnum"></a>
 ## Enum: TypeEnum
 
-
 * `boleto` (value: `"boleto"`)
-
 * `pos` (value: `"pos"`)
-
-* `payment_link` (value: `"payment_link"`)
-
-* `protest_link` (value: `"protest_link"`)
-
+* `paymentLink` (value: `"payment_link"`)
+* `protestLink` (value: `"protest_link"`)
 * `online` (value: `"online"`)
-
-* `auto_generate_payment_link` (value: `"auto_generate_payment_link"`)
-
-* `auto_generate_protest_link` (value: `"auto_generate_protest_link"`)
-
-* `billet_code` (value: `"billet_code"`)
-
-* `bill_payment` (value: `"bill_payment"`)
+* `autoGeneratePaymentLink` (value: `"auto_generate_payment_link"`)
+* `autoGenerateProtestLink` (value: `"auto_generate_protest_link"`)
 
 
-
-
-
+<a name="StatusEnum"></a>
 ## Enum: StatusEnum
 
-
 * `pending` (value: `"pending"`)
-
-* `pending_capture` (value: `"pending_capture"`)
-
-* `in_progress_capture` (value: `"in_progress_capture"`)
-
+* `pendingCapture` (value: `"pending_capture"`)
+* `inProgressCapture` (value: `"in_progress_capture"`)
 * `succeeded` (value: `"succeeded"`)
-
 * `canceled` (value: `"canceled"`)
-
-* `pending_cancel` (value: `"pending_cancel"`)
-
+* `pendingCancel` (value: `"pending_cancel"`)
 * `abort` (value: `"abort"`)
-
 * `failed` (value: `"failed"`)
-
-* `waiting_confirmation` (value: `"waiting_confirmation"`)
-
-* `expired` (value: `"expired"`)
-
-* `waiting_cashIn` (value: `"waiting_cashIn"`)
-
-
-
 

@@ -1,25 +1,17 @@
 # ParcelaExpressApi.UpdateSellerPosDto
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**seller_id** | **String** |  | [optional] 
-**terminal_id** | **String** |  | [optional] 
-**acquirer_id** | **String** |  | [optional] 
+**sellerId** | **String** |  | [optional] 
+**terminalId** | **String** |  | [optional] 
+**acquirerId** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
 
-
-
+<a name="StatusEnum"></a>
 ## Enum: StatusEnum
 
-
 * `active` (value: `"active"`)
-
 * `broken` (value: `"broken"`)
-
 * `canceled` (value: `"canceled"`)
-
-
-
 

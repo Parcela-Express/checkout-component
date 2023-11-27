@@ -1,26 +1,19 @@
 # ParcelaExpressApi.CreateBankAccountDto
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bank_code** | **String** |  | 
-**agency_number** | **String** |  | 
-**agency_digit** | **String** |  | [optional] 
-**account_number** | **String** |  | 
-**account_digit** | **String** |  | [optional] 
-**type_account** | **String** |  | 
-**pix_key** | **String** |  | [optional] 
+**bankCode** | **String** |  | 
+**agencyNumber** | **String** |  | 
+**agencyDigit** | **String** |  | [optional] 
+**accountNumber** | **String** |  | 
+**accountDigit** | **String** |  | [optional] 
+**typeAccount** | **String** |  | 
+**pixKey** | **String** |  | [optional] 
 
-
-
+<a name="TypeAccountEnum"></a>
 ## Enum: TypeAccountEnum
 
-
 * `current` (value: `"current"`)
-
 * `savings` (value: `"savings"`)
-
-
-
 

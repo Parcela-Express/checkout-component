@@ -1,56 +1,30 @@
 # ParcelaExpressApi.CreateFileExportRequestDto
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **String** |  | 
 **extension** | **String** |  | 
-**start_date** | **String** |  | 
-**end_date** | **String** |  | 
+**startDate** | **String** |  | 
+**endDate** | **String** |  | 
 **querystring** | **String** |  | 
-**seller_id** | **String** |  | 
+**sellerId** | **String** |  | 
 
-
-
+<a name="TypeEnum"></a>
 ## Enum: TypeEnum
 
-
 * `sales` (value: `"sales"`)
-
-* `sales_concil` (value: `"sales_concil"`)
-
+* `salesConcil` (value: `"sales_concil"`)
 * `payments` (value: `"payments"`)
-
 * `settlement` (value: `"settlement"`)
-
-* `settlement_transactions` (value: `"settlement_transactions"`)
-
-* `settlements_batch_transactions` (value: `"settlements_batch_transactions"`)
-
-* `protocols` (value: `"protocols"`)
-
-* `sales_history` (value: `"sales_history"`)
-
-* `sellers` (value: `"sellers"`)
-
-* `sales_bill_payment` (value: `"sales_bill_payment"`)
+* `settlementTransactions` (value: `"settlement_transactions"`)
+* `settlementsBatchTransactions` (value: `"settlements_batch_transactions"`)
 
 
-
-
-
+<a name="ExtensionEnum"></a>
 ## Enum: ExtensionEnum
 
-
 * `xls` (value: `"xls"`)
-
 * `csv` (value: `"csv"`)
-
 * `json` (value: `"json"`)
-
-* `pdf` (value: `"pdf"`)
-
-
-
 

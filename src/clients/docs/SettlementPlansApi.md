@@ -1,27 +1,22 @@
 # ParcelaExpressApi.SettlementPlansApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**listSettlementPlans**](SettlementPlansApi.md#listSettlementPlans) | **GET** /v1/settlement-plans | Listar os planos de liquidação cadastrados
 
-
-
-## listSettlementPlans
-
+<a name="listSettlementPlans"></a>
+# **listSettlementPlans**
 > [GetSettlementPlanDto] listSettlementPlans()
 
 Listar os planos de liquidação cadastrados
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SettlementPlansApi();
 apiInstance.listSettlementPlans((error, data, response) => {
@@ -34,7 +29,6 @@ apiInstance.listSettlementPlans((error, data, response) => {
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -47,6 +41,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

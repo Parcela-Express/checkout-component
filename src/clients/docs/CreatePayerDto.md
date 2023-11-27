@@ -1,7 +1,6 @@
 # ParcelaExpressApi.CreatePayerDto
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | 
@@ -9,5 +8,3 @@ Name | Type | Description | Notes
 **email** | **String** |  | [optional] 
 **address** | [**CreateAddressDto**](CreateAddressDto.md) |  | [optional] 
 **phone** | **String** |  | [optional] 
-
-

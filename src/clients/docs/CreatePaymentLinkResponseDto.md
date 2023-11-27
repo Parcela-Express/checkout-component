@@ -1,7 +1,6 @@
 # ParcelaExpressApi.CreatePaymentLinkResponseDto
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
@@ -11,37 +10,26 @@ Name | Type | Description | Notes
 **email** | **String** |  | 
 **phone** | **String** |  | 
 **token** | **String** |  | 
-**payer_name** | **String** |  | 
-**payer_document** | **String** |  | 
+**payerName** | **String** |  | 
+**payerDocument** | **String** |  | 
 **payer** | [**CreatePaymentLinkPayerResponseDto**](CreatePaymentLinkPayerResponseDto.md) |  | 
 **status** | **String** |  | 
-**formatted_status** | **String** |  | 
+**formattedStatus** | **String** |  | 
 **sale** | [**CreatePaymentLinkSaleResponseDto**](CreatePaymentLinkSaleResponseDto.md) |  | 
 **seller** | [**CreatePaymentLinkSellerResponseDto**](CreatePaymentLinkSellerResponseDto.md) |  | 
-**created_at** | **String** |  | 
-**expires_in** | **String** |  | 
-**qrcode_url** | **String** |  | [optional] 
-**payment_methods** | **[String]** |  | [optional] 
-**pre_capture** | **Boolean** |  | 
+**createdAt** | **String** |  | 
+**expiresIn** | **String** |  | 
+**qrcodeUrl** | **String** |  | [optional] 
+**paymentMethods** | **[String]** |  | [optional] 
+**preCapture** | **Boolean** |  | 
 **metadata** | **Object** |  | 
-**note** | **String** |  | [optional] 
-**billet** | [**CreateBilletDto**](CreateBilletDto.md) |  | 
 
-
-
+<a name="StatusEnum"></a>
 ## Enum: StatusEnum
 
-
 * `active` (value: `"active"`)
-
-* `pending_capture` (value: `"pending_capture"`)
-
+* `pendingCapture` (value: `"pending_capture"`)
 * `expired` (value: `"expired"`)
-
 * `canceled` (value: `"canceled"`)
-
 * `paid` (value: `"paid"`)
-
-
-
 

@@ -1,6 +1,6 @@
 # ParcelaExpressApi.SettlementsBatchesApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,26 +15,22 @@ Method | HTTP request | Description
 [**settlementBatchControllerGetSettlementBatch**](SettlementsBatchesApi.md#settlementBatchControllerGetSettlementBatch) | **GET** /v1/settlement/{settlement_batch_id} | Listar detalhes de liquidação
 [**settlementBatchControllerUpdateSettlementBatch**](SettlementsBatchesApi.md#settlementBatchControllerUpdateSettlementBatch) | **PATCH** /v1/settlement/{settlement_batch_id} | Atualizar lote de liquidação
 
-
-
-## concilExportRequest
-
-> GetFileExportRequestDto concilExportRequest(CreateExportSettlementListDto)
+<a name="concilExportRequest"></a>
+# **concilExportRequest**
+> GetFileExportRequestDto concilExportRequest(body)
 
 Gerar uma requisição de exportação das vendas dos históricos de liquidações para conciliação
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SettlementsBatchesApi();
-let CreateExportSettlementListDto = new ParcelaExpressApi.CreateExportSettlementListDto(); // CreateExportSettlementListDto | 
-apiInstance.concilExportRequest(CreateExportSettlementListDto, (error, data, response) => {
+let body = new ParcelaExpressApi.CreateExportSettlementListDto(); // CreateExportSettlementListDto | 
+
+apiInstance.concilExportRequest(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -45,10 +41,9 @@ apiInstance.concilExportRequest(CreateExportSettlementListDto, (error, data, res
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **CreateExportSettlementListDto** | [**CreateExportSettlementListDto**](CreateExportSettlementListDto.md)|  | 
+ **body** | [**CreateExportSettlementListDto**](CreateExportSettlementListDto.md)|  | 
 
 ### Return type
 
@@ -60,28 +55,25 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-
-## createSettlementBatchListExportRequest
-
-> GetFileExportRequestDto createSettlementBatchListExportRequest(CreateExportSettlementListDto)
+<a name="createSettlementBatchListExportRequest"></a>
+# **createSettlementBatchListExportRequest**
+> GetFileExportRequestDto createSettlementBatchListExportRequest(body)
 
 Gerar uma requisição de exportação dos históricos de liquidação
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SettlementsBatchesApi();
-let CreateExportSettlementListDto = new ParcelaExpressApi.CreateExportSettlementListDto(); // CreateExportSettlementListDto | 
-apiInstance.createSettlementBatchListExportRequest(CreateExportSettlementListDto, (error, data, response) => {
+let body = new ParcelaExpressApi.CreateExportSettlementListDto(); // CreateExportSettlementListDto | 
+
+apiInstance.createSettlementBatchListExportRequest(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -92,10 +84,9 @@ apiInstance.createSettlementBatchListExportRequest(CreateExportSettlementListDto
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **CreateExportSettlementListDto** | [**CreateExportSettlementListDto**](CreateExportSettlementListDto.md)|  | 
+ **body** | [**CreateExportSettlementListDto**](CreateExportSettlementListDto.md)|  | 
 
 ### Return type
 
@@ -107,29 +98,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-
-## createSettlementBatchSalesExportRequest
-
-> GetFileExportRequestDto createSettlementBatchSalesExportRequest(settlement_batch_id, CreateExportSettlementBatchSalesListDto)
+<a name="createSettlementBatchSalesExportRequest"></a>
+# **createSettlementBatchSalesExportRequest**
+> GetFileExportRequestDto createSettlementBatchSalesExportRequest(body, settlementBatchId)
 
 Gerar uma requisição de exportação da lista das vendas de um lote de liquidação
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SettlementsBatchesApi();
-let settlement_batch_id = "settlement_batch_id_example"; // String | 
-let CreateExportSettlementBatchSalesListDto = new ParcelaExpressApi.CreateExportSettlementBatchSalesListDto(); // CreateExportSettlementBatchSalesListDto | 
-apiInstance.createSettlementBatchSalesExportRequest(settlement_batch_id, CreateExportSettlementBatchSalesListDto, (error, data, response) => {
+let body = new ParcelaExpressApi.CreateExportSettlementBatchSalesListDto(); // CreateExportSettlementBatchSalesListDto | 
+let settlementBatchId = "settlementBatchId_example"; // String | 
+
+apiInstance.createSettlementBatchSalesExportRequest(body, settlementBatchId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -140,11 +128,10 @@ apiInstance.createSettlementBatchSalesExportRequest(settlement_batch_id, CreateE
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settlement_batch_id** | **String**|  | 
- **CreateExportSettlementBatchSalesListDto** | [**CreateExportSettlementBatchSalesListDto**](CreateExportSettlementBatchSalesListDto.md)|  | 
+ **body** | [**CreateExportSettlementBatchSalesListDto**](CreateExportSettlementBatchSalesListDto.md)|  | 
+ **settlementBatchId** | **String**|  | 
 
 ### Return type
 
@@ -156,28 +143,25 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-
-## createTransactionsListExportRequest
-
-> GetFileExportRequestDto createTransactionsListExportRequest(CreateExportSettlementListDto)
+<a name="createTransactionsListExportRequest"></a>
+# **createTransactionsListExportRequest**
+> GetFileExportRequestDto createTransactionsListExportRequest(body)
 
 Gerar uma requisição de exportação das vendas dos históricos de liquidações
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SettlementsBatchesApi();
-let CreateExportSettlementListDto = new ParcelaExpressApi.CreateExportSettlementListDto(); // CreateExportSettlementListDto | 
-apiInstance.createTransactionsListExportRequest(CreateExportSettlementListDto, (error, data, response) => {
+let body = new ParcelaExpressApi.CreateExportSettlementListDto(); // CreateExportSettlementListDto | 
+
+apiInstance.createTransactionsListExportRequest(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -188,10 +172,9 @@ apiInstance.createTransactionsListExportRequest(CreateExportSettlementListDto, (
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **CreateExportSettlementListDto** | [**CreateExportSettlementListDto**](CreateExportSettlementListDto.md)|  | 
+ **body** | [**CreateExportSettlementListDto**](CreateExportSettlementListDto.md)|  | 
 
 ### Return type
 
@@ -203,37 +186,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-
-## listAllSettlement
-
-> PaginatedDto listAllSettlement(opts)
+<a name="listAllSettlement"></a>
+# **listAllSettlement**
+> InlineResponse200 listAllSettlement(opts)
 
 Listar liquidações
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SettlementsBatchesApi();
-let opts = {
+let opts = { 
   'startDate': "startDate_example", // String | Formato: yyyy-mm-dd
   'endDate': "endDate_example", // String | Formato: yyyy-mm-dd
   'id': "id_example", // String | 
   'status': "status_example", // String | 
   'sellerId': "sellerId_example", // String | 
   'type': "type_example", // String | 
-  'limit': 3.4, // Number | 
-  'current_page': 3.4, // Number | 
-  'order_by_field': "order_by_field_example", // String | 
-  'order_by_value': "order_by_value_example" // String | 
+  'limit': 1.2, // Number | 
+  'currentPage': 1.2, // Number | 
+  'orderByField': "orderByField_example", // String | 
+  'orderByValue': "orderByValue_example" // String | 
 };
 apiInstance.listAllSettlement(opts, (error, data, response) => {
   if (error) {
@@ -246,7 +225,6 @@ apiInstance.listAllSettlement(opts, (error, data, response) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **String**| Formato: yyyy-mm-dd | [optional] 
@@ -256,13 +234,13 @@ Name | Type | Description  | Notes
  **sellerId** | **String**|  | [optional] 
  **type** | **String**|  | [optional] 
  **limit** | **Number**|  | [optional] 
- **current_page** | **Number**|  | [optional] 
- **order_by_field** | **String**|  | [optional] 
- **order_by_value** | **String**|  | [optional] 
+ **currentPage** | **Number**|  | [optional] 
+ **orderByField** | **String**|  | [optional] 
+ **orderByValue** | **String**|  | [optional] 
 
 ### Return type
 
-[**PaginatedDto**](PaginatedDto.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -270,36 +248,32 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-
-## listAllSettlementDetailed
-
-> PaginatedDto listAllSettlementDetailed(opts)
+<a name="listAllSettlementDetailed"></a>
+# **listAllSettlementDetailed**
+> InlineResponse200 listAllSettlementDetailed(opts)
 
 Listar todas as liquidações detalhadas
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SettlementsBatchesApi();
-let opts = {
+let opts = { 
   'startDate': "startDate_example", // String | Formato: yyyy-mm-dd
   'endDate': "endDate_example", // String | Formato: yyyy-mm-dd
   'id': "id_example", // String | 
   'status': "status_example", // String | 
   'type': "type_example", // String | 
-  'limit': 3.4, // Number | 
-  'current_page': 3.4, // Number | 
-  'order_by_field': "order_by_field_example", // String | 
-  'order_by_value': "order_by_value_example" // String | 
+  'limit': 1.2, // Number | 
+  'currentPage': 1.2, // Number | 
+  'orderByField': "orderByField_example", // String | 
+  'orderByValue': "orderByValue_example" // String | 
 };
 apiInstance.listAllSettlementDetailed(opts, (error, data, response) => {
   if (error) {
@@ -312,7 +286,6 @@ apiInstance.listAllSettlementDetailed(opts, (error, data, response) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **String**| Formato: yyyy-mm-dd | [optional] 
@@ -321,13 +294,13 @@ Name | Type | Description  | Notes
  **status** | **String**|  | [optional] 
  **type** | **String**|  | [optional] 
  **limit** | **Number**|  | [optional] 
- **current_page** | **Number**|  | [optional] 
- **order_by_field** | **String**|  | [optional] 
- **order_by_value** | **String**|  | [optional] 
+ **currentPage** | **Number**|  | [optional] 
+ **orderByField** | **String**|  | [optional] 
+ **orderByValue** | **String**|  | [optional] 
 
 ### Return type
 
-[**PaginatedDto**](PaginatedDto.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -335,37 +308,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-
-## listSellerSettlement
-
-> PaginatedDto listSellerSettlement(sellerId, opts)
+<a name="listSellerSettlement"></a>
+# **listSellerSettlement**
+> InlineResponse200 listSellerSettlement(sellerId, opts)
 
 Listar liquidações separadas por seller
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SettlementsBatchesApi();
 let sellerId = "sellerId_example"; // String | 
-let opts = {
+let opts = { 
   'startDate': "startDate_example", // String | Formato: yyyy-mm-dd
   'endDate': "endDate_example", // String | Formato: yyyy-mm-dd
   'id': "id_example", // String | 
   'status': "status_example", // String | 
   'type': "type_example", // String | 
-  'limit': 3.4, // Number | 
-  'current_page': 3.4, // Number | 
-  'order_by_field': "order_by_field_example", // String | 
-  'order_by_value': "order_by_value_example" // String | 
+  'limit': 1.2, // Number | 
+  'currentPage': 1.2, // Number | 
+  'orderByField': "orderByField_example", // String | 
+  'orderByValue': "orderByValue_example" // String | 
 };
 apiInstance.listSellerSettlement(sellerId, opts, (error, data, response) => {
   if (error) {
@@ -378,7 +347,6 @@ apiInstance.listSellerSettlement(sellerId, opts, (error, data, response) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sellerId** | **String**|  | 
@@ -388,13 +356,13 @@ Name | Type | Description  | Notes
  **status** | **String**|  | [optional] 
  **type** | **String**|  | [optional] 
  **limit** | **Number**|  | [optional] 
- **current_page** | **Number**|  | [optional] 
- **order_by_field** | **String**|  | [optional] 
- **order_by_value** | **String**|  | [optional] 
+ **currentPage** | **Number**|  | [optional] 
+ **orderByField** | **String**|  | [optional] 
+ **orderByValue** | **String**|  | [optional] 
 
 ### Return type
 
-[**PaginatedDto**](PaginatedDto.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -402,38 +370,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-
-## noPaginatedListAllSettlementDetailedWith
-
-> PaginatedDto noPaginatedListAllSettlementDetailedWith(opts)
+<a name="noPaginatedListAllSettlementDetailedWith"></a>
+# **noPaginatedListAllSettlementDetailedWith**
+> InlineResponse200 noPaginatedListAllSettlementDetailedWith(opts)
 
 Listar todas as liquidações detalhadas sem paginação
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SettlementsBatchesApi();
-let opts = {
+let opts = { 
   'startDate': "startDate_example", // String | Formato: yyyy-mm-dd
   'endDate': "endDate_example", // String | Formato: yyyy-mm-dd
   'id': "id_example", // String | 
   'status': "status_example", // String | 
   'type': "type_example", // String | 
-  'limit': 3.4, // Number | 
-  'current_page': 3.4, // Number | 
-  'order_by_field': "order_by_field_example", // String | 
-  'order_by_value': "order_by_value_example", // String | 
-  'sellerId': "sellerId_example", // String | 
-  'merchant_id': "merchant_id_example" // String | 
+  'limit': 1.2, // Number | 
+  'currentPage': 1.2, // Number | 
+  'orderByField': "orderByField_example", // String | 
+  'orderByValue': "orderByValue_example", // String | 
+  'sellerId': "sellerId_example" // String | 
 };
 apiInstance.noPaginatedListAllSettlementDetailedWith(opts, (error, data, response) => {
   if (error) {
@@ -446,7 +409,6 @@ apiInstance.noPaginatedListAllSettlementDetailedWith(opts, (error, data, respons
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **String**| Formato: yyyy-mm-dd | [optional] 
@@ -455,15 +417,14 @@ Name | Type | Description  | Notes
  **status** | **String**|  | [optional] 
  **type** | **String**|  | [optional] 
  **limit** | **Number**|  | [optional] 
- **current_page** | **Number**|  | [optional] 
- **order_by_field** | **String**|  | [optional] 
- **order_by_value** | **String**|  | [optional] 
+ **currentPage** | **Number**|  | [optional] 
+ **orderByField** | **String**|  | [optional] 
+ **orderByValue** | **String**|  | [optional] 
  **sellerId** | **String**|  | [optional] 
- **merchant_id** | **String**|  | [optional] 
 
 ### Return type
 
-[**PaginatedDto**](PaginatedDto.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -471,42 +432,38 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-
-## settlementBatchControllerGetSettlementBatch
-
-> GetSettlementResponseDto settlementBatchControllerGetSettlementBatch(limit, current_page, settlement_batch_id, opts)
+<a name="settlementBatchControllerGetSettlementBatch"></a>
+# **settlementBatchControllerGetSettlementBatch**
+> GetSettlementResponseDto settlementBatchControllerGetSettlementBatch(limit, currentPage, settlementBatchId, opts)
 
 Listar detalhes de liquidação
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SettlementsBatchesApi();
 let limit = 10; // Number | 
-let current_page = 1; // Number | 
-let settlement_batch_id = "settlement_batch_id_example"; // String | 
-let opts = {
+let currentPage = 1; // Number | 
+let settlementBatchId = "settlementBatchId_example"; // String | 
+let opts = { 
   'startDate': "startDate_example", // String | Formato: yyyy-mm-dd
   'endDate': "endDate_example", // String | Formato: yyyy-mm-dd
-  'sort': "'time-descending'", // String | 
-  'settlement_status': ["null"], // [String] | 
+  'sort': "time-descending", // String | 
+  'settlementStatus': ["settlementStatus_example"], // [String] | 
   'description': "description_example", // String | 
-  'amount': 3.4, // Number | 
-  'original_amount': 3.4, // Number | 
-  'type': ["null"], // [String] | 
+  'amount': 1.2, // Number | 
+  'originalAmount': 1.2, // Number | 
+  'type': ["type_example"], // [String] | 
   'name': "name_example", // String | 
-  'form_payment': ["null"] // [String] | 
+  'formPayment': ["formPayment_example"] // [String] | 
 };
-apiInstance.settlementBatchControllerGetSettlementBatch(limit, current_page, settlement_batch_id, opts, (error, data, response) => {
+apiInstance.settlementBatchControllerGetSettlementBatch(limit, currentPage, settlementBatchId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -517,22 +474,21 @@ apiInstance.settlementBatchControllerGetSettlementBatch(limit, current_page, set
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Number**|  | [default to 10]
- **current_page** | **Number**|  | [default to 1]
- **settlement_batch_id** | **String**|  | 
+ **currentPage** | **Number**|  | [default to 1]
+ **settlementBatchId** | **String**|  | 
  **startDate** | **String**| Formato: yyyy-mm-dd | [optional] 
  **endDate** | **String**| Formato: yyyy-mm-dd | [optional] 
- **sort** | **String**|  | [optional] [default to &#39;time-descending&#39;]
- **settlement_status** | [**[String]**](String.md)|  | [optional] 
+ **sort** | **String**|  | [optional] [default to time-descending]
+ **settlementStatus** | [**[String]**](String.md)|  | [optional] 
  **description** | **String**|  | [optional] 
  **amount** | **Number**|  | [optional] 
- **original_amount** | **Number**|  | [optional] 
+ **originalAmount** | **Number**|  | [optional] 
  **type** | [**[String]**](String.md)|  | [optional] 
  **name** | **String**|  | [optional] 
- **form_payment** | [**[String]**](String.md)|  | [optional] 
+ **formPayment** | [**[String]**](String.md)|  | [optional] 
 
 ### Return type
 
@@ -544,29 +500,26 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-
-## settlementBatchControllerUpdateSettlementBatch
-
-> SettlementBatch settlementBatchControllerUpdateSettlementBatch(settlement_batch_id, UpdateSettlementBatchDTO)
+<a name="settlementBatchControllerUpdateSettlementBatch"></a>
+# **settlementBatchControllerUpdateSettlementBatch**
+> Object settlementBatchControllerUpdateSettlementBatch(body, settlementBatchId)
 
 Atualizar lote de liquidação
 
 ### Example
-
 ```javascript
-import ParcelaExpressApi from 'parcela_express_api';
+import {ParcelaExpressApi} from 'parcela_express_api';
 let defaultClient = ParcelaExpressApi.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: bearer
-let bearer = defaultClient.authentications['bearer'];
-bearer.accessToken = "YOUR ACCESS TOKEN"
+
 
 let apiInstance = new ParcelaExpressApi.SettlementsBatchesApi();
-let settlement_batch_id = "settlement_batch_id_example"; // String | 
-let UpdateSettlementBatchDTO = new ParcelaExpressApi.UpdateSettlementBatchDTO(); // UpdateSettlementBatchDTO | 
-apiInstance.settlementBatchControllerUpdateSettlementBatch(settlement_batch_id, UpdateSettlementBatchDTO, (error, data, response) => {
+let body = new ParcelaExpressApi.UpdateSettlementBatchDTO(); // UpdateSettlementBatchDTO | 
+let settlementBatchId = "settlementBatchId_example"; // String | 
+
+apiInstance.settlementBatchControllerUpdateSettlementBatch(body, settlementBatchId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -577,15 +530,14 @@ apiInstance.settlementBatchControllerUpdateSettlementBatch(settlement_batch_id, 
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settlement_batch_id** | **String**|  | 
- **UpdateSettlementBatchDTO** | [**UpdateSettlementBatchDTO**](UpdateSettlementBatchDTO.md)|  | 
+ **body** | [**UpdateSettlementBatchDTO**](UpdateSettlementBatchDTO.md)|  | 
+ **settlementBatchId** | **String**|  | 
 
 ### Return type
 
-[**SettlementBatch**](SettlementBatch.md)
+**Object**
 
 ### Authorization
 
@@ -593,6 +545,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

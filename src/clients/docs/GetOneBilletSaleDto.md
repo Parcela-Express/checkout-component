@@ -1,14 +1,11 @@
 # ParcelaExpressApi.GetOneBilletSaleDto
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **description** | **String** |  | 
-**original_amount** | **Number** |  | 
+**originalAmount** | **Number** |  | 
 **amount** | **Number** |  | 
 **status** | **String** |  | 
-**updated_at** | **String** |  | 
-
-
+**updatedAt** | **String** |  | 

@@ -1,14 +1,11 @@
 # ParcelaExpressApi.CreateWebHookLinkResponseDto
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
-**acquirer_code** | **String** |  | 
+**acquirerCode** | **String** |  | 
 **url** | **String** |  | 
 **description** | **String** |  | 
-**seller_id** | **String** |  | 
-**created_at** | **String** |  | 
-
-
+**sellerId** | **String** |  | 
+**createdAt** | **String** |  | 
