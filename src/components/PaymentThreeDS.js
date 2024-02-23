@@ -11,21 +11,19 @@ const threeDSConfiguration = {
 
 const PaymentThreeDS = ({ action, environment, clientKey }) => {
   const configuration = {
-	locale: 'pt_BR',
-	environment,
-	clientKey,
-	onAdditionalDetails: () => {},
+    locale: 'pt_BR',
+    environment,
+    clientKey,
+    onAdditionalDetails: () => {}
   };
 
   React.useEffect(() => {
-    const checkout = new AdyenCheckout(configuration);  
+    const checkout = new AdyenCheckout(configuration);
 
-	checkout.createFromAction(action, threeDSConfiguration).mount('#three-checkout');
+    checkout.createFromAction(action, threeDSConfiguration).mount('#three-checkout');
   }, [action, configuration]);
 
-  return (
-    <div id='three-checkout' />					
-  );
+  return <div id="three-checkout" />;
 };
 
 PaymentThreeDS.propTypes = {
