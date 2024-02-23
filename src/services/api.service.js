@@ -1,5 +1,5 @@
 class APIService {
-  constructor(apiUrl = 'https://api-prod.parcelaexpress.com.br') {
+  constructor(apiUrl) {
     this.apiUrl = apiUrl;
   }
 

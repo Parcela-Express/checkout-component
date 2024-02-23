@@ -10,6 +10,14 @@ const Checkout = (props) => {
   const [provider, setProvider] = React.useState();
   const [isLoading, setIsLoading] = React.useState(true);
 
+  if (!apiUrl) {
+    throw new Error("Property 'apiUrl' is required");
+  }
+
+  if (!sellerKey) {
+    throw new Error("Property 'sellerKey' is required");
+  }
+
   React.useEffect(() => {
     const fetchData = async () => {
       const apiInstance = new APIService(apiUrl);
@@ -60,7 +68,7 @@ const Checkout = (props) => {
 };
 
 Checkout.propTypes = {
-  apiUrl: PropTypes.string,
+  apiUrl: PropTypes.string.isRequired,
   successReturnUrl: function (props, propName) {
     if (
       (props.customerData.form_payment === 'debit' || props.customerData.active_3ds) &&
