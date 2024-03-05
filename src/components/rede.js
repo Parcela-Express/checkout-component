@@ -30,6 +30,7 @@ import {
   isValidExpiryDate,
   isValidExpiryFormat
 } from '../services/cardUtils';
+import APIService from '../services/api.service';
 
 const Rede = (props) => {
   const [cardNumber, setCardNumber] = useState('');
@@ -90,9 +91,14 @@ const Rede = (props) => {
   };
 
   const propsOnchange = () => {
+    const state = getCardState();
+    return props.onChange(state);
+  };
+
+  const getCardState = () => {
     const [month, year] = expiry.split('/');
     const isValid = !!(cardHolderNameValid && cardNumberValid && expiryValid && cvcValid);
-    const state = {
+    return {
       isValid,
       data: {
         paymentMethod: {
@@ -104,17 +110,116 @@ const Rede = (props) => {
         browserInfo: getBrowserInfo()
       }
     };
-    return props.onChange(state);
   };
 
-  const handleSubmit = () => {
-    if (cardHolderNameValid && cardNumberValid && expiryValid && cvcValid) {
-      const [month, year] = expiry.split('/');
-      const encryptedCardNumber = encryptData(cardNumber);
-      const encryptedExpiryMonth = encryptData(month);
-      const encryptedExpiryYear = encryptData(year);
-      const encryptedSecurityCode = encryptData(cvc);
-      alert('Formulário enviado com sucesso!');
+  const validateInputs = () => {
+    return cardHolderNameValid && cardNumberValid && expiryValid && cvcValid;
+  };
+
+  const validateUrls = () => {
+    const { customerData, successReturnUrl, errorReturnUrl } = props;
+    return !(
+      customerData.form_payment === 'debit' &&
+      (typeof successReturnUrl !== 'string' || typeof errorReturnUrl !== 'string')
+    );
+  };
+
+  const buildCreatePaymentDto = () => {
+    const { customerData, successReturnUrl, errorReturnUrl } = props;
+    const [month, year] = expiry.split('/');
+    const encryptedCardNumber = encryptData(cardNumber);
+    const encryptedExpiryMonth = encryptData(month);
+    const encryptedExpiryYear = encryptData(year);
+    const encryptedSecurityCode = encryptData(cvc);
+
+    const createPaymentDto = {
+      amount_cents: customerData.amount_cents,
+      description: customerData.description,
+      form_payment: customerData.form_payment,
+      pre_capture: customerData.pre_capture,
+      card_attributes: {
+        holder_name: cardHolderName,
+        number: encryptedCardNumber,
+        expiration_month: encryptedExpiryMonth,
+        expiration_year: encryptedExpiryYear,
+        security_code: encryptedSecurityCode
+      },
+      installment_plan: customerData.installment_plan,
+      customer: customerData.customer,
+      sale_id: customerData.sale_id,
+      has_split_rules: customerData.has_split_rules,
+      split_rules: customerData.split_rules
+    };
+
+    if (customerData.service_id) {
+      createPaymentDto.service_id = customerData.service_id;
+    }
+
+    if (customerData.protocol) {
+      createPaymentDto.protocol = customerData.protocol;
+    }
+
+    if (customerData.extract_identification) {
+      createPaymentDto.extract_identification = customerData.extract_identification;
+    }
+
+    if (customerData.confirmation_required) {
+      createPaymentDto.confirmation_required = customerData.confirmation_required;
+    }
+
+    if (successReturnUrl) {
+      createPaymentDto.success_return_url = successReturnUrl;
+    }
+
+    if (errorReturnUrl) {
+      createPaymentDto.error_return_url = errorReturnUrl;
+    }
+
+    if (customerData.recurrence && customerData.recurrence_day) {
+      createPaymentDto.recurrence = customerData.recurrence;
+      createPaymentDto.recurrence_day = customerData.recurrence_day;
+    }
+
+    return createPaymentDto;
+  };
+
+  const handleSubmit = async () => {
+    const apiInstance = new APIService(props.apiUrl);
+    const { sellerKey } = props;
+
+    if (!props.onSubmit || typeof props.onSubmit !== 'function') {
+      return;
+    }
+
+    if (!validateInputs()) {
+      return;
+    }
+
+    if (!validateUrls()) {
+      if (props.onSubmitError) {
+        return props.onSubmitError(
+          'Please provide successReturnUrl string and errorReturnUrl string!'
+        );
+      } else {
+        console.error('Please provide successReturnUrl string and errorReturnUrl string!');
+        return;
+      }
+    }
+
+    const createPaymentDto = buildCreatePaymentDto();
+    props.beforeSubmit && props.beforeSubmit();
+
+    try {
+      const data = await apiInstance.createPaymentWithSplit(createPaymentDto, sellerKey);
+      props.afterSubmit && props.afterSubmit();
+
+      return props.onSubmit(getCardState(), {}, data);
+    } catch (err) {
+      if (props.onSubmitError) {
+        throw props.onSubmitError(err.message);
+      } else {
+        throw err.message;
+      }
     }
   };
 
@@ -127,7 +232,7 @@ const Rede = (props) => {
           </FormLabel>
           <InputGroup>
             <Input
-              autocomplete="cc-number"
+              autoComplete="cc-number"
               type="text"
               value={cardNumber}
               onChange={handleCardNumberChange}
@@ -152,7 +257,7 @@ const Rede = (props) => {
               Data de validade
             </FormLabel>
             <Input
-              autocomplete="cc-exp"
+              autoComplete="cc-exp"
               type="text"
               value={expiry}
               onChange={handleExpiryChange}
@@ -174,7 +279,7 @@ const Rede = (props) => {
 
             <InputGroup>
               <Input
-                autocomplete="cc-csc"
+                autoComplete="cc-csc"
                 type="text"
                 value={cvc}
                 onChange={handleCvcChange}
