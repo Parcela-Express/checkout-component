@@ -92,6 +92,7 @@ const Demo = () => {
               successReturnUrl={'http://success-url.com.br'}
               errorReturnUrl={'http://error-url.com.br'}
               showPayButton={true}
+              theme={'outline'}
             />
           </Flex>
         </Stack>
