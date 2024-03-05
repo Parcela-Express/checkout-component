@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AdyenCheckout from '@adyen/adyen-web';
 import PaymentThreeDS from './PaymentThreeDS';
 import APIService from '../services/api.service';
@@ -50,15 +50,21 @@ const Adyen = (props) => {
   } = props;
   const [paymentResponse, setPaymentResponse] = React.useState(undefined);
 
-  switch (theme) {
-    case 'outline':
-      require('../outline.css');
-      break;
+  useEffect(() => {
+    const importThemeCSS = async () => {
+      try {
+        if (theme === 'outline') {
+          await import('../outline.css');
+        } else {
+          await import('../checkout.css');
+        }
+      } catch (error) {
+        console.error('Erro ao importar o arquivo CSS:', error);
+      }
+    };
 
-    default:
-      require('../checkout.css');
-      break;
-  }
+    importThemeCSS();
+  }, []);
 
   const configuration = {
     locale: 'pt-br',
