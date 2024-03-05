@@ -42,6 +42,14 @@ const Rede = (props) => {
   const [cvcValid, setCvcValid] = useState(false);
   const [cardHolderNameValid, setCardHolderNameValid] = useState(false);
   const [cardIcon, setCardIcon] = useState(<NoCardSvg />);
+  const [inputTheme, setInputTheme] = useState('filled');
+
+  useEffect(() => {
+    const { theme } = props;
+    if (theme === 'outline') {
+      setInputTheme('outline');
+    }
+  }, []);
 
   useEffect(() => {
     propsOnchange();
@@ -232,6 +240,8 @@ const Rede = (props) => {
           </FormLabel>
           <InputGroup>
             <Input
+              px={4}
+              variant={inputTheme}
               autoComplete="cc-number"
               type="text"
               value={cardNumber}
@@ -252,11 +262,13 @@ const Rede = (props) => {
         </FormControl>
 
         <Flex justify="space-between">
-          <FormControl flex="1" isInvalid={!expiryValid && expiry.length}>
+          <FormControl isInvalid={!expiryValid && expiry.length}>
             <FormLabel noOfLines={1} fontSize="0.875rem" fontWeight="600" marginInlineEnd="0">
               Data de validade
             </FormLabel>
             <Input
+              px={4}
+              variant={inputTheme}
               autoComplete="cc-exp"
               type="text"
               value={expiry}
@@ -272,13 +284,15 @@ const Rede = (props) => {
             </FormErrorMessage>
           </FormControl>
 
-          <FormControl flex="1" ml={4} isInvalid={!cvcValid && cvc.length}>
+          <FormControl ml={4} isInvalid={!cvcValid && cvc.length}>
             <FormLabel fontSize="0.875rem" fontWeight="600" marginInlineEnd="0">
               CVC / CVV
             </FormLabel>
 
             <InputGroup>
               <Input
+                px={4}
+                variant={inputTheme}
                 autoComplete="cc-csc"
                 type="text"
                 value={cvc}
@@ -305,6 +319,8 @@ const Rede = (props) => {
             Nome no cartão
           </FormLabel>
           <Input
+            px={4}
+            variant={inputTheme}
             type="text"
             value={cardHolderName}
             onChange={handleCardHolderNameChange}
