@@ -1,4 +1,4 @@
-class APIService {
+export default class APIService {
   constructor(apiUrl) {
     this.apiUrl = apiUrl;
   }
@@ -70,5 +70,3 @@ class APIService {
     }
   }
 }
-
-module.exports = APIService;
