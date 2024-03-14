@@ -39,7 +39,7 @@ const Demo = () => {
           <Flex w={`50%`} borderWidth={1} borderColor={`#ccc`} rounded={`xl`} p={10}>
             <Checkout
               environment={'TEST'}
-              apiUrl={`https://sandbox.parcelaexpress.com.br`}
+              apiUrl={`http://localhost:9010`}
               customerData={{
                 amount_cents: 20000,
                 description: 'Venda Teste',
@@ -102,4 +102,4 @@ const Demo = () => {
   );
 };
 
-render(<Demo />, document.querySelector('#demo'));
+render(<Demo />, document.querySelector('#root'));
