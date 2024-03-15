@@ -1,6 +1,6 @@
 {
   "name": "@parcelaexpress/checkout-react-component",
-  "version": "3.0.5-beta.0",
+  "version": "3.0.9-beta.0",
   "description": "Parcela Checkout Component",
   "main": "./dist/checkout-react-component.umd.js",
   "module": "./dist/checkout-react-component.es.js",
@@ -34,7 +34,8 @@
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
     "prettier": "^3.2.5",
-    "vite": "^3.2.3"
+    "vite": "^3.2.3",
+    "vite-plugin-libcss": "^1.1.1"
   },
   "author": "Parcela Express <contato@parcelaexpress.com.br>",
   "license": "MIT",

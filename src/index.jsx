@@ -4,6 +4,7 @@ import Adyen from './components/adyen';
 import Rede from './components/rede';
 import APIService from './services/api.service';
 import { Flex, HStack, Skeleton, Stack, ChakraProvider } from '@chakra-ui/react';
+import './outline.css';
 
 const Checkout = (props) => {
   const { apiUrl, sellerKey } = props;
