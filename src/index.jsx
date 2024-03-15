@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Adyen from './components/adyen';
 import Rede from './components/rede';
 import APIService from './services/api.service';
-import { Flex, HStack, Skeleton, Stack } from '@chakra-ui/react';
+import { Flex, HStack, Skeleton, Stack, ChakraProvider } from '@chakra-ui/react';
 
 const Checkout = (props) => {
   const { apiUrl, sellerKey } = props;
@@ -48,7 +48,7 @@ const Checkout = (props) => {
   };
 
   return (
-    <>
+    <ChakraProvider>
       {isLoading ? (
         <Flex w="500px" bgColor="#fff">
           <Stack w="full" spacing={8}>
@@ -64,7 +64,7 @@ const Checkout = (props) => {
       ) : (
         renderProviderComponent()
       )}
-    </>
+    </ChakraProvider>
   );
 };
 
