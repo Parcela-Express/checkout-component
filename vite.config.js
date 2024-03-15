@@ -12,9 +12,17 @@ export default defineConfig({
     minify: true,
     lib: {
       entry: resolve(__dirname, 'src/index.jsx'),
-      fileName: 'index',
       name: '@parcelaexpress/checkout-react-component',
-      formats: ['es', 'umd']
+      formats: ['es', 'umd'],
+      fileName: (format) => `checkout-react-component.${format}.js`
+    },
+    rollupOptions: {
+      external: ['react', 'react-dom'],
+      output: {
+        globals: {
+          react: 'React'
+        }
+      }
     }
   }
 });
