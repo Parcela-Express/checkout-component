@@ -8,7 +8,7 @@ import './outline.css';
 
 const Checkout = (props) => {
   const { apiUrl, sellerKey } = props;
-  const [provider, setProvider] = useState();
+  const [provider, setProvider] = useState(undefined);
   const [isLoading, setIsLoading] = useState(true);
 
   if (!apiUrl) {

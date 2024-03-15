@@ -1,6 +1,6 @@
 {
   "name": "@parcelaexpress/checkout-react-component",
-  "version": "3.0.9-beta.0",
+  "version": "3.0.16-beta.0",
   "description": "Parcela Checkout Component",
   "main": "./dist/checkout-react-component.umd.js",
   "module": "./dist/checkout-react-component.es.js",
@@ -16,22 +16,20 @@
     "start": "vite --port 3000"
   },
   "peerDependencies": {
-    "react": "18.x",
-    "react-dom": "18.x"
+    "react": "17.x",
+    "react-dom": "17.x"
   },
   "dependencies": {
     "@adyen/adyen-web": "^3.20.0",
-    "@chakra-ui/react": "^2.8.2",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.0",
-    "framer-motion": "^11.0.13",
-    "react": "18.x",
-    "react-dom": "18.x",
+    "@chakra-ui/react": "^1.3.4",
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
+    "framer-motion": "^3.10.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-icons": "^5.0.1"
   },
   "devDependencies": {
-    "@types/react": "^18.0.24",
-    "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
     "prettier": "^3.2.5",
     "vite": "^3.2.3",
