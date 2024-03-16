@@ -42,14 +42,6 @@ const Rede = (props) => {
   const [cvcValid, setCvcValid] = useState(false);
   const [cardHolderNameValid, setCardHolderNameValid] = useState(false);
   const [cardIcon, setCardIcon] = useState(<NoCardSvg />);
-  const [inputTheme, setInputTheme] = useState('filled');
-
-  useEffect(() => {
-    const { theme } = props;
-    if (theme === 'outline') {
-      setInputTheme('outline');
-    }
-  }, []);
 
   useEffect(() => {
     propsOnchange();
@@ -241,7 +233,7 @@ const Rede = (props) => {
           <InputGroup>
             <Input
               px={4}
-              variant={inputTheme}
+              variant={'outline'}
               autoComplete="cc-number"
               type="text"
               value={cardNumber}
@@ -268,7 +260,7 @@ const Rede = (props) => {
             </FormLabel>
             <Input
               px={4}
-              variant={inputTheme}
+              variant={'outline'}
               autoComplete="cc-exp"
               type="text"
               value={expiry}
@@ -292,7 +284,7 @@ const Rede = (props) => {
             <InputGroup>
               <Input
                 px={4}
-                variant={inputTheme}
+                variant={'outline'}
                 autoComplete="cc-csc"
                 type="text"
                 value={cvc}
@@ -320,7 +312,7 @@ const Rede = (props) => {
           </FormLabel>
           <Input
             px={4}
-            variant={inputTheme}
+            variant={'outline'}
             type="text"
             value={cardHolderName}
             onChange={handleCardHolderNameChange}

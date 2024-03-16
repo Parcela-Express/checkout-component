@@ -1,14 +1,15 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Adyen from './components/adyen';
 import Rede from './components/rede';
 import APIService from './services/api.service';
-import { Flex, HStack, Skeleton, Stack } from '@chakra-ui/react';
+import { Flex, HStack, Skeleton, Stack, ChakraProvider } from '@chakra-ui/react';
+import './outline.css';
 
 const Checkout = (props) => {
   const { apiUrl, sellerKey } = props;
-  const [provider, setProvider] = React.useState();
-  const [isLoading, setIsLoading] = React.useState(true);
+  const [provider, setProvider] = useState(undefined);
+  const [isLoading, setIsLoading] = useState(true);
 
   if (!apiUrl) {
     throw new Error("Property 'apiUrl' is required");
@@ -18,7 +19,7 @@ const Checkout = (props) => {
     throw new Error("Property 'sellerKey' is required");
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       const apiInstance = new APIService(apiUrl);
 
@@ -36,18 +37,19 @@ const Checkout = (props) => {
     fetchData();
   }, []);
 
-  let providerComponent;
-
-  if (provider === 'adyen') {
-    providerComponent = <Adyen {...props} />;
-  } else if (provider === 'rede') {
-    providerComponent = <Rede {...props} />;
-  } else {
-    providerComponent = 'Invalid Payment Provider';
-  }
+  const renderProviderComponent = () => {
+    switch (provider) {
+      case 'adyen':
+        return <Adyen {...props} />;
+      case 'rede':
+        return <Rede {...props} />;
+      default:
+        return 'Invalid Payment Provider';
+    }
+  };
 
   return (
-    <>
+    <ChakraProvider>
       {isLoading ? (
         <Flex w="500px" bgColor="#fff">
           <Stack w="full" spacing={8}>
@@ -61,9 +63,9 @@ const Checkout = (props) => {
           </Stack>
         </Flex>
       ) : (
-        providerComponent
+        renderProviderComponent()
       )}
-    </>
+    </ChakraProvider>
   );
 };
 

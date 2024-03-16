@@ -85,12 +85,9 @@ const App = () => {
       successReturnUrl={'http://success-url.com.br'}
       errorReturnUrl={'http://error-url.com.br'}
       showPayButton={true}
-      theme={'outline'}
     />
   );
 };
 ```
 
 Os campos has_split_rules e split_rules(opcionais) são usados para dividir o valor da venda entre os estabelecimentos.
-
-O campo "theme" é opcional e deve ser definido como 'outline' caso deseje o estilo.
