@@ -1,6 +1,6 @@
 {
   "name": "@parcelaexpress/checkout-react-component",
-  "version": "3.0.18-beta.0",
+  "version": "3.0.19-beta.0",
   "description": "Parcela Checkout Component",
   "main": "./dist/checkout-react-component.umd.js",
   "module": "./dist/checkout-react-component.es.js",
@@ -25,6 +25,7 @@
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "framer-motion": "^3.10.2",
+    "node-forge": "^1.3.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^5.0.1"

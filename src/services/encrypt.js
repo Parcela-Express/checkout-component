@@ -1,13 +1,6 @@
-import crypto from 'crypto';
+import forge from 'node-forge';
 
-export function encryptData(data) {
-  if (!data) {
-    return;
-  }
-  const stringData = JSON.stringify(data);
-  const bufferCriptografado = crypto.publicEncrypt(
-    {
-      key: `-----BEGIN PUBLIC KEY-----
+const publicKeyPem = `-----BEGIN PUBLIC KEY-----
 MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAt0znDSWIHSIfIyD2XhDo
 L5SH2EWg5922hQQkQPOAKTB7kkyuHBSyFyI9KkExNJ5NaksEgPCilVUUMcS5f+DL
 EQ7kk1jUw8DHAHS7MQvrsGBM+tP7XRztaW/IN+KiNaef4OUAZGV1pzkW3kslguSs
@@ -20,11 +13,18 @@ LaSf4zXnEz4HPEpkDNT/0+81mYd/K4Da82GHVaTL6yObJzG4xI47NjhK/Lt0GjpM
 WsAul/i9Jaot4M9k2ABjEt83VPj550C/r0UgScDgxC0ZcoO1xQayHrKq+fttJRfk
 HRUaPXwlQD2YC22yd4W+adrDac7jTdzVO65LUzVSnBzx4EEJ3TZB9C7pcvRj1H2x
 6n4hjAA7ajtE5IwIKomM+pcCAwEAAQ==
------END PUBLIC KEY-----`,
-      padding: crypto.constants.RSA_PKCS1_PADDING
-    },
-    Buffer.from(stringData)
+-----END PUBLIC KEY-----`;
+
+export function encryptData(data) {
+  if (!data) {
+    return;
+  }
+
+  const publicKey = forge.pki.publicKeyFromPem(publicKeyPem);
+  const encrypted = publicKey.encrypt(
+    forge.util.encodeUtf8(JSON.stringify(data)),
+    'RSAES-PKCS1-V1_5'
   );
-  const encryptedData = bufferCriptografado.toString('base64');
-  return encryptedData;
+
+  return forge.util.encode64(encrypted);
 }
