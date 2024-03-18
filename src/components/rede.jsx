@@ -119,7 +119,7 @@ const Rede = (props) => {
   const validateUrls = () => {
     const { customerData, successReturnUrl, errorReturnUrl } = props;
     return !(
-      customerData.form_payment === 'debit' &&
+      customerData?.form_payment === 'debit' &&
       (typeof successReturnUrl !== 'string' || typeof errorReturnUrl !== 'string')
     );
   };
