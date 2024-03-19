@@ -92,6 +92,22 @@ const Demo = () => {
               successReturnUrl={'http://success-url.com.br'}
               errorReturnUrl={'http://error-url.com.br'}
               showPayButton={true}
+              shopper={{
+                name: 'Teste',
+                email: 'teste@parcelaexpress.com.br',
+                birth_date: '2000-05-29',
+                phone: '31999999999',
+                document: '12345678910',
+                address: {
+                  city: 'Belo Horizonte',
+                  house_number_or_name: '10',
+                  postal_code: '31010500',
+                  state_or_province: 'MG',
+                  street: 'Rua Adamina',
+                  complement: 'N/A',
+                  district: 'Santa Tereza'
+                }
+              }}
             />
           </Flex>
         </Stack>

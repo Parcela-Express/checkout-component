@@ -125,7 +125,7 @@ const Rede = (props) => {
   };
 
   const buildCreatePaymentDto = () => {
-    const { customerData, successReturnUrl, errorReturnUrl } = props;
+    const { customerData, successReturnUrl, errorReturnUrl, shopper } = props;
     const [month, year] = expiry.split('/');
     const encryptedCardNumber = encryptData(cardNumber);
     const encryptedExpiryMonth = encryptData(month);
@@ -178,6 +178,10 @@ const Rede = (props) => {
     if (customerData.recurrence && customerData.recurrence_day) {
       createPaymentDto.recurrence = customerData.recurrence;
       createPaymentDto.recurrence_day = customerData.recurrence_day;
+    }
+
+    if (shopper) {
+      createPaymentDto.shopper = shopper;
     }
 
     return createPaymentDto;
