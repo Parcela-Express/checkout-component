@@ -135,7 +135,6 @@ Os campos has_split_rules e split_rules(opcionais) são usados para dividir o va
 - `service_id` (string): ID do serviço. _(Opcional)_
 - `protocol` (string): Protocolo. _(Opcional)_
 - `split_rules` (array): Regras de divisão da venda. _(Opcional)_
-  - Consulte abaixo para detalhes.
 - `recurrence` (bool): Indica se a venda é recorrente. _(Opcional)_
 - `recurrence_day` (number): Dia da recorrência. _(Opcional)_
 
