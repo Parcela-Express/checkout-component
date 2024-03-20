@@ -42,6 +42,7 @@ const Rede = (props) => {
   const [cvcValid, setCvcValid] = useState(false);
   const [cardHolderNameValid, setCardHolderNameValid] = useState(false);
   const [cardIcon, setCardIcon] = useState(<NoCardSvg />);
+  const showPayButton = props.showPayButton !== undefined ? props.showPayButton : true;
 
   useEffect(() => {
     propsOnchange();
@@ -327,33 +328,34 @@ const Rede = (props) => {
             borderColor={cardHolderNameValid && cardHolderName?.length > 0 ? 'green.500' : ''}
           />
         </FormControl>
-
-        <Button
-          background="#233660"
-          border="0"
-          borderRadius="6px"
-          color="#fff"
-          cursor="pointer"
-          height="48px"
-          margin="0"
-          padding="15px"
-          textDecoration="none"
-          width="100%"
-          onClick={handleSubmit}
-          disabled={!(cardHolderNameValid && cardNumberValid && expiryValid && cvcValid)}
-          leftIcon={<FaLock />}
-          transition="background .3s ease-out, box-shadow .3s ease-out"
-          _focus={{
-            boxShadow: '0 0 0 2px #99c2ff',
-            outline: '0'
-          }}
-          _hover={{
-            background: '#1c3045',
-            boxShadow: '0 0, 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14)'
-          }}
-        >
-          Pagamento
-        </Button>
+        {showPayButton && (
+          <Button
+            background="#233660"
+            border="0"
+            borderRadius="6px"
+            color="#fff"
+            cursor="pointer"
+            height="48px"
+            margin="0"
+            padding="15px"
+            textDecoration="none"
+            width="100%"
+            onClick={handleSubmit}
+            disabled={!(cardHolderNameValid && cardNumberValid && expiryValid && cvcValid)}
+            leftIcon={<FaLock />}
+            transition="background .3s ease-out, box-shadow .3s ease-out"
+            _focus={{
+              boxShadow: '0 0 0 2px #99c2ff',
+              outline: '0'
+            }}
+            _hover={{
+              background: '#1c3045',
+              boxShadow: '0 0, 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14)'
+            }}
+          >
+            Pagamento
+          </Button>
+        )}
       </Stack>
     </Box>
   );
