@@ -45,8 +45,7 @@ const Adyen = (props) => {
     sellerKey,
     successReturnUrl,
     errorReturnUrl,
-    showPayButton,
-    shopper
+    showPayButton
   } = props;
   const [paymentResponse, setPaymentResponse] = React.useState(undefined);
 
@@ -163,10 +162,6 @@ const Adyen = (props) => {
         if (customerData.recurrence && customerData.recurrence_day) {
           createPaymentDto.recurrence = customerData.recurrence;
           createPaymentDto.recurrence_day = customerData.recurrence_day;
-        }
-
-        if (shopper) {
-          createPaymentDto.shopper = shopper;
         }
 
         return new Promise((resolve, reject) => {
