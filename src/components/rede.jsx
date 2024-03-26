@@ -46,7 +46,7 @@ const Rede = (props) => {
 
   useEffect(() => {
     propsOnchange();
-  }, [cardNumberValid, expiryValid, cvcValid, cardHolderNameValid]);
+  }, [cardNumber, expiry, cvc, cardHolderName]);
 
   const handleCardNumberChange = (e) => {
     const input = e.target.value;
