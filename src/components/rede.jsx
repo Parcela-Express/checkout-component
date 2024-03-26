@@ -243,8 +243,9 @@ const Rede = (props) => {
               placeholder="1234 5678 9012 3456"
               fontSize="12px"
               fontWeight="400"
-              color="#90a2bd"
-              borderColor={cardNumberValid && cardNumber?.length === 19 ? 'green.500' : ''}
+              color="black"
+              _placeholder={{ color: '#90a2bd' }}
+              borderColor={cardNumberValid && cardNumber?.length === 19 ? 'green.500' : '#90a2bd'}
             />
             <InputRightElement w={'27px'} mr={2} pointerEvents="none">
               {cardIcon}
@@ -270,8 +271,9 @@ const Rede = (props) => {
               placeholder="MM/AA"
               fontSize="12px"
               fontWeight="400"
-              color="#90a2bd"
-              borderColor={expiryValid && expiry?.length === 5 ? 'green.500' : ''}
+              color="black"
+              _placeholder={{ color: '#90a2bd' }}
+              borderColor={expiryValid && expiry?.length === 5 ? 'green.500' : '#90a2bd'}
             />
             <FormErrorMessage fontSize="12px" fontWeight="400">
               {!expiryValid ? 'Data inválida' : ''}
@@ -295,8 +297,9 @@ const Rede = (props) => {
                 placeholder="123"
                 fontSize="12px"
                 fontWeight="400"
-                color="#90a2bd"
-                borderColor={cvcValid && cvc.length === 3 ? 'green.500' : ''}
+                color="black"
+                _placeholder={{ color: '#90a2bd' }}
+                borderColor={cvcValid && cvc.length === 3 ? 'green.500' : '#90a2bd'}
               />
               <InputRightElement pointerEvents="none">
                 <CvcSvg />
@@ -321,8 +324,11 @@ const Rede = (props) => {
             placeholder="J. Smith"
             fontSize="12px"
             fontWeight="400"
-            color="#90a2bd"
-            borderColor={cardHolderNameValid && cardHolderName?.length > 0 ? 'green.500' : ''}
+            color="black"
+            _placeholder={{ color: '#90a2bd' }}
+            borderColor={
+              cardHolderNameValid && cardHolderName?.length > 0 ? 'green.500' : '#90a2bd'
+            }
           />
         </FormControl>
         {showPayButton && (
