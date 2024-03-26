@@ -135,23 +135,7 @@ Checkout.propTypes = {
     recurrence: PropTypes.bool,
     recurrence_day: PropTypes.number
   }).isRequired,
-  showPayButton: PropTypes.bool,
-  shopper: PropTypes.shape({
-    name: PropTypes.string,
-    email: PropTypes.string,
-    birth_date: PropTypes.string,
-    phone: PropTypes.string,
-    document: PropTypes.string,
-    address: PropTypes.shape({
-      city: PropTypes.string,
-      house_number_or_name: PropTypes.string,
-      postal_code: PropTypes.string,
-      state_or_province: PropTypes.string,
-      street: PropTypes.string,
-      complement: PropTypes.string,
-      district: PropTypes.string
-    })
-  })
+  showPayButton: PropTypes.bool
 };
 
 export default Checkout;

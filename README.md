@@ -116,7 +116,6 @@ Os campos has_split_rules e split_rules(opcionais) são usados para dividir o va
 | `afterSubmit`      | function | Não         | Função a ser executada após o envio.                                                                         |
 | `customerData`     | object   | Sim         | Dados do cliente. Consulte abaixo para detalhes sobre seus subcampos.                                        |
 | `showPayButton`    | bool     | Não         | Define se o botão de pagamento será exibido.                                                                 |
-| `shopper`          | object   | Não         | Detalhes do pagador                                                                                          |
 
 ### `customerData` Subcampos:
 
@@ -137,6 +136,7 @@ Os campos has_split_rules e split_rules(opcionais) são usados para dividir o va
 - `split_rules` (array): Regras de divisão da venda. _(Opcional)_
 - `recurrence` (bool): Indica se a venda é recorrente. _(Opcional)_
 - `recurrence_day` (number): Dia da recorrência. _(Opcional)_
+- `pre_capture` (bool): Indica se a venda é pré captura. _(Opcional)_
 
 ### `customerData.customer` Subcampos:
 
