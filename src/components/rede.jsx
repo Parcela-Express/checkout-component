@@ -103,7 +103,7 @@ const Rede = (props) => {
       isValid,
       data: {
         paymentMethod: {
-          holder_name: cardHolderName,
+          holderName: cardHolderName,
           encryptedCardNumber: encryptData(cardNumber) || '',
           encryptedExpiryMonth: encryptData(month) || '',
           encryptedExpiryYear: encryptData(year) || '',
