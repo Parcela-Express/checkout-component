@@ -1,6 +1,6 @@
 {
   "name": "@parcelaexpress/checkout-react-component",
-  "version": "3.0.28-beta.0",
+  "version": "3.0.30-beta.0",
   "description": "Parcela Checkout Component",
   "main": "./dist/checkout-react-component.umd.js",
   "module": "./dist/checkout-react-component.es.js",
