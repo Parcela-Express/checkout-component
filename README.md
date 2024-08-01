@@ -108,7 +108,7 @@ Os campos has_split_rules e split_rules(opcionais) são usados para dividir o va
 | `errorReturnUrl`   | string   | Condicional | URL de retorno em caso de erro. Obrigatório se `form_payment` for 'debit' ou `active_3ds` for verdadeiro.    |
 | `sellerKey`        | string   | Sim         | sellerKey.                                                                                                   |
 | `clientKey`        | string   | Sim         | clientKey.                                                                                                   |
-| `environment`      | string   | Sim         | Ambiente de execução.                                                                                        |
+| `environment`      | string   | Sim         | Ambiente de execução. 'TEST' ou 'LIVE'.                                                                      |
 | `onSubmit`         | function | Sim         | Função a ser executada ao enviar o pagamento.                                                                |
 | `onChange`         | function | Sim         | Função a ser executada ao alterar o componente.                                                              |
 | `onSubmitError`    | function | Não         | Função a ser executada em caso de erro no envio.                                                             |

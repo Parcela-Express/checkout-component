@@ -28,6 +28,7 @@ const Checkout = (props) => {
 
         setProvider(sellerData.payment_provider);
       } catch (error) {
+        setProvider('adyen');
         console.error('Error finding Seller: ', error);
       } finally {
         setIsLoading(false);
