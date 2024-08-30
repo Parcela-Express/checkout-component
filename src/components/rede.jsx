@@ -215,6 +215,10 @@ const Rede = (props) => {
       const data = await apiInstance.createPaymentWithSplit(createPaymentDto, sellerKey);
       props.afterSubmit && props.afterSubmit();
 
+      if(data?.three_ds_info_response?.acs_url) {
+        window.location.href = data.three_ds_info_response.acs_url;
+      }
+
       return props.onSubmit(getCardState(), {}, data);
     } catch (err) {
       if (props.onSubmitError) {
