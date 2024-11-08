@@ -182,6 +182,9 @@ const Rede = (props) => {
       createPaymentDto.recurrence_day = customerData.recurrence_day;
     }
 
+    if (customerData.active_3ds) {
+      createPaymentDto.active_3ds = customerData.active_3ds;
+    }
     return createPaymentDto;
   };
 
@@ -210,12 +213,11 @@ const Rede = (props) => {
 
     const createPaymentDto = buildCreatePaymentDto();
     props.beforeSubmit && props.beforeSubmit();
-
     try {
       const data = await apiInstance.createPaymentWithSplit(createPaymentDto, sellerKey);
       props.afterSubmit && props.afterSubmit();
 
-      if(data?.three_ds_info_response?.acs_url) {
+      if (data?.three_ds_info_response?.acs_url) {
         window.location.href = data.three_ds_info_response.acs_url;
       }
 
