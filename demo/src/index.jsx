@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { Flex, Image, Stack, ChakraProvider } from '@chakra-ui/react';
 
 import Checkout from '../../src';
@@ -101,4 +101,6 @@ const Demo = () => {
   );
 };
 
-render(<Demo />, document.querySelector('#root'));
+const container = document.getElementById('root');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(<Demo />, document.querySelector('#root'));
