@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Adyen from './components/adyen';
+import Adyen from './components/adyen/adyen.tsx';
 import Rede from './components/rede';
 import APIService from './services/api.service';
 import { Flex, HStack, Skeleton, Stack, ChakraProvider } from '@chakra-ui/react';
@@ -10,22 +10,22 @@ const Checkout = (props) => {
   const { apiUrl, sellerKey } = props;
   const [provider, setProvider] = useState(undefined);
   const [isLoading, setIsLoading] = useState(true);
-
+  
   if (!apiUrl) {
     throw new Error("Property 'apiUrl' is required");
   }
-
+  
   if (!sellerKey) {
     throw new Error("Property 'sellerKey' is required");
   }
-
+  
   useEffect(() => {
     const fetchData = async () => {
       const apiInstance = new APIService(apiUrl);
-
+      
       try {
         const sellerData = await apiInstance.getSellerPaymentProvider(sellerKey);
-
+        
         setProvider(sellerData.payment_provider);
       } catch (error) {
         setProvider('adyen');
@@ -33,10 +33,10 @@ const Checkout = (props) => {
         setIsLoading(false);
       }
     };
-
+    
     fetchData();
   }, []);
-
+  
   const renderProviderComponent = () => {
     switch (provider) {
       case 'adyen':

@@ -1,6 +1,6 @@
 {
   "name": "@parcelaexpress/checkout-react-component",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Parcela Checkout Component",
   "main": "./dist/checkout-react-component.umd.js",
   "module": "./dist/checkout-react-component.es.js",
@@ -20,7 +20,8 @@
     "react-dom": "19.x"
   },
   "dependencies": {
-    "@adyen/adyen-web": "^3.20.0",
+    "@adyen/adyen-web": "6.19.0",
+    "@chakra-ui/icons": "^2.2.4",
     "@chakra-ui/react": "2.10.4",
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.0",
