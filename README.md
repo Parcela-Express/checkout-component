@@ -116,6 +116,7 @@ Os campos has_split_rules e split_rules(opcionais) são usados para dividir o va
 | `afterSubmit`      | function | Não         | Função a ser executada após o envio.                                                                         |
 | `customerData`     | object   | Sim         | Dados do cliente. Consulte abaixo para detalhes sobre seus subcampos.                                        |
 | `showPayButton`    | bool     | Não         | Define se o botão de pagamento será exibido.                                                                 |
+| `maskSecurityCode` | bool     | Não         | Define se o campo cvv vai ser oculto ou aberto                                                              |
 
 ### `customerData` Subcampos:
 
