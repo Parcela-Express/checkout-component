@@ -290,7 +290,6 @@ const Rede = (props) => {
                 px={4}
                 variant={'outline'}
                 autoComplete="cc-csc"
-                type="text"
                 value={cvc}
                 onChange={handleCvcChange}
                 maxLength={3}
@@ -300,6 +299,7 @@ const Rede = (props) => {
                 color="black"
                 _placeholder={{ color: '#90a2bd' }}
                 borderColor={cvcValid && cvc.length === 3 ? 'green.500' : '#90a2bd'}
+                type={props.maskSecurityCode ? 'password' : 'text'}
               />
               <InputRightElement pointerEvents="none">
                 <CvcSvg />
